@@ -1,0 +1,12 @@
+/* Base da página: todas as medidas incluem borda e preenchimento. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
