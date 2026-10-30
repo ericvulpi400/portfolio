@@ -107,3 +107,135 @@ footer p {
     margin: 0;
     font-size: 0.875rem;
 }
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--navy);
+    border-bottom: 1px solid #35506b;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 71rem;
+    margin: auto;
+    padding: 1rem 1.5rem;
+}
+
+.brand {
+    flex-shrink: 0;
+    font-weight: 700;
+    line-height: 1.35;
+    text-decoration: none;
+}
+
+.brand span {
+    display: block;
+    color: #c5d6e7;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 1.1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navigation a {
+    color: #fff;
+}
+
+.menu a {
+    display: inline-block;
+    padding: 0.4rem 0;
+    font-size: 0.875rem;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+.navigation a:focus-visible {
+    outline-color: #f8c67b;
+}
+
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    padding: 1.5rem 0 3rem;
+    border-bottom: 1px solid var(--line);
+}
+
+.intro-text {
+    flex: 1;
+}
+
+.eyebrow {
+    color: var(--blue);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.intro-description {
+    max-width: 32ch;
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+.period {
+    color: var(--muted);
+}
+
+.profile-photo {
+    width: 15rem;
+    flex-shrink: 0;
+    border: 6px solid #fff;
+    border-radius: 1.25rem;
+    box-shadow: 0 12px 32px #122d491c;
+}
+
+.contact-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+    padding: 0.7rem 1.1rem;
+    border: 1px solid var(--blue);
+    border-radius: 0.4rem;
+    background: var(--blue);
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.contact-button:hover {
+    background: var(--navy);
+}
+
+.skip-link {
+    position: fixed;
+    top: -8rem;
+    left: 1rem;
+    z-index: 20;
+    padding: 0.75rem 1rem;
+    background: #fff;
+    color: var(--navy);
+}
+
+.skip-link:focus-visible {
+    top: 1rem;
+}
