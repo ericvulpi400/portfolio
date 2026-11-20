@@ -1,0 +1,23 @@
+node_modules/
+dist/
+out/
+*.log
+
+# Sprites MiniFolks (LYASeeK): licença proíbe revender/distribuir os arquivos.
+# O repositório é público, então os sprites ficam só na máquina. O manifesto (gerado) pode ir.
+assets/minifolks/*
+!assets/minifolks/manifest.json
+!assets/minifolks/LEIA-ME.md
+
+# SDK da Steam: o desenvolvedor baixa do site de parceiros
+steamworks_sdk/
+spike/steamworks_sdk/
+steam_appid.txt
+spike/assets/
+
+# Imagens de referência de terceiros: só locais (recriáveis por tools/referencias/)
+referencias/**/*.png
+referencias/**/*.jpg
+
+# prancha de assets de terceiros (local)
+assets/pesquisa_prancha.png

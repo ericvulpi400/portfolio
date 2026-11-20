@@ -1,0 +1,5594 @@
+{
+ "generated": "2026-11-20T23:01:50.731Z",
+ "root": "assets/minifolks",
+ "note": "Gerado por tools/minifolks/build_manifest.mjs a partir dos arquivos reais. Não editar à mão.",
+ "packs": {
+  "forest_animals": {
+   "characters": {
+    "bear": {
+     "name": "Bear",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 10,
+      "rows": 8,
+      "w": 320,
+      "h": 256
+     },
+     "pivot": {
+      "x": 16,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 5,
+      "y": 20,
+      "w": 22,
+      "h": 11
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "forest_animals/7300838/Outline/MiniBear.png",
+       "Without outline": "forest_animals/7300838/Without outline/MiniBear.png"
+      },
+      "ase": "forest_animals/7300839/MiniBear.aseprite"
+     },
+     "actions": [
+      "idle",
+      "walk",
+      "jump",
+      "attack",
+      "attack2",
+      "warcry",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 1,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 2,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack": {
+       "source": "attack",
+       "row": 3,
+       "frames": 6,
+       "ms": [
+        100,
+        150,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack2": {
+       "source": "attack2",
+       "row": 4,
+       "frames": 5,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        200
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "warcry": {
+       "source": "roar",
+       "row": 5,
+       "frames": 10,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        300,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "hit",
+       "row": 6,
+       "frames": 2,
+       "ms": [
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 7,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        400
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "bird": {
+     "name": "Bird",
+     "cell": {
+      "w": 16,
+      "h": 16
+     },
+     "sheet": {
+      "cols": 4,
+      "rows": 3,
+      "w": 64,
+      "h": 48
+     },
+     "pivot": {
+      "x": 8,
+      "y": 15,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 4,
+      "y": 7,
+      "w": 8,
+      "h": 8
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "forest_animals/7300838/Outline/MiniBird.png",
+       "Without outline": "forest_animals/7300838/Without outline/MiniBird.png"
+      },
+      "ase": "forest_animals/7300839/MiniBird.aseprite"
+     },
+     "actions": [
+      "idle",
+      "fly",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        400,
+        100,
+        100,
+        200
+       ],
+       "loop": true,
+       "footY": 15
+      },
+      "fly": {
+       "source": "fly",
+       "row": 1,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 15
+      },
+      "death": {
+       "source": "death",
+       "row": 2,
+       "frames": 3,
+       "ms": [
+        100,
+        100,
+        400
+       ],
+       "loop": false,
+       "footY": 15
+      }
+     }
+    },
+    "boar": {
+     "name": "Boar",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 5,
+      "rows": 6,
+      "w": 160,
+      "h": 192
+     },
+     "pivot": {
+      "x": 16,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 7,
+      "y": 21,
+      "w": 18,
+      "h": 10
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "forest_animals/7300838/Outline/MiniBoar.png",
+       "Without outline": "forest_animals/7300838/Without outline/MiniBoar.png"
+      },
+      "ase": "forest_animals/7300839/MiniBoar.aseprite"
+     },
+     "actions": [
+      "idle",
+      "walk",
+      "jump",
+      "attack",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 1,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 2,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack": {
+       "source": "attack",
+       "row": 3,
+       "frames": 5,
+       "ms": [
+        200,
+        100,
+        100,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "hit",
+       "row": 4,
+       "frames": 2,
+       "ms": [
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 5,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        400
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "bunny": {
+     "name": "Bunny",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 4,
+      "rows": 4,
+      "w": 128,
+      "h": 128
+     },
+     "pivot": {
+      "x": 16,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 10,
+      "y": 23,
+      "w": 12,
+      "h": 8
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "forest_animals/7300838/Outline/MiniBunny.png",
+       "Without outline": "forest_animals/7300838/Without outline/MiniBunny.png"
+      },
+      "ase": "forest_animals/7300839/MiniBunny.aseprite"
+     },
+     "actions": [
+      "idle",
+      "walk",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        400,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 1,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "hit": {
+       "source": "hit",
+       "row": 2,
+       "frames": 2,
+       "ms": [
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 3,
+       "frames": 3,
+       "ms": [
+        100,
+        100,
+        400
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "deer1": {
+     "name": "Deer1",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 5,
+      "rows": 6,
+      "w": 160,
+      "h": 192
+     },
+     "pivot": {
+      "x": 16,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 8,
+      "y": 17,
+      "w": 15,
+      "h": 14
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "forest_animals/7300838/Outline/MiniDeer1.png",
+       "Without outline": "forest_animals/7300838/Without outline/MiniDeer1.png"
+      },
+      "ase": "forest_animals/7300839/MiniDeer1.aseprite"
+     },
+     "actions": [
+      "idle",
+      "walk",
+      "jump",
+      "attack",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 1,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 2,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack": {
+       "source": "attack",
+       "row": 3,
+       "frames": 5,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "hit",
+       "row": 4,
+       "frames": 2,
+       "ms": [
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 5,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        400
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "deer2": {
+     "name": "Deer2",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 7,
+      "rows": 7,
+      "w": 224,
+      "h": 224
+     },
+     "pivot": {
+      "x": 16,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 8,
+      "y": 14,
+      "w": 16,
+      "h": 17
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "forest_animals/7300838/Outline/MiniDeer2.png",
+       "Without outline": "forest_animals/7300838/Without outline/MiniDeer2.png"
+      },
+      "ase": "forest_animals/7300839/MiniDeer2.aseprite"
+     },
+     "actions": [
+      "idle",
+      "walk",
+      "jump",
+      "attack",
+      "attack2",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 1,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 2,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack": {
+       "source": "attack",
+       "row": 3,
+       "frames": 5,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack2": {
+       "source": "attack2",
+       "row": 4,
+       "frames": 7,
+       "ms": [
+        100,
+        200,
+        75,
+        75,
+        75,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "hit",
+       "row": 5,
+       "frames": 2,
+       "ms": [
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 6,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        400
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "fox": {
+     "name": "Fox",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 6,
+      "rows": 6,
+      "w": 192,
+      "h": 192
+     },
+     "pivot": {
+      "x": 15,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 6,
+      "y": 20,
+      "w": 18,
+      "h": 11
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "forest_animals/7300838/Outline/MiniFox.png",
+       "Without outline": "forest_animals/7300838/Without outline/MiniFox.png"
+      },
+      "ase": "forest_animals/7300839/MiniFox.aseprite"
+     },
+     "actions": [
+      "idle",
+      "walk",
+      "jump",
+      "attack",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 1,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 2,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack": {
+       "source": "attack",
+       "row": 3,
+       "frames": 6,
+       "ms": [
+        100,
+        200,
+        100,
+        100,
+        100,
+        200
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "hit",
+       "row": 4,
+       "frames": 2,
+       "ms": [
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 5,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        400
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "wolf": {
+     "name": "Wolf",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 7,
+      "rows": 8,
+      "w": 224,
+      "h": 256
+     },
+     "pivot": {
+      "x": 16,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 6,
+      "y": 20,
+      "w": 19,
+      "h": 11
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "forest_animals/7300838/Outline/MiniWolf.png",
+       "Without outline": "forest_animals/7300838/Without outline/MiniWolf.png"
+      },
+      "ase": "forest_animals/7300839/MiniWolf.aseprite"
+     },
+     "actions": [
+      "idle",
+      "walk",
+      "jump",
+      "attack",
+      "attack2",
+      "howl",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 1,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 2,
+       "frames": 4,
+       "ms": [
+        200,
+        100,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack": {
+       "source": "attack",
+       "row": 3,
+       "frames": 5,
+       "ms": [
+        200,
+        100,
+        100,
+        100,
+        200
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack2": {
+       "source": "attack2",
+       "row": 4,
+       "frames": 5,
+       "ms": [
+        200,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "howl": {
+       "source": "howl",
+       "row": 5,
+       "frames": 7,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        400,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "hit",
+       "row": 6,
+       "frames": 2,
+       "ms": [
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 7,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        500
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    }
+   },
+   "count": 8
+  },
+  "humans": {
+   "characters": {
+    "archmage": {
+     "name": "ArchMage",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 11,
+      "rows": 9,
+      "w": 352,
+      "h": 288
+     },
+     "pivot": {
+      "x": 18,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 10,
+      "y": 16,
+      "w": 15,
+      "h": 15
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "humans/MinifolksHumans/Outline/MiniArchMage.png",
+       "Without Outline": "humans/MinifolksHumans/Without Outline/MiniArchMage.png"
+      },
+      "ase": "humans/ase/MiniArchMage.aseprite"
+     },
+     "actions": [
+      "idle",
+      "walk",
+      "jump",
+      "attack",
+      "attack2",
+      "spell",
+      "spell2",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 1,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 2,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack": {
+       "source": "attack",
+       "row": 3,
+       "frames": 11,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack2": {
+       "source": "attack2",
+       "row": 4,
+       "frames": 9,
+       "ms": [
+        200,
+        100,
+        100,
+        200,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "spell": {
+       "source": "spell",
+       "row": 5,
+       "frames": 9,
+       "ms": [
+        200,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "spell2": {
+       "source": "spell2",
+       "row": 6,
+       "frames": 10,
+       "ms": [
+        200,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "hit",
+       "row": 7,
+       "frames": 2,
+       "ms": [
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 8,
+       "frames": 9,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        400
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "archer": {
+     "name": "ArcherMan",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 11,
+      "rows": 7,
+      "w": 352,
+      "h": 224
+     },
+     "pivot": {
+      "x": 17,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 10,
+      "y": 16,
+      "w": 14,
+      "h": 15
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "humans/MinifolksHumans/Outline/MiniArcherMan.png",
+       "Without Outline": "humans/MinifolksHumans/Without Outline/MiniArcherMan.png"
+      },
+      "ase": "humans/ase/MiniArcher.aseprite"
+     },
+     "actions": [
+      "idle",
+      "walk",
+      "jump",
+      "attack",
+      "attack2",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 1,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 2,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack": {
+       "source": "attack",
+       "row": 3,
+       "frames": 11,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        200,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack2": {
+       "source": "attack2",
+       "row": 4,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        200,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "damage",
+       "row": 5,
+       "frames": 3,
+       "ms": [
+        50,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 6,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        400
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "cavalier": {
+     "name": "CavalierMan",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 8,
+      "rows": 7,
+      "w": 256,
+      "h": 224
+     },
+     "pivot": {
+      "x": 15,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 6,
+      "y": 6,
+      "w": 18,
+      "h": 25
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "humans/MinifolksHumans/Outline/MiniCavalierMan.png",
+       "Without Outline": "humans/MinifolksHumans/Without Outline/MiniCavalierMan.png"
+      },
+      "ase": "humans/ase/MiniCavalierMan.aseprite"
+     },
+     "actions": [
+      "idle",
+      "walk",
+      "walk2",
+      "jump",
+      "attack",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 8,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 1,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk2": {
+       "source": "walk2",
+       "row": 2,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 3,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack": {
+       "source": "attack",
+       "row": 4,
+       "frames": 7,
+       "ms": [
+        200,
+        100,
+        100,
+        150,
+        100,
+        100,
+        200
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "damage",
+       "row": 5,
+       "frames": 2,
+       "ms": [
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 6,
+       "frames": 6,
+       "ms": [
+        200,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "crossbow": {
+     "name": "CrossBowMan",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 10,
+      "rows": 7,
+      "w": 320,
+      "h": 224
+     },
+     "pivot": {
+      "x": 18,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 11,
+      "y": 18,
+      "w": 13,
+      "h": 13
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "humans/MinifolksHumans/Outline/MiniCrossBowMan.png",
+       "Without Outline": "humans/MinifolksHumans/Without Outline/MiniCrossBowMan.png"
+      },
+      "ase": "humans/ase/MiniCrossBowMan.aseprite"
+     },
+     "actions": [
+      "idle",
+      "walk",
+      "jump",
+      "attack",
+      "attack2",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 1,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 2,
+       "frames": 3,
+       "ms": [
+        200,
+        100,
+        200
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack": {
+       "source": "attack",
+       "row": 3,
+       "frames": 10,
+       "ms": [
+        200,
+        100,
+        200,
+        100,
+        200,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack2": {
+       "source": "attack2",
+       "row": 4,
+       "frames": 4,
+       "ms": [
+        200,
+        100,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "damage",
+       "row": 5,
+       "frames": 3,
+       "ms": [
+        200,
+        50,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 6,
+       "frames": 4,
+       "ms": [
+        200,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "halberd": {
+     "name": "HalberdMan",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 6,
+      "rows": 6,
+      "w": 192,
+      "h": 192
+     },
+     "pivot": {
+      "x": 16,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 9,
+      "y": 15,
+      "w": 13,
+      "h": 16
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "humans/MinifolksHumans/Outline/MiniHalberdMan.png",
+       "Without Outline": "humans/MinifolksHumans/Without Outline/MiniHalberdMan.png"
+      },
+      "ase": "humans/ase/MiniHalberdMan.aseprite"
+     },
+     "actions": [
+      "idle",
+      "walk",
+      "jump",
+      "attack",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 1,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 2,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack": {
+       "source": "attack",
+       "row": 3,
+       "frames": 6,
+       "ms": [
+        200,
+        100,
+        200,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "damage",
+       "row": 4,
+       "frames": 3,
+       "ms": [
+        50,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 5,
+       "frames": 5,
+       "ms": [
+        200,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "horse": {
+     "name": "HorseMan",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 8,
+      "rows": 7,
+      "w": 256,
+      "h": 224
+     },
+     "pivot": {
+      "x": 15,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 6,
+      "y": 6,
+      "w": 18,
+      "h": 25
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "humans/MinifolksHumans/Outline/MiniHorseMan.png",
+       "Without Outline": "humans/MinifolksHumans/Without Outline/MiniHorseMan.png"
+      },
+      "ase": "humans/ase/MiniHorseMan.aseprite"
+     },
+     "actions": [
+      "idle",
+      "walk",
+      "walk2",
+      "jump",
+      "attack",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 8,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 1,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk2": {
+       "source": "walk2",
+       "row": 2,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 3,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack": {
+       "source": "attack",
+       "row": 4,
+       "frames": 7,
+       "ms": [
+        200,
+        100,
+        100,
+        150,
+        100,
+        100,
+        200
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "damage",
+       "row": 5,
+       "frames": 2,
+       "ms": [
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 6,
+       "frames": 6,
+       "ms": [
+        200,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "king": {
+     "name": "KingMan",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 10,
+      "rows": 7,
+      "w": 320,
+      "h": 224
+     },
+     "pivot": {
+      "x": 16,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 9,
+      "y": 18,
+      "w": 14,
+      "h": 13
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "humans/MinifolksHumans/Outline/MiniKingMan.png",
+       "Without Outline": "humans/MinifolksHumans/Without Outline/MiniKingMan.png"
+      },
+      "ase": "humans/ase/MiniKingMan.aseprite"
+     },
+     "actions": [
+      "idle",
+      "idle_b",
+      "walk",
+      "jump",
+      "attack",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "idle_b": {
+       "source": "idle2",
+       "row": 1,
+       "frames": 5,
+       "ms": [
+        200,
+        100,
+        200,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 2,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 3,
+       "frames": 5,
+       "ms": [
+        100,
+        200,
+        100,
+        100,
+        200
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack": {
+       "source": "attack",
+       "row": 4,
+       "frames": 10,
+       "ms": [
+        200,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "hit",
+       "row": 5,
+       "frames": 3,
+       "ms": [
+        200,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 6,
+       "frames": 6,
+       "ms": [
+        200,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "mage": {
+     "name": "Mage",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 11,
+      "rows": 8,
+      "w": 352,
+      "h": 256
+     },
+     "pivot": {
+      "x": 17,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 10,
+      "y": 16,
+      "w": 14,
+      "h": 15
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "humans/MinifolksHumans/Outline/MiniMage.png",
+       "Without Outline": "humans/MinifolksHumans/Without Outline/MiniMage.png"
+      },
+      "ase": "humans/ase/MiniMage.aseprite"
+     },
+     "actions": [
+      "idle",
+      "walk",
+      "jump",
+      "attack",
+      "attack2",
+      "spell",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 1,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 2,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack": {
+       "source": "attack",
+       "row": 3,
+       "frames": 11,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack2": {
+       "source": "attack2",
+       "row": 4,
+       "frames": 9,
+       "ms": [
+        200,
+        100,
+        100,
+        200,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "spell": {
+       "source": "spell",
+       "row": 5,
+       "frames": 9,
+       "ms": [
+        200,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "hit",
+       "row": 6,
+       "frames": 2,
+       "ms": [
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 7,
+       "frames": 9,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        400
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "prince": {
+     "name": "PrinceMan",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 6,
+      "rows": 6,
+      "w": 192,
+      "h": 192
+     },
+     "pivot": {
+      "x": 16,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 10,
+      "y": 16,
+      "w": 12,
+      "h": 15
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "humans/MinifolksHumans/Outline/MiniPrinceMan.png",
+       "Without Outline": "humans/MinifolksHumans/Without Outline/MiniPrinceMan.png"
+      },
+      "ase": "humans/ase/MiniPrinceMan.aseprite"
+     },
+     "actions": [
+      "idle",
+      "walk",
+      "jump",
+      "attack",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 1,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 2,
+       "frames": 5,
+       "ms": [
+        200,
+        100,
+        200,
+        50,
+        50
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack": {
+       "source": "attack",
+       "row": 3,
+       "frames": 6,
+       "ms": [
+        200,
+        100,
+        200,
+        100,
+        100,
+        200
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "damage",
+       "row": 4,
+       "frames": 3,
+       "ms": [
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 5,
+       "frames": 6,
+       "ms": [
+        200,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "shield": {
+     "name": "ShieldMan",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 6,
+      "rows": 7,
+      "w": 192,
+      "h": 224
+     },
+     "pivot": {
+      "x": 16,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 9,
+      "y": 16,
+      "w": 14,
+      "h": 15
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "humans/MinifolksHumans/Outline/MiniShieldMan.png",
+       "Without Outline": "humans/MinifolksHumans/Without Outline/MiniShieldMan.png"
+      },
+      "ase": "humans/ase/MiniShieldMan.aseprite"
+     },
+     "actions": [
+      "idle",
+      "walk",
+      "jump",
+      "attack",
+      "block",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 1,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 2,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack": {
+       "source": "attack",
+       "row": 3,
+       "frames": 6,
+       "ms": [
+        200,
+        100,
+        200,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "block": {
+       "source": "block",
+       "row": 4,
+       "frames": 6,
+       "ms": [
+        200,
+        100,
+        200,
+        100,
+        100,
+        200
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "hit",
+       "row": 5,
+       "frames": 3,
+       "ms": [
+        50,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 6,
+       "frames": 4,
+       "ms": [
+        200,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "spear": {
+     "name": "SpearMan",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 7,
+      "rows": 6,
+      "w": 224,
+      "h": 192
+     },
+     "pivot": {
+      "x": 16,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 10,
+      "y": 17,
+      "w": 12,
+      "h": 14
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "humans/MinifolksHumans/Outline/MiniSpearMan.png",
+       "Without Outline": "humans/MinifolksHumans/Without Outline/MiniSpearMan.png"
+      },
+      "ase": "humans/ase/MiniSpearMan.aseprite"
+     },
+     "actions": [
+      "idle",
+      "walk",
+      "jump",
+      "attack",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 1,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 2,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack": {
+       "source": "attack",
+       "row": 3,
+       "frames": 7,
+       "ms": [
+        200,
+        100,
+        100,
+        200,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "hit",
+       "row": 4,
+       "frames": 3,
+       "ms": [
+        50,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 5,
+       "frames": 5,
+       "ms": [
+        200,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "sword": {
+     "name": "SwordMan",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 6,
+      "rows": 6,
+      "w": 192,
+      "h": 192
+     },
+     "pivot": {
+      "x": 16,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 9,
+      "y": 16,
+      "w": 13,
+      "h": 15
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "humans/MinifolksHumans/Outline/MiniSwordMan.png",
+       "Without Outline": "humans/MinifolksHumans/Without Outline/MiniSwordMan.png"
+      },
+      "ase": "humans/ase/MiniSwordMan.aseprite"
+     },
+     "actions": [
+      "idle",
+      "walk",
+      "jump",
+      "attack",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 1,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 2,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack": {
+       "source": "attack",
+       "row": 3,
+       "frames": 6,
+       "ms": [
+        100,
+        200,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "hit",
+       "row": 4,
+       "frames": 3,
+       "ms": [
+        50,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 5,
+       "frames": 4,
+       "ms": [
+        200,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "humansprojectiles": {
+     "name": "HumansProjectiles",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 2,
+      "rows": 1,
+      "w": 80,
+      "h": 48
+     },
+     "pivot": {
+      "x": 17,
+      "y": 27,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 3,
+      "y": 6,
+      "w": 27,
+      "h": 21
+     },
+     "kind": "prop",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "default": "humans/MinifolksHumans/HumansProjectiles.png"
+      },
+      "ase": null
+     },
+     "actions": [
+      "row0"
+     ],
+     "anims": {
+      "row0": {
+       "source": "row0",
+       "row": 0,
+       "frames": 1,
+       "ms": null,
+       "loop": false,
+       "footY": 27
+      }
+     }
+    }
+   },
+   "count": 13
+  },
+  "villagers": {
+   "characters": {
+    "noble": {
+     "name": "NobleMan",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 6,
+      "rows": 5,
+      "w": 192,
+      "h": 160
+     },
+     "pivot": {
+      "x": 15,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 7,
+      "y": 17,
+      "w": 15,
+      "h": 14
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "villagers/5277354/MinifolksVillagers/Outline/MiniNobleMan.png",
+       "Without Outline": "villagers/5277354/MinifolksVillagers/Without Outline/MiniNobleMan.png"
+      },
+      "ase": "villagers/5293128/ase/MiniNobleMan.aseprite"
+     },
+     "actions": [
+      "idle",
+      "walk",
+      "jump",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 1,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 2,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "damage",
+       "row": 3,
+       "frames": 3,
+       "ms": [
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 4,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        500
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "noblewo": {
+     "name": "NobleWoman",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 6,
+      "rows": 5,
+      "w": 192,
+      "h": 160
+     },
+     "pivot": {
+      "x": 16,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 10,
+      "y": 17,
+      "w": 12,
+      "h": 14
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "villagers/5277354/MinifolksVillagers/Outline/MiniNobleWoman.png",
+       "Without Outline": "villagers/5277354/MinifolksVillagers/Without Outline/MiniNobleWoman.png"
+      },
+      "ase": "villagers/5293128/ase/MiniNobleWoman.aseprite"
+     },
+     "actions": [
+      "idle",
+      "walk",
+      "jump",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 1,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 2,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "hit",
+       "row": 3,
+       "frames": 3,
+       "ms": [
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 4,
+       "frames": 4,
+       "ms": [
+        200,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "old": {
+     "name": "OldMan",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 6,
+      "rows": 5,
+      "w": 192,
+      "h": 160
+     },
+     "pivot": {
+      "x": 16,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 10,
+      "y": 19,
+      "w": 12,
+      "h": 12
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "villagers/5277354/MinifolksVillagers/Outline/MiniOldMan.png",
+       "Without Outline": "villagers/5277354/MinifolksVillagers/Without Outline/MiniOldMan.png"
+      },
+      "ase": "villagers/5293128/ase/MiniOldMan.aseprite"
+     },
+     "actions": [
+      "idle",
+      "walk",
+      "jump",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 1,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 2,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        200
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "hit",
+       "row": 3,
+       "frames": 3,
+       "ms": [
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 4,
+       "frames": 3,
+       "ms": [
+        100,
+        100,
+        500
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "oldwo": {
+     "name": "OldWoman",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 6,
+      "rows": 5,
+      "w": 192,
+      "h": 160
+     },
+     "pivot": {
+      "x": 16,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 11,
+      "y": 17,
+      "w": 10,
+      "h": 14
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "villagers/5277354/MinifolksVillagers/Outline/MiniOldWoman.png",
+       "Without Outline": "villagers/5277354/MinifolksVillagers/Without Outline/MiniOldWoman.png"
+      },
+      "ase": "villagers/5293128/ase/MiniOldWoman.aseprite"
+     },
+     "actions": [
+      "idle",
+      "walk",
+      "jump",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 1,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 2,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "hit",
+       "row": 3,
+       "frames": 3,
+       "ms": [
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 4,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        500
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "peasant": {
+     "name": "Peasant",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 6,
+      "rows": 6,
+      "w": 192,
+      "h": 192
+     },
+     "pivot": {
+      "x": 16,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 9,
+      "y": 17,
+      "w": 13,
+      "h": 14
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "villagers/5277354/MinifolksVillagers/Outline/MiniPeasant.png",
+       "Without Outline": "villagers/5277354/MinifolksVillagers/Without Outline/MiniPeasant.png"
+      },
+      "ase": "villagers/5293128/ase/MiniPeasant.aseprite"
+     },
+     "actions": [
+      "idle",
+      "walk",
+      "jump",
+      "attack",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 1,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 2,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack": {
+       "source": "attack",
+       "row": 3,
+       "frames": 6,
+       "ms": [
+        500,
+        100,
+        100,
+        200,
+        100,
+        200
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "damage",
+       "row": 4,
+       "frames": 3,
+       "ms": [
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 5,
+       "frames": 4,
+       "ms": [
+        500,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "princess": {
+     "name": "Princess",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 6,
+      "rows": 5,
+      "w": 192,
+      "h": 160
+     },
+     "pivot": {
+      "x": 16,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 10,
+      "y": 17,
+      "w": 12,
+      "h": 14
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "villagers/5277354/MinifolksVillagers/Outline/MiniPrincess.png",
+       "Without Outline": "villagers/5277354/MinifolksVillagers/Without Outline/MiniPrincess.png"
+      },
+      "ase": "villagers/5293128/ase/MiniPrincess.aseprite"
+     },
+     "actions": [
+      "idle",
+      "walk",
+      "jump",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 1,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 2,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "hit",
+       "row": 3,
+       "frames": 3,
+       "ms": [
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 4,
+       "frames": 5,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        500
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "queen": {
+     "name": "Queen",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 6,
+      "rows": 5,
+      "w": 192,
+      "h": 160
+     },
+     "pivot": {
+      "x": 16,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 10,
+      "y": 17,
+      "w": 12,
+      "h": 14
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "villagers/5277354/MinifolksVillagers/Outline/MiniQueen.png",
+       "Without Outline": "villagers/5277354/MinifolksVillagers/Without Outline/MiniQueen.png"
+      },
+      "ase": "villagers/5293128/ase/MiniQueen.aseprite"
+     },
+     "actions": [
+      "idle",
+      "walk",
+      "jump",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 1,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 2,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "hit",
+       "row": 3,
+       "frames": 3,
+       "ms": [
+        500,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 4,
+       "frames": 5,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        500
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "villager": {
+     "name": "VillagerMan",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 6,
+      "rows": 5,
+      "w": 192,
+      "h": 160
+     },
+     "pivot": {
+      "x": 16,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 10,
+      "y": 18,
+      "w": 12,
+      "h": 13
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "villagers/5277354/MinifolksVillagers/Outline/MiniVillagerMan.png",
+       "Without Outline": "villagers/5277354/MinifolksVillagers/Without Outline/MiniVillagerMan.png"
+      },
+      "ase": "villagers/5293128/ase/MiniVillagerMan.aseprite"
+     },
+     "actions": [
+      "idle",
+      "walk",
+      "jump",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 1,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 2,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "damage",
+       "row": 3,
+       "frames": 3,
+       "ms": [
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 4,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        500
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "villagerwo": {
+     "name": "VillagerWoman",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 6,
+      "rows": 5,
+      "w": 192,
+      "h": 160
+     },
+     "pivot": {
+      "x": 16,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 10,
+      "y": 17,
+      "w": 12,
+      "h": 14
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "villagers/5277354/MinifolksVillagers/Outline/MiniVillagerWoman.png",
+       "Without Outline": "villagers/5277354/MinifolksVillagers/Without Outline/MiniVillagerWoman.png"
+      },
+      "ase": "villagers/5293128/ase/MiniVillagerWoman.aseprite"
+     },
+     "actions": [
+      "idle",
+      "walk",
+      "jump",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 1,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 2,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "hit",
+       "row": 3,
+       "frames": 3,
+       "ms": [
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 4,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        500
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "worker": {
+     "name": "Worker",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 6,
+      "rows": 7,
+      "w": 192,
+      "h": 224
+     },
+     "pivot": {
+      "x": 17,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 10,
+      "y": 18,
+      "w": 14,
+      "h": 13
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Outline": "villagers/5277354/MinifolksVillagers/Outline/MiniWorker.png",
+       "Without Outline": "villagers/5277354/MinifolksVillagers/Without Outline/MiniWorker.png"
+      },
+      "ase": "villagers/5293128/ase/MiniWorker.aseprite"
+     },
+     "actions": [
+      "idle",
+      "walk",
+      "jump",
+      "attack",
+      "work",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 1,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 2,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack": {
+       "source": "attack",
+       "row": 3,
+       "frames": 4,
+       "ms": [
+        100,
+        200,
+        100,
+        200
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "work": {
+       "source": "work",
+       "row": 4,
+       "frames": 5,
+       "ms": [
+        100,
+        200,
+        100,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "damage",
+       "row": 5,
+       "frames": 3,
+       "ms": [
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 6,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        500
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    }
+   },
+   "count": 10
+  },
+  "villagers2": {
+   "characters": {
+    "blacksmith": {
+     "name": "BlacksmithB",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 10,
+      "rows": 8,
+      "w": 320,
+      "h": 256
+     },
+     "pivot": {
+      "x": 15,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 8,
+      "y": 18,
+      "w": 13,
+      "h": 13
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Blue/Outline": "villagers2/8160746/Blue/Outline/MiniBlacksmithB.png",
+       "Blue/Without Outline": "villagers2/8160746/Blue/Without Outline/MiniBlacksmithB.png",
+       "Original/Outline": "villagers2/8160746/Original/Outline/MiniBlacksmith.png",
+       "Original/Without Outline": "villagers2/8160746/Original/Without Outline/MiniBlacksmith.png"
+      },
+      "ase": "villagers2/8160750/MiniBlacksmith.aseprite"
+     },
+     "actions": [
+      "idle",
+      "work",
+      "work2",
+      "walk",
+      "jump",
+      "attack",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "work": {
+       "source": "work",
+       "row": 1,
+       "frames": 10,
+       "ms": [
+        200,
+        100,
+        100,
+        100,
+        200,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "work2": {
+       "source": "work2",
+       "row": 2,
+       "frames": 4,
+       "ms": [
+        200,
+        100,
+        100,
+        400
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 3,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 4,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack": {
+       "source": "attack",
+       "row": 5,
+       "frames": 6,
+       "ms": [
+        100,
+        200,
+        100,
+        100,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "hit",
+       "row": 6,
+       "frames": 2,
+       "ms": [
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 7,
+       "frames": 5,
+       "ms": [
+        200,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "gatherer": {
+     "name": "Gatherer",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 10,
+      "rows": 7,
+      "w": 320,
+      "h": 224
+     },
+     "pivot": {
+      "x": 16,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 11,
+      "y": 18,
+      "w": 10,
+      "h": 13
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Blue/Outline": "villagers2/8160746/Blue/Outline/MiniGatherer.png",
+       "Blue/Without Outline": "villagers2/8160746/Blue/Without Outline/MiniGatherer.png",
+       "Original/Outline": "villagers2/8160746/Original/Outline/MiniGatherer.png",
+       "Original/Without Outline": "villagers2/8160746/Original/Without Outline/MiniGatherer.png"
+      },
+      "ase": "villagers2/8160750/MiniGatherer.aseprite"
+     },
+     "actions": [
+      "idle",
+      "idle_b",
+      "work",
+      "walk",
+      "jump",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "idle_b": {
+       "source": "idle2",
+       "row": 1,
+       "frames": 5,
+       "ms": [
+        100,
+        200,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "work": {
+       "source": "work",
+       "row": 2,
+       "frames": 10,
+       "ms": [
+        200,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 3,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 4,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "hit",
+       "row": 5,
+       "frames": 2,
+       "ms": [
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 6,
+       "frames": 4,
+       "ms": [
+        200,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "gravedigger": {
+     "name": "GraveDigger",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 14,
+      "rows": 8,
+      "w": 448,
+      "h": 256
+     },
+     "pivot": {
+      "x": 15,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 7,
+      "y": 17,
+      "w": 15,
+      "h": 14
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Blue/Outline": "villagers2/8160746/Blue/Outline/MiniGraveDigger.png",
+       "Blue/Without Outline": "villagers2/8160746/Blue/Without Outline/MiniGraveDigger.png",
+       "Original/Outline": "villagers2/8160746/Original/Outline/MiniGraveDigger.png",
+       "Original/Without Outline": "villagers2/8160746/Original/Without Outline/MiniGraveDigger.png"
+      },
+      "ase": "villagers2/8160750/MiniGraveDigger.aseprite"
+     },
+     "actions": [
+      "idle",
+      "idle_b",
+      "work",
+      "walk",
+      "jump",
+      "attack",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "idle_b": {
+       "source": "idle2",
+       "row": 1,
+       "frames": 14,
+       "ms": [
+        200,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "work": {
+       "source": "work",
+       "row": 2,
+       "frames": 5,
+       "ms": [
+        100,
+        100,
+        200,
+        100,
+        200
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 3,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 4,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack": {
+       "source": "attack",
+       "row": 5,
+       "frames": 6,
+       "ms": [
+        200,
+        100,
+        100,
+        200,
+        100,
+        200
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "damage",
+       "row": 6,
+       "frames": 2,
+       "ms": [
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 7,
+       "frames": 6,
+       "ms": [
+        200,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "hunter": {
+     "name": "Hunter",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 11,
+      "rows": 8,
+      "w": 352,
+      "h": 256
+     },
+     "pivot": {
+      "x": 17,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 9,
+      "y": 18,
+      "w": 15,
+      "h": 13
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Blue/Outline": "villagers2/8160746/Blue/Outline/MiniHunter.png",
+       "Blue/Without Outline": "villagers2/8160746/Blue/Without Outline/MiniHunter.png",
+       "Original/Outline": "villagers2/8160746/Original/Outline/MiniHunter.png",
+       "Original/Without Outline": "villagers2/8160746/Original/Without Outline/MiniHunter.png"
+      },
+      "ase": "villagers2/8160750/MiniHunter.aseprite"
+     },
+     "actions": [
+      "idle",
+      "walk",
+      "jump",
+      "attack",
+      "attack2",
+      "skinning",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 1,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 2,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack": {
+       "source": "attack",
+       "row": 3,
+       "frames": 11,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        200,
+        100,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack2": {
+       "source": "attack2",
+       "row": 4,
+       "frames": 8,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        200,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "skinning": {
+       "source": "skinning",
+       "row": 5,
+       "frames": 9,
+       "ms": [
+        100,
+        100,
+        200,
+        100,
+        100,
+        100,
+        100,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "damage",
+       "row": 6,
+       "frames": 2,
+       "ms": [
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 7,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        400
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "lumberjack": {
+     "name": "Lumberjack",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 7,
+      "rows": 8,
+      "w": 224,
+      "h": 256
+     },
+     "pivot": {
+      "x": 14,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 6,
+      "y": 18,
+      "w": 16,
+      "h": 13
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Blue/Outline": "villagers2/8160746/Blue/Outline/MiniLumberjack.png",
+       "Blue/Without Outline": "villagers2/8160746/Blue/Without Outline/MiniLumberjack.png",
+       "Original/Outline": "villagers2/8160746/Original/Outline/MiniLumberjack.png",
+       "Original/Without Outline": "villagers2/8160746/Original/Without Outline/MiniLumberjack.png"
+      },
+      "ase": "villagers2/8160750/MiniLumberjack.aseprite"
+     },
+     "actions": [
+      "idle",
+      "idle_b",
+      "work",
+      "walk",
+      "jump",
+      "attack",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "idle_b": {
+       "source": "idle2",
+       "row": 1,
+       "frames": 7,
+       "ms": [
+        200,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "work": {
+       "source": "work",
+       "row": 2,
+       "frames": 6,
+       "ms": [
+        200,
+        100,
+        200,
+        100,
+        100,
+        200
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 3,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 4,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack": {
+       "source": "attack",
+       "row": 5,
+       "frames": 7,
+       "ms": [
+        200,
+        100,
+        200,
+        100,
+        100,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "hit",
+       "row": 6,
+       "frames": 2,
+       "ms": [
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 7,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        400
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "merchant": {
+     "name": "MerchantB",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 9,
+      "rows": 7,
+      "w": 288,
+      "h": 224
+     },
+     "pivot": {
+      "x": 16,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 10,
+      "y": 17,
+      "w": 12,
+      "h": 14
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Blue/Outline": "villagers2/8160746/Blue/Outline/MiniMerchantB.png",
+       "Blue/Without Outline": "villagers2/8160746/Blue/Without Outline/MiniMerchantB.png",
+       "Original/Outline": "villagers2/8160746/Original/Outline/MiniMerchant.png",
+       "Original/Without Outline": "villagers2/8160746/Original/Without Outline/MiniMerchant.png"
+      },
+      "ase": "villagers2/8160750/MiniMerchant.aseprite"
+     },
+     "actions": [
+      "idle",
+      "idle_b",
+      "idle_b_b",
+      "walk",
+      "jump",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "idle_b": {
+       "source": "idle2",
+       "row": 1,
+       "frames": 9,
+       "ms": [
+        100,
+        200,
+        100,
+        100,
+        100,
+        100,
+        100,
+        200,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "idle_b_b": {
+       "source": "idle3",
+       "row": 2,
+       "frames": 7,
+       "ms": [
+        200,
+        100,
+        100,
+        100,
+        200,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 3,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 4,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "hit",
+       "row": 5,
+       "frames": 2,
+       "ms": [
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 6,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        400
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "miner": {
+     "name": "Miner",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 6,
+      "rows": 8,
+      "w": 192,
+      "h": 256
+     },
+     "pivot": {
+      "x": 18,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 10,
+      "y": 18,
+      "w": 16,
+      "h": 13
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Blue/Outline": "villagers2/8160746/Blue/Outline/MiniMiner.png",
+       "Blue/Without Outline": "villagers2/8160746/Blue/Without Outline/MiniMiner.png",
+       "Original/Outline": "villagers2/8160746/Original/Outline/MiniMiner.png",
+       "Original/Without Outline": "villagers2/8160746/Original/Without Outline/MiniMiner.png"
+      },
+      "ase": "villagers2/8160750/MiniMiner.aseprite"
+     },
+     "actions": [
+      "idle",
+      "idle_b",
+      "work",
+      "walk",
+      "jump",
+      "attack",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "idle_b": {
+       "source": "idle2",
+       "row": 1,
+       "frames": 6,
+       "ms": [
+        200,
+        100,
+        100,
+        100,
+        100,
+        200
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "work": {
+       "source": "work",
+       "row": 2,
+       "frames": 5,
+       "ms": [
+        100,
+        200,
+        100,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 3,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 4,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack": {
+       "source": "attack",
+       "row": 5,
+       "frames": 5,
+       "ms": [
+        100,
+        200,
+        100,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "damage",
+       "row": 6,
+       "frames": 2,
+       "ms": [
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 7,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        400
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "nun": {
+     "name": "Nun",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 6,
+      "rows": 6,
+      "w": 192,
+      "h": 192
+     },
+     "pivot": {
+      "x": 16,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 11,
+      "y": 18,
+      "w": 10,
+      "h": 13
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Blue/Outline": "villagers2/8160746/Blue/Outline/MiniNun.png",
+       "Blue/Without Outline": "villagers2/8160746/Blue/Without Outline/MiniNun.png",
+       "Original/Outline": "villagers2/8160746/Original/Outline/MiniNun.png",
+       "Original/Without Outline": "villagers2/8160746/Original/Without Outline/MiniNun.png"
+      },
+      "ase": "villagers2/8160750/MiniNun.aseprite"
+     },
+     "actions": [
+      "idle",
+      "idle_b",
+      "walk",
+      "jump",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "idle_b": {
+       "source": "idle2",
+       "row": 1,
+       "frames": 3,
+       "ms": [
+        200,
+        100,
+        400
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 2,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 3,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "hit",
+       "row": 4,
+       "frames": 2,
+       "ms": [
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 5,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        400
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "suspiciousmerchant": {
+     "name": "SuspiciousMerchantB",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 7,
+      "rows": 6,
+      "w": 224,
+      "h": 192
+     },
+     "pivot": {
+      "x": 16,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 10,
+      "y": 18,
+      "w": 12,
+      "h": 13
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Blue/Outline": "villagers2/8160746/Blue/Outline/MiniSuspiciousMerchantB.png",
+       "Blue/Without Outline": "villagers2/8160746/Blue/Without Outline/MiniSuspiciousMerchantB.png",
+       "Original/Outline": "villagers2/8160746/Original/Outline/MiniSuspiciousMerchant.png",
+       "Original/Without Outline": "villagers2/8160746/Original/Without Outline/MiniSuspiciousMerchant.png"
+      },
+      "ase": "villagers2/8160750/MiniSuspiciousMerchant.aseprite"
+     },
+     "actions": [
+      "idle",
+      "idle_b",
+      "walk",
+      "jump",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "idle_b": {
+       "source": "idle2",
+       "row": 1,
+       "frames": 7,
+       "ms": [
+        200,
+        100,
+        100,
+        100,
+        400,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 2,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 3,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "hit",
+       "row": 4,
+       "frames": 2,
+       "ms": [
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 5,
+       "frames": 5,
+       "ms": [
+        200,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "thief": {
+     "name": "Thief",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 12,
+      "rows": 8,
+      "w": 384,
+      "h": 256
+     },
+     "pivot": {
+      "x": 16,
+      "y": 31,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": 10,
+      "y": 18,
+      "w": 12,
+      "h": 13
+     },
+     "kind": "character",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Blue/Outline": "villagers2/8160746/Blue/Outline/MiniThief.png",
+       "Blue/Without Outline": "villagers2/8160746/Blue/Without Outline/MiniThief.png",
+       "Original/Outline": "villagers2/8160746/Original/Outline/MiniThief.png",
+       "Original/Without Outline": "villagers2/8160746/Original/Without Outline/MiniThief.png"
+      },
+      "ase": "villagers2/8160750/MiniThief.aseprite"
+     },
+     "actions": [
+      "idle",
+      "idle_b",
+      "walk",
+      "jump",
+      "attack",
+      "steal",
+      "hit",
+      "death"
+     ],
+     "anims": {
+      "idle": {
+       "source": "idle",
+       "row": 0,
+       "frames": 4,
+       "ms": [
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "idle_b": {
+       "source": "idle2",
+       "row": 1,
+       "frames": 12,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        300,
+        100,
+        100,
+        300,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "walk": {
+       "source": "walk",
+       "row": 2,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": true,
+       "footY": 31
+      },
+      "jump": {
+       "source": "jump",
+       "row": 3,
+       "frames": 3,
+       "ms": [
+        200,
+        200,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "attack": {
+       "source": "attack",
+       "row": 4,
+       "frames": 7,
+       "ms": [
+        200,
+        100,
+        200,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "steal": {
+       "source": "steal",
+       "row": 5,
+       "frames": 6,
+       "ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "hit": {
+       "source": "hit",
+       "row": 6,
+       "frames": 2,
+       "ms": [
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      },
+      "death": {
+       "source": "death",
+       "row": 7,
+       "frames": 5,
+       "ms": [
+        200,
+        100,
+        100,
+        100,
+        100
+       ],
+       "loop": false,
+       "footY": 31
+      }
+     }
+    },
+    "anvil": {
+     "name": "Anvil",
+     "cell": {
+      "w": 32,
+      "h": 32
+     },
+     "sheet": {
+      "cols": 0,
+      "rows": 0,
+      "w": 8,
+      "h": 8
+     },
+     "pivot": {
+      "x": null,
+      "y": null,
+      "rule": "centro horizontal e base da caixa opaca do idle"
+     },
+     "idleBox": {
+      "x": null,
+      "y": null,
+      "w": null,
+      "h": null
+     },
+     "kind": "prop",
+     "heavy": false,
+     "files": {
+      "pngs": {
+       "Original/Outline": "villagers2/8160746/Original/Outline/MiniAnvil.png",
+       "Original/Without Outline": "villagers2/8160746/Original/Without Outline/MiniAnvil.png"
+      },
+      "ase": null
+     },
+     "actions": [],
+     "anims": {}
+    }
+   },
+   "count": 11
+  }
+ },
+ "issues": [
+  "info forest_animals/bear/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info forest_animals/bear/attack: tag .ase 7 quadros, PNG 6 (usado o PNG, offset 1, 1 quadro(s) sem casar)",
+  "info forest_animals/bear/attack2: tag .ase 6 quadros, PNG 5 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info forest_animals/bear/roar: tag .ase 11 quadros, PNG 10 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info forest_animals/bear/hit: tag .ase 3 quadros, PNG 2 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info forest_animals/bear/death: tag .ase 5 quadros, PNG 4 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info forest_animals/bird/death: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info forest_animals/boar/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info forest_animals/boar/attack: tag .ase 6 quadros, PNG 5 (usado o PNG, offset 1, 1 quadro(s) sem casar)",
+  "info forest_animals/boar/hit: tag .ase 3 quadros, PNG 2 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info forest_animals/boar/death: tag .ase 5 quadros, PNG 4 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info forest_animals/bunny/walk: tag .ase 5 quadros, PNG 4 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info forest_animals/bunny/hit: tag .ase 3 quadros, PNG 2 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info forest_animals/bunny/death: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info forest_animals/deer1/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info forest_animals/deer1/attack: tag .ase 6 quadros, PNG 5 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info forest_animals/deer1/hit: tag .ase 3 quadros, PNG 2 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info forest_animals/deer1/death: tag .ase 5 quadros, PNG 4 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info forest_animals/deer2/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info forest_animals/deer2/attack: tag .ase 6 quadros, PNG 5 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info forest_animals/deer2/attack2: tag .ase 8 quadros, PNG 7 (usado o PNG, offset 1, 2 quadro(s) sem casar)",
+  "info forest_animals/deer2/hit: tag .ase 3 quadros, PNG 2 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info forest_animals/deer2/death: tag .ase 5 quadros, PNG 4 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info forest_animals/fox/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info forest_animals/fox/attack: tag .ase 7 quadros, PNG 6 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info forest_animals/fox/hit: tag .ase 3 quadros, PNG 2 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info forest_animals/fox/death: tag .ase 5 quadros, PNG 4 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info forest_animals/wolf/jump: tag .ase 5 quadros, PNG 4 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info forest_animals/wolf/attack: tag .ase 6 quadros, PNG 5 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info forest_animals/wolf/attack2: tag .ase 6 quadros, PNG 5 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info forest_animals/wolf/howl: tag .ase 10 quadros, PNG 7 (usado o PNG, offset 1, 1 quadro(s) sem casar)",
+  "info forest_animals/wolf/hit: tag .ase 3 quadros, PNG 2 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info forest_animals/wolf/death: tag .ase 5 quadros, PNG 4 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info humans/archmage/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info humans/archmage/attack: tag .ase 12 quadros, PNG 11 (usado o PNG, offset 1, 7 quadro(s) sem casar)",
+  "info humans/archmage/attack2: tag .ase 10 quadros, PNG 9 (usado o PNG, offset 0, 9 quadro(s) sem casar)",
+  "info humans/archmage/spell: tag .ase 10 quadros, PNG 9 (usado o PNG, offset 0, 6 quadro(s) sem casar)",
+  "info humans/archmage/spell2: tag .ase 11 quadros, PNG 10 (usado o PNG, offset 0, 8 quadro(s) sem casar)",
+  "info humans/archmage/hit: tag .ase 3 quadros, PNG 2 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info humans/archmage/death: tag .ase 10 quadros, PNG 9 (usado o PNG, offset 1, 2 quadro(s) sem casar)",
+  "info humans/archer/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info humans/archer/attack: tag .ase 12 quadros, PNG 11 (usado o PNG, offset 1, 6 quadro(s) sem casar)",
+  "info humans/archer/attack2: tag .ase 7 quadros, PNG 6 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info humans/archer/damage: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info humans/archer/death: tag .ase 5 quadros, PNG 4 (usado o PNG, offset 1, 1 quadro(s) sem casar)",
+  "info humans/cavalier/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 3 quadro(s) sem casar)",
+  "info humans/cavalier/attack: tag .ase 8 quadros, PNG 7 (usado o PNG, offset 0, 7 quadro(s) sem casar)",
+  "info humans/cavalier/damage: tag .ase 3 quadros, PNG 2 (usado o PNG, offset 0, 2 quadro(s) sem casar)",
+  "info humans/cavalier/death: tag .ase 7 quadros, PNG 6 (usado o PNG, offset 0, 6 quadro(s) sem casar)",
+  "info humans/crossbow/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 1, 2 quadro(s) sem casar)",
+  "info humans/crossbow/attack: tag .ase 11 quadros, PNG 10 (usado o PNG, offset 0, 10 quadro(s) sem casar)",
+  "info humans/crossbow/attack2: tag .ase 5 quadros, PNG 4 (usado o PNG, offset 0, 3 quadro(s) sem casar)",
+  "info humans/crossbow/damage: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 3 quadro(s) sem casar)",
+  "info humans/crossbow/death: tag .ase 5 quadros, PNG 4 (usado o PNG, offset 0, 4 quadro(s) sem casar)",
+  "info humans/halberd/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 3 quadro(s) sem casar)",
+  "info humans/halberd/attack: tag .ase 7 quadros, PNG 6 (usado o PNG, offset 0, 6 quadro(s) sem casar)",
+  "info humans/halberd/damage: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 1, 2 quadro(s) sem casar)",
+  "info humans/halberd/death: tag .ase 6 quadros, PNG 5 (usado o PNG, offset 0, 5 quadro(s) sem casar)",
+  "info humans/horse/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 3 quadro(s) sem casar)",
+  "info humans/horse/attack: tag .ase 8 quadros, PNG 7 (usado o PNG, offset 0, 7 quadro(s) sem casar)",
+  "info humans/horse/damage: tag .ase 3 quadros, PNG 2 (usado o PNG, offset 0, 2 quadro(s) sem casar)",
+  "info humans/horse/death: tag .ase 7 quadros, PNG 6 (usado o PNG, offset 0, 5 quadro(s) sem casar)",
+  "info humans/king/idle2: tag .ase 6 quadros, PNG 5 (usado o PNG, offset 0, 5 quadro(s) sem casar)",
+  "info humans/king/jump: tag .ase 6 quadros, PNG 5 (usado o PNG, offset 1, 4 quadro(s) sem casar)",
+  "info humans/king/attack: tag .ase 11 quadros, PNG 10 (usado o PNG, offset 0, 9 quadro(s) sem casar)",
+  "info humans/king/hit: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 2 quadro(s) sem casar)",
+  "info humans/king/death: tag .ase 7 quadros, PNG 6 (usado o PNG, offset 0, 6 quadro(s) sem casar)",
+  "info humans/mage/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info humans/mage/attack: tag .ase 12 quadros, PNG 11 (usado o PNG, offset 1, 7 quadro(s) sem casar)",
+  "info humans/mage/attack2: tag .ase 10 quadros, PNG 9 (usado o PNG, offset 0, 8 quadro(s) sem casar)",
+  "info humans/mage/spell: tag .ase 10 quadros, PNG 9 (usado o PNG, offset 0, 5 quadro(s) sem casar)",
+  "info humans/mage/hit: tag .ase 3 quadros, PNG 2 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info humans/mage/death: tag .ase 10 quadros, PNG 9 (usado o PNG, offset 1, 2 quadro(s) sem casar)",
+  "info humans/prince/jump: tag .ase 6 quadros, PNG 5 (usado o PNG, offset 0, 3 quadro(s) sem casar)",
+  "info humans/prince/attack: tag .ase 7 quadros, PNG 6 (usado o PNG, offset 0, 4 quadro(s) sem casar)",
+  "info humans/prince/damage: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info humans/prince/death: tag .ase 7 quadros, PNG 6 (usado o PNG, offset 0, 3 quadro(s) sem casar)",
+  "info humans/shield/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 3 quadro(s) sem casar)",
+  "info humans/shield/attack: tag .ase 7 quadros, PNG 6 (usado o PNG, offset 0, 5 quadro(s) sem casar)",
+  "info humans/shield/block: tag .ase 7 quadros, PNG 6 (usado o PNG, offset 0, 5 quadro(s) sem casar)",
+  "info humans/shield/hit: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 1, 1 quadro(s) sem casar)",
+  "info humans/shield/death: tag .ase 5 quadros, PNG 4 (usado o PNG, offset 0, 4 quadro(s) sem casar)",
+  "info humans/spear/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info humans/spear/attack: tag .ase 8 quadros, PNG 7 (usado o PNG, offset 0, 7 quadro(s) sem casar)",
+  "info humans/spear/hit: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 1, 1 quadro(s) sem casar)",
+  "info humans/spear/death: tag .ase 6 quadros, PNG 5 (usado o PNG, offset 0, 5 quadro(s) sem casar)",
+  "info humans/sword/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info humans/sword/attack: tag .ase 7 quadros, PNG 6 (usado o PNG, offset 1, 4 quadro(s) sem casar)",
+  "info humans/sword/hit: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 1, 1 quadro(s) sem casar)",
+  "info humans/sword/death: tag .ase 5 quadros, PNG 4 (usado o PNG, offset 0, 4 quadro(s) sem casar)",
+  "humans/humansprojectiles: sem .ase, célula inferida 32x32 pelo tamanho da imagem",
+  "info villagers/noble/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info villagers/noble/damage: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info villagers/noble/death: tag .ase 5 quadros, PNG 4 (usado o PNG, offset 1, 1 quadro(s) sem casar)",
+  "info villagers/noblewo/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info villagers/noblewo/hit: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info villagers/noblewo/death: tag .ase 5 quadros, PNG 4 (usado o PNG, offset 0, 3 quadro(s) sem casar)",
+  "info villagers/old/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info villagers/old/hit: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info villagers/old/death: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 1, 2 quadro(s) sem casar)",
+  "info villagers/oldwo/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info villagers/oldwo/hit: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info villagers/oldwo/death: tag .ase 5 quadros, PNG 4 (usado o PNG, offset 1, 2 quadro(s) sem casar)",
+  "info villagers/peasant/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info villagers/peasant/attack: tag .ase 7 quadros, PNG 6 (usado o PNG, offset 0, 6 quadro(s) sem casar)",
+  "info villagers/peasant/damage: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 1, 1 quadro(s) sem casar)",
+  "info villagers/peasant/death: tag .ase 5 quadros, PNG 4 (usado o PNG, offset 0, 4 quadro(s) sem casar)",
+  "info villagers/princess/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info villagers/princess/hit: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info villagers/princess/death: tag .ase 6 quadros, PNG 5 (usado o PNG, offset 1, 2 quadro(s) sem casar)",
+  "info villagers/queen/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info villagers/queen/hit: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info villagers/queen/death: tag .ase 6 quadros, PNG 5 (usado o PNG, offset 1, 2 quadro(s) sem casar)",
+  "info villagers/villager/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info villagers/villager/damage: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info villagers/villager/death: tag .ase 5 quadros, PNG 4 (usado o PNG, offset 1, 1 quadro(s) sem casar)",
+  "info villagers/villagerwo/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info villagers/villagerwo/hit: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info villagers/villagerwo/death: tag .ase 5 quadros, PNG 4 (usado o PNG, offset 1, 2 quadro(s) sem casar)",
+  "info villagers/worker/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info villagers/worker/attack: tag .ase 5 quadros, PNG 4 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info villagers/worker/work: tag .ase 6 quadros, PNG 5 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info villagers/worker/damage: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info villagers/worker/death: tag .ase 5 quadros, PNG 4 (usado o PNG, offset 1, 2 quadro(s) sem casar)",
+  "info villagers2/blacksmith/work2: tag .ase 5 quadros, PNG 4 (usado o PNG, offset 0, 4 quadro(s) sem casar)",
+  "info villagers2/blacksmith/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 2 quadro(s) sem casar)",
+  "info villagers2/blacksmith/attack: tag .ase 7 quadros, PNG 6 (usado o PNG, offset 1, 4 quadro(s) sem casar)",
+  "info villagers2/blacksmith/hit: tag .ase 3 quadros, PNG 2 (usado o PNG, offset 1, 1 quadro(s) sem casar)",
+  "info villagers2/blacksmith/death: tag .ase 6 quadros, PNG 5 (usado o PNG, offset 0, 4 quadro(s) sem casar)",
+  "info villagers2/gatherer/idle2: tag .ase 6 quadros, PNG 5 (usado o PNG, offset 1, 1 quadro(s) sem casar)",
+  "info villagers2/gatherer/work: tag .ase 11 quadros, PNG 10 (usado o PNG, offset 0, 6 quadro(s) sem casar)",
+  "info villagers2/gatherer/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info villagers2/gatherer/hit: tag .ase 3 quadros, PNG 2 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info villagers2/gatherer/death: tag .ase 5 quadros, PNG 4 (usado o PNG, offset 0, 3 quadro(s) sem casar)",
+  "info villagers2/gravedigger/idle2: tag .ase 15 quadros, PNG 14 (usado o PNG, offset 0, 13 quadro(s) sem casar)",
+  "info villagers2/gravedigger/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 3 quadro(s) sem casar)",
+  "info villagers2/gravedigger/attack: tag .ase 7 quadros, PNG 6 (usado o PNG, offset 0, 4 quadro(s) sem casar)",
+  "info villagers2/gravedigger/damage: tag .ase 3 quadros, PNG 2 (usado o PNG, offset 0, 2 quadro(s) sem casar)",
+  "info villagers2/gravedigger/death: tag .ase 7 quadros, PNG 6 (usado o PNG, offset 0, 6 quadro(s) sem casar)",
+  "info villagers2/hunter/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info villagers2/hunter/attack: tag .ase 12 quadros, PNG 11 (usado o PNG, offset 1, 7 quadro(s) sem casar)",
+  "info villagers2/hunter/attack2: tag .ase 9 quadros, PNG 8 (usado o PNG, offset 1, 5 quadro(s) sem casar)",
+  "info villagers2/hunter/skinning: tag .ase 10 quadros, PNG 9 (usado o PNG, offset 1, 7 quadro(s) sem casar)",
+  "info villagers2/hunter/damage: tag .ase 3 quadros, PNG 2 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info villagers2/hunter/death: tag .ase 5 quadros, PNG 4 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info villagers2/lumberjack/idle2: tag .ase 8 quadros, PNG 7 (usado o PNG, offset 0, 7 quadro(s) sem casar)",
+  "info villagers2/lumberjack/work: tag .ase 7 quadros, PNG 6 (usado o PNG, offset 0, 6 quadro(s) sem casar)",
+  "info villagers2/lumberjack/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 3 quadro(s) sem casar)",
+  "info villagers2/lumberjack/attack: tag .ase 8 quadros, PNG 7 (usado o PNG, offset 0, 6 quadro(s) sem casar)",
+  "info villagers2/lumberjack/hit: tag .ase 3 quadros, PNG 2 (usado o PNG, offset 0, 1 quadro(s) sem casar)",
+  "info villagers2/lumberjack/death: tag .ase 5 quadros, PNG 4 (usado o PNG, offset 1, 3 quadro(s) sem casar)",
+  "info villagers2/merchant/idle2: tag .ase 10 quadros, PNG 9 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info villagers2/merchant/idle3: tag .ase 8 quadros, PNG 7 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info villagers2/merchant/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info villagers2/merchant/hit: tag .ase 3 quadros, PNG 2 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info villagers2/merchant/death: tag .ase 5 quadros, PNG 4 (usado o PNG, offset 1, 3 quadro(s) sem casar)",
+  "info villagers2/miner/idle2: tag .ase 7 quadros, PNG 6 (usado o PNG, offset 0, 2 quadro(s) sem casar)",
+  "info villagers2/miner/work: tag .ase 6 quadros, PNG 5 (usado o PNG, offset 1, 1 quadro(s) sem casar)",
+  "info villagers2/miner/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info villagers2/miner/attack: tag .ase 6 quadros, PNG 5 (usado o PNG, offset 1, 1 quadro(s) sem casar)",
+  "info villagers2/miner/damage: tag .ase 3 quadros, PNG 2 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info villagers2/miner/death: tag .ase 5 quadros, PNG 4 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info villagers2/nun/idle2: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 2 quadro(s) sem casar)",
+  "info villagers2/nun/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info villagers2/nun/hit: tag .ase 3 quadros, PNG 2 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info villagers2/nun/death: tag .ase 5 quadros, PNG 4 (usado o PNG, offset 1, 1 quadro(s) sem casar)",
+  "info villagers2/suspiciousmerchant/idle2: tag .ase 8 quadros, PNG 7 (usado o PNG, offset 0, 6 quadro(s) sem casar)",
+  "info villagers2/suspiciousmerchant/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 3 quadro(s) sem casar)",
+  "info villagers2/suspiciousmerchant/hit: tag .ase 3 quadros, PNG 2 (usado o PNG, offset 1, 1 quadro(s) sem casar)",
+  "info villagers2/suspiciousmerchant/death: tag .ase 6 quadros, PNG 5 (usado o PNG, offset 0, 4 quadro(s) sem casar)",
+  "info villagers2/thief/idle2: tag .ase 13 quadros, PNG 12 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info villagers2/thief/jump: tag .ase 4 quadros, PNG 3 (usado o PNG, offset 0, 0 quadro(s) sem casar)",
+  "info villagers2/thief/attack: tag .ase 8 quadros, PNG 7 (usado o PNG, offset 0, 5 quadro(s) sem casar)",
+  "info villagers2/thief/steal: tag .ase 7 quadros, PNG 6 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info villagers2/thief/hit: tag .ase 3 quadros, PNG 2 (usado o PNG, offset 1, 0 quadro(s) sem casar)",
+  "info villagers2/thief/death: tag .ase 6 quadros, PNG 5 (usado o PNG, offset 0, 5 quadro(s) sem casar)",
+  "villagers2/anvil: sem .ase, célula inferida 32x32 pelo tamanho da imagem"
+ ]
+}

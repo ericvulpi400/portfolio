@@ -1,0 +1,18 @@
+#!/bin/bash
+# Monta as pranchas comparativas (referencias/pranchas/*.png) a partir das imagens baixadas.
+# uso: bash tools/referencias/montar_pranchas.sh   (precisa do ImageMagick)
+set -e; cd "$(dirname "$0")/../../referencias"; mkdir -p pranchas
+board() { local name="$1" title="$2"; shift 2
+  montage "$@" -thumbnail 640x360 -background '#1b1724' -fill '#e8dcc8' -font DejaVu-Sans -pointsize 15 \
+    -set label '%d/%t' -tile 3x -geometry +6+6 -title "$title" "pranchas/$name.png"; echo "pranchas/$name.png ($# imagens)"; }
+board 01_pacotes_e_abertura "Pacotes fechados, abertura e chances" balatro/pacote_fechado_01.png balatro/abertura_pacote_01.png balatro/carta_destaque_01.png cardboard_conquest/escolha_pacote_01.png cardboard_conquest/escolha_pacote_02.png slotbound_demo/chances_01.png balatro/cartas_em_jogo_01.png balatro/cartas_em_jogo_02.png dragon_eclipse/mao_de_cartas_01.png cardboard_conquest/mao_de_cartas_01.png
+board 02_revelacao_rara "Revelação de raridade alta" slotbound/revelacao_rara_01.png slotbound/revelacao_rara_02.png slotbound/revelacao_rara_03.png marvel_snap/revelacao_rara_01.png marvel_snap/revelacao_rara_02.png cardboard_conquest/carta_nova_01.png cardboard_conquest/carta_nova_02.png marvel_snap/revelacao_rara_03.png marvel_snap/revelacao_rara_04.png
+board 03_album_colecao "Álbum, coleção e versões raras" slotbound/album_01.png balatro/album_01.png marvel_snap/album_01.png marvel_snap/album_02.png marvel_snap/versoes_raras_01.png balatro/versoes_raras_01.png my_life_as_an_archeologist/bestiario_01.png slotbound/album_02.png marvel_snap/album_03.png
+board 04_detalhe_carta "Detalhe de carta e texto de efeito" balatro/detalhe_carta_01.png marvel_snap/detalhe_carta_01.png dragon_eclipse/subclasse_01.png slotbound/escolha_1de3_01.png slotbound_demo/detalhe_carta_01.png balatro/detalhe_carta_02.png dragon_eclipse/mao_de_cartas_02.png
+board 05_campo_cheio "Campo de batalha cheio, chefe e infinito" slotbound/campo_cheio_01.png slotbound/chefe_01.png slotbound/infinito_01.png cardboard_conquest/campo_cheio_01.png dragon_eclipse/campo_cheio_01.png seedborne_soldiers/campo_cheio_01.png auto_dungeon/campo_cheio_01.png my_life_as_an_archeologist/campo_01.png
+board 06_absorcao_evolucao "Absorção, estrelas, promoção e evolução" slotbound_demo/absorcao_estrelas_01.png slotbound_demo/absorcao_estrelas_02.png dragon_eclipse/evolucao_01.png dragon_eclipse/subclasse_01.png
+board 07_loja "Loja" slotbound/loja_01.png balatro/loja_01.png cardboard_conquest/loja_01.png dragon_eclipse/loja_01.png seedborne_soldiers/loja_01.png
+board 08_escolha_1de3 "Escolha 1-de-3 (núcleos, artefatos, talentos)" slotbound/escolha_1de3_01.png dragon_eclipse/escolha_1de3_01.png seedborne_soldiers/escolha_1de3_01.png my_life_as_an_archeologist/artefato_1de3_01.png my_life_as_an_archeologist/escolha_1de3_01.png cardboard_conquest/escolha_pacote_01.png
+board 09_meta_e_fim_de_run "Fim de run, árvore permanente, equipamento e bestiário" cardboard_conquest/fim_de_run_01.png marvel_snap/fim_de_run_01.png my_life_as_an_archeologist/arvore_permanente_01.png my_life_as_an_archeologist/equipamento_01.png my_life_as_an_archeologist/bestiario_01.png
+board 10_preparacao_e_menus "Preparação, menus e configurações" slotbound/preparacao_01.png dragon_eclipse/preparacao_01.png balatro/menus_01.png balatro/configuracoes_01.png cardboard_conquest/menus_01.png seedborne_soldiers/mapa_01.png
+board 11_capsulas_steam "Cápsulas da loja Steam (header 920x430 reduzido)" slotbound/capsula_steam_01.png balatro/capsula_steam_01.png cardboard_conquest/capsula_steam_01.png dragon_eclipse/capsula_steam_01.png my_life_as_an_archeologist/capsula_steam_01.png

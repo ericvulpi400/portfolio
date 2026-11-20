@@ -1,0 +1,562 @@
+[
+ {
+  "arquivo": "slotbound/preparacao_01.png",
+  "jogo": "Slotbound",
+  "appid": 4459590,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4459590/778498d4e1269d64658d3250d76e075486d51bff/ss_778498d4e1269d64658d3250d76e075486d51bff.1920x1080.jpg",
+  "ensina": "Preparação: máquina 3x3 à esquerda, campo à direita, onda/ouro/limite no topo. Tudo numa tela, sem troca de cena.",
+  "tags": "layout,UX,gameplay"
+ },
+ {
+  "arquivo": "slotbound/revelacao_rara_01.png",
+  "jogo": "Slotbound",
+  "appid": 4459590,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4459590/ba431b3e2683d86de1373117f0bb417309b02936/ss_ba431b3e2683d86de1373117f0bb417309b02936.1920x1080.jpg",
+  "ensina": "Invocação lendária: feixe de luz + rótulo com a chance (0,1%). A raridade vem com o número.",
+  "tags": "feedback,visual"
+ },
+ {
+  "arquivo": "slotbound/revelacao_rara_02.png",
+  "jogo": "Slotbound",
+  "appid": 4459590,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4459590/821f44cbddab67dd74b381c5a9fffdfbc2e1f45a/ss_821f44cbddab67dd74b381c5a9fffdfbc2e1f45a.1920x1080.jpg",
+  "ensina": "Jackpot: a moldura inteira da máquina vira ouro e a tela pisca. Escala do feedback ~ raridade.",
+  "tags": "feedback,visual"
+ },
+ {
+  "arquivo": "slotbound/chefe_01.png",
+  "jogo": "Slotbound",
+  "appid": 4459590,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4459590/2795c8ee7b3bd3ce16ba8bc4d007b66693c37e70/ss_2795c8ee7b3bd3ce16ba8bc4d007b66693c37e70.1920x1080.jpg",
+  "ensina": "Onda de chefe: barra de vida larga no topo, nome do chefe, ícone de chefe sobre a máquina.",
+  "tags": "layout,gameplay"
+ },
+ {
+  "arquivo": "slotbound/campo_cheio_01.png",
+  "jogo": "Slotbound",
+  "appid": 4459590,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4459590/16257959b5281a28b8d7d2262056e323377ac7d9/ss_16257959b5281a28b8d7d2262056e323377ac7d9.1920x1080.jpg",
+  "ensina": "Campo cheio com ~25 unidades legíveis: sombra, barra de vida mini, escala 1x.",
+  "tags": "visual,legibilidade"
+ },
+ {
+  "arquivo": "slotbound/escolha_1de3_01.png",
+  "jogo": "Slotbound",
+  "appid": 4459590,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4459590/16bd3ec69156a5e85bd88de417dbaa7f389a8026/ss_16bd3ec69156a5e85bd88de417dbaa7f389a8026.1920x1080.jpg",
+  "ensina": "Escolha de núcleo 1-de-3: pergaminhos com raridade por cor e texto, \"quando usa\" no rodapé, botão Reroll.",
+  "tags": "UX,layout"
+ },
+ {
+  "arquivo": "slotbound/loja_01.png",
+  "jogo": "Slotbound",
+  "appid": 4459590,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4459590/49437a859bfc96b8a93b535b84556e5cae7cfe52/ss_49437a859bfc96b8a93b535b84556e5cae7cfe52.1920x1080.jpg",
+  "ensina": "Loja: vendedor como personagem, 3 itens + 2 ações (vender/reroll), custo em gemas sob cada item.",
+  "tags": "layout,economia"
+ },
+ {
+  "arquivo": "slotbound/album_01.png",
+  "jogo": "Slotbound",
+  "appid": 4459590,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4459590/14d13c50055c8c434b7e6be93a88d88ccd9a975c/ss_14d13c50055c8c434b7e6be93a88d88ccd9a975c.1920x1080.jpg",
+  "ensina": "Coleção em livro: grade de silhuetas, página da direita com atributos, habilidade e árvore de promoção.",
+  "tags": "layout,coleção"
+ },
+ {
+  "arquivo": "slotbound_demo/chances_01.png",
+  "jogo": "Slotbound Demo",
+  "appid": 4906570,
+  "fonte": "https://video.akamai.steamstatic.com/store_trailers/4906570/569465016/afb356fd1080dea9f1fe5a7d355182aa7315359c/1782920663/hls_264_master.m3u8 @ ~10s, quadro 6 (Slotbound - Gameplay Trailer)",
+  "ensina": "Tooltip \"Warrior (Normal) — Chance 95%\" ao invocar: chance explícita no momento da revelação.",
+  "tags": "UX,chances"
+ },
+ {
+  "arquivo": "slotbound_demo/absorcao_estrelas_01.png",
+  "jogo": "Slotbound Demo",
+  "appid": 4906570,
+  "fonte": "https://video.akamai.steamstatic.com/store_trailers/4906570/569465016/afb356fd1080dea9f1fe5a7d355182aa7315359c/1782920663/hls_264_master.m3u8 @ ~14s, quadro 8 (Slotbound - Gameplay Trailer)",
+  "ensina": "Absorção: painel de níveis e efeitos herdados (\"Imprint\"), confirmação explícita de absorver.",
+  "tags": "gameplay,UX"
+ },
+ {
+  "arquivo": "slotbound_demo/absorcao_estrelas_02.png",
+  "jogo": "Slotbound Demo",
+  "appid": 4906570,
+  "fonte": "https://video.akamai.steamstatic.com/store_trailers/4906570/569465016/afb356fd1080dea9f1fe5a7d355182aa7315359c/1782920663/hls_264_master.m3u8 @ ~16s, quadro 9 (Slotbound - Gameplay Trailer)",
+  "ensina": "Promoção de classe: carta destacada com raios, novos atributos listados.",
+  "tags": "feedback,gameplay"
+ },
+ {
+  "arquivo": "slotbound/revelacao_rara_03.png",
+  "jogo": "Slotbound",
+  "appid": 4459590,
+  "fonte": "https://video.akamai.steamstatic.com/store_trailers/4459590/61881972/3d4feef8b4ba165d676f76197190b1cd3af96120/1793117327/hls_264_master.m3u8 @ ~24s, quadro 13 (Slotbound - Official Trailer)",
+  "ensina": "Jackpot com confete multicolor saindo da máquina.",
+  "tags": "feedback"
+ },
+ {
+  "arquivo": "slotbound/infinito_01.png",
+  "jogo": "Slotbound",
+  "appid": 4459590,
+  "fonte": "https://video.akamai.steamstatic.com/store_trailers/4459590/61881972/3d4feef8b4ba165d676f76197190b1cd3af96120/1793117327/hls_264_master.m3u8 @ ~48s, quadro 25 (Slotbound - Official Trailer)",
+  "ensina": "Modo infinito: contador de onda grande (97) no topo.",
+  "tags": "estrutura,marketing"
+ },
+ {
+  "arquivo": "slotbound/capsula_steam_01.png",
+  "jogo": "Slotbound",
+  "appid": 4459590,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4459590/560f439f789caa08634fbf9ff462c73bf06fbf41/header.jpg",
+  "ensina": "Cápsula: heróis em pose de ação + a máquina como ícone do gancho, logo grande em pixel.",
+  "tags": "marketing"
+ },
+ {
+  "arquivo": "balatro/pacote_fechado_01.png",
+  "jogo": "Balatro",
+  "appid": 2379780,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2379780/ss_b8455573ec1fd2c9412f22bd8df05f2d8027a95b.1920x1080.jpg",
+  "ensina": "Pacotes fechados lado a lado: Normal/Jumbo/Mega pelo tamanho e brilho; arte da embalagem diz o tipo.",
+  "tags": "visual,pacote"
+ },
+ {
+  "arquivo": "balatro/abertura_pacote_01.png",
+  "jogo": "Balatro",
+  "appid": 2379780,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2379780/ss_4862112e5030f74a5818cd4c31347d699ac5adf3.1920x1080.jpg",
+  "ensina": "Pacote aberto: cartas em leque, escolha 1 de N, tooltip da carta sob o leque, partículas douradas.",
+  "tags": "UX,pacote"
+ },
+ {
+  "arquivo": "balatro/loja_01.png",
+  "jogo": "Balatro",
+  "appid": 2379780,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2379780/ss_ddee13031ad8ba66ac7806a46f6e5519d32e767d.1920x1080.jpg",
+  "ensina": "Loja: placa \"SHOP\", pacote Celestial aberto com 3 cartas, botão Skip. Pacotes vendidos na loja da run.",
+  "tags": "layout,pacote,economia"
+ },
+ {
+  "arquivo": "balatro/detalhe_carta_01.png",
+  "jogo": "Balatro",
+  "appid": 2379780,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2379780/ss_204350350761316ad3aa8b0184689f3f93e01f7b.1920x1080.jpg",
+  "ensina": "Detalhe: caixa com nome, efeito numérico curto e selo de raridade colorido (Uncommon).",
+  "tags": "legibilidade,UX"
+ },
+ {
+  "arquivo": "balatro/album_01.png",
+  "jogo": "Balatro",
+  "appid": 2379780,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2379780/ss_e32ac94d7d1d6be7dd015d78f2b52aeb4cc282ed.1920x1080.jpg",
+  "ensina": "Coleção: grade 5x3 de jokers com paginação; faltantes ficam ocultos.",
+  "tags": "coleção,layout"
+ },
+ {
+  "arquivo": "balatro/versoes_raras_01.png",
+  "jogo": "Balatro",
+  "appid": 2379780,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2379780/ss_3be65a7dd3be072d567e11883d208861a7e959fa.1920x1080.jpg",
+  "ensina": "Edições raras (foil/holo/polychrome) na mesma carta: o efeito visual muda, a arte não.",
+  "tags": "visual,raridade"
+ },
+ {
+  "arquivo": "balatro/menus_01.png",
+  "jogo": "Balatro",
+  "appid": 2379780,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2379780/ss_ae055e0e583ac65000920ce33511df73f40814f4.1920x1080.jpg",
+  "ensina": "Visão do baralho: contagem por naipe/valor, abas no topo (Deck/Vouchers/Poker Hands).",
+  "tags": "UX,menus"
+ },
+ {
+  "arquivo": "balatro/configuracoes_01.png",
+  "jogo": "Balatro",
+  "appid": 2379780,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2379780/ss_5ab29592c9b5cafe5ce787740afc411eecb9664a.1920x1080.jpg",
+  "ensina": "Desafios: lista numerada com regras, painel de modificadores à direita, botão PLAY grande.",
+  "tags": "menus,estrutura"
+ },
+ {
+  "arquivo": "balatro/carta_destaque_01.png",
+  "jogo": "Balatro",
+  "appid": 2379780,
+  "fonte": "https://video.akamai.steamstatic.com/store_trailers/2379780/581550014/e9a47276c1efe4165c2e25e35a06d417d78e1724/1758033766/hls_264_master.m3u8 @ ~16s, quadro 9 (Accolades Gameplay Video)",
+  "ensina": "Carta de planeta isolada no centro durante a revelação: tamanho grande, fundo escuro, sem distrações.",
+  "tags": "feedback,pacote"
+ },
+ {
+  "arquivo": "balatro/capsula_steam_01.png",
+  "jogo": "Balatro",
+  "appid": 2379780,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2379780/7a85430784e4d613cdb0547414d8cf16ffa45747/header.jpg",
+  "ensina": "Cápsula: só o logo e cartas; legível em tamanho pequeno.",
+  "tags": "marketing"
+ },
+ {
+  "arquivo": "marvel_snap/album_01.png",
+  "jogo": "MARVEL SNAP",
+  "appid": 1997040,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1997040/43b137d737d6cc805da7f5477c1ad00e75ffaf21/ss_43b137d737d6cc805da7f5477c1ad00e75ffaf21.1920x1080.jpg",
+  "ensina": "Coleção: grade densa com custo/poder nos cantos, filtros no topo, álbuns separados.",
+  "tags": "coleção,layout"
+ },
+ {
+  "arquivo": "marvel_snap/detalhe_carta_01.png",
+  "jogo": "MARVEL SNAP",
+  "appid": 1997040,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1997040/012149a12287c8458e878d60188eba8360386e2d/ss_012149a12287c8458e878d60188eba8360386e2d.1920x1080.jpg",
+  "ensina": "Detalhe da carta: carta grande à esquerda, variantes à direita, cosméticos (borda, acabamento).",
+  "tags": "UX,coleção"
+ },
+ {
+  "arquivo": "marvel_snap/versoes_raras_01.png",
+  "jogo": "MARVEL SNAP",
+  "appid": 1997040,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1997040/8f9802427a4f58cfa157e2eace993f27e70666e5/ss_8f9802427a4f58cfa157e2eace993f27e70666e5.1920x1080.jpg",
+  "ensina": "Variantes da mesma carta em leque: a coleção cresce sem mudar a regra do jogo.",
+  "tags": "coleção,marketing"
+ },
+ {
+  "arquivo": "marvel_snap/revelacao_rara_01.png",
+  "jogo": "MARVEL SNAP",
+  "appid": 1997040,
+  "fonte": "https://video.akamai.steamstatic.com/store_trailers/1997040/598543/7c5061fb6121997d5dedbf24c3ef83808706fd11/1750744104/hls_264_master.m3u8 @ ~4s, quadro 3 (How to play)",
+  "ensina": "Revelação: carta no centro com aura e partículas em anel.",
+  "tags": "feedback"
+ },
+ {
+  "arquivo": "marvel_snap/album_02.png",
+  "jogo": "MARVEL SNAP",
+  "appid": 1997040,
+  "fonte": "https://video.akamai.steamstatic.com/store_trailers/1997040/598543/7c5061fb6121997d5dedbf24c3ef83808706fd11/1750744104/hls_264_master.m3u8 @ ~10s, quadro 6 (How to play)",
+  "ensina": "Muro de cartas: mostra o tamanho da coleção num só quadro (marketing).",
+  "tags": "marketing,coleção"
+ },
+ {
+  "arquivo": "marvel_snap/fim_de_run_01.png",
+  "jogo": "MARVEL SNAP",
+  "appid": 1997040,
+  "fonte": "https://video.akamai.steamstatic.com/store_trailers/1997040/598543/7c5061fb6121997d5dedbf24c3ef83808706fd11/1750744104/hls_264_master.m3u8 @ ~104s, quadro 53 (How to play)",
+  "ensina": "Recompensas da partida: carta ganha em destaque + barra de progresso.",
+  "tags": "feedback,meta"
+ },
+ {
+  "arquivo": "marvel_snap/revelacao_rara_02.png",
+  "jogo": "MARVEL SNAP",
+  "appid": 1997040,
+  "fonte": "https://video.akamai.steamstatic.com/store_trailers/1997040/598552/72d0dacb2ee1c96b0b5bd218610819a203ff0999/1750744105/hls_264_master.m3u8 @ ~24s, quadro 13 (Gameplay Trailer)",
+  "ensina": "Carta em tela cheia com moldura quebrada (arte saindo da borda) para a raridade máxima.",
+  "tags": "feedback,visual"
+ },
+ {
+  "arquivo": "cardboard_conquest/escolha_pacote_01.png",
+  "jogo": "Cardboard Conquest",
+  "appid": 4937370,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4937370/1a9a15d660dd6d1625dfcaa83da9cbbc62fff49e/ss_1a9a15d660dd6d1625dfcaa83da9cbbc62fff49e.1920x1080.jpg",
+  "ensina": "\"Monte seu arsenal\": 3 pacotes temáticos, escolhe 1; cada pacote mostra o tema e \"ver cartas\".",
+  "tags": "pacote,UX"
+ },
+ {
+  "arquivo": "cardboard_conquest/escolha_pacote_02.png",
+  "jogo": "Cardboard Conquest",
+  "appid": 4937370,
+  "fonte": "https://video.akamai.steamstatic.com/store_trailers/4937370/372453965/d202b10896b5184104b0a43c1481b4d3c44f2df3/1795073518/hls_264_master.m3u8 @ ~16s, quadro 9 (Cardboard Conquest Trailer)",
+  "ensina": "\"Draft 3 de 23 pacotes\": contador do draft visível, pacote = facção/tema.",
+  "tags": "pacote,estrutura"
+ },
+ {
+  "arquivo": "cardboard_conquest/carta_nova_01.png",
+  "jogo": "Cardboard Conquest",
+  "appid": 4937370,
+  "fonte": "https://video.akamai.steamstatic.com/store_trailers/4937370/372453965/d202b10896b5184104b0a43c1481b4d3c44f2df3/1795073518/hls_264_master.m3u8 @ ~8s, quadro 5 (Cardboard Conquest Trailer)",
+  "ensina": "\"Novas cartas desbloqueadas\": silhueta preta antes da revelação (suspense).",
+  "tags": "feedback,coleção"
+ },
+ {
+  "arquivo": "cardboard_conquest/carta_nova_02.png",
+  "jogo": "Cardboard Conquest",
+  "appid": 4937370,
+  "fonte": "https://video.akamai.steamstatic.com/store_trailers/4937370/372453965/d202b10896b5184104b0a43c1481b4d3c44f2df3/1795073518/hls_264_master.m3u8 @ ~10s, quadro 6 (Cardboard Conquest Trailer)",
+  "ensina": "A silhueta revela a carta; contador \"1068 cartas\" reforça o tamanho da coleção.",
+  "tags": "feedback,coleção"
+ },
+ {
+  "arquivo": "cardboard_conquest/fim_de_run_01.png",
+  "jogo": "Cardboard Conquest",
+  "appid": 4937370,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4937370/3e739b0e994d8447683b5f5ad84d9944b98411a8/ss_3e739b0e994d8447683b5f5ad84d9944b98411a8.1920x1080.jpg",
+  "ensina": "Vitória: carta nova desbloqueada no centro + 6 estatísticas da run em caixas.",
+  "tags": "meta,layout"
+ },
+ {
+  "arquivo": "cardboard_conquest/loja_01.png",
+  "jogo": "Cardboard Conquest",
+  "appid": 4937370,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4937370/7e19592c547cbdf6e4ae59ee5414f0a9ff3bd163/ss_7e19592c547cbdf6e4ae59ee5414f0a9ff3bd163.1920x1080.jpg",
+  "ensina": "Mercador: cartas na prateleira com preço, poções e \"queimar carta\" (ralo de baralho).",
+  "tags": "economia,layout"
+ },
+ {
+  "arquivo": "cardboard_conquest/campo_cheio_01.png",
+  "jogo": "Cardboard Conquest",
+  "appid": 4937370,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4937370/375ad79cfc0549f3062a6799a8765c3fbb1197e9/ss_375ad79cfc0549f3062a6799a8765c3fbb1197e9.1920x1080.jpg",
+  "ensina": "Tabuleiro com trilhas: mão de cartas embaixo, controles de velocidade (pausa, >>), log.",
+  "tags": "layout,UX"
+ },
+ {
+  "arquivo": "cardboard_conquest/menus_01.png",
+  "jogo": "Cardboard Conquest",
+  "appid": 4937370,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4937370/5ad8bf4d6304aeb2a255558ccfd970422e53ff7a/ss_5ad8bf4d6304aeb2a255558ccfd970422e53ff7a.1920x1080.jpg",
+  "ensina": "Escolha de comandante: personagens em roda, poder do comandante em caixa, botão grande embaixo.",
+  "tags": "menus,UX"
+ },
+ {
+  "arquivo": "dragon_eclipse/escolha_1de3_01.png",
+  "jogo": "Dragon Eclipse",
+  "appid": 2626860,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626860/ss_b8ff190bec4f561e411adad9c92d973921b83904.1920x1080.jpg",
+  "ensina": "Escolha em pedestais: 3 criaturas com \"+1 poder\", tooltip do talento ao lado.",
+  "tags": "UX,gameplay"
+ },
+ {
+  "arquivo": "dragon_eclipse/evolucao_01.png",
+  "jogo": "Dragon Eclipse",
+  "appid": 2626860,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626860/ss_fe7447d06afc9695fd65c94a60a0e52e9f519dba.1920x1080.jpg",
+  "ensina": "Forja de cartas: duplicar / melhorar / remover — três máquinas, três ralos.",
+  "tags": "gameplay,economia"
+ },
+ {
+  "arquivo": "dragon_eclipse/subclasse_01.png",
+  "jogo": "Dragon Eclipse",
+  "appid": 2626860,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626860/ss_b0213c6ba946360e9e08eca1c490aa533e84ae54.1920x1080.jpg",
+  "ensina": "\"Escolha um novo talento\": 3 opções textuais curtas com números em destaque colorido.",
+  "tags": "gameplay,legibilidade"
+ },
+ {
+  "arquivo": "dragon_eclipse/loja_01.png",
+  "jogo": "Dragon Eclipse",
+  "appid": 2626860,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626860/ss_90a3b4ceed6b005e836a7edf3a21b14d3df3730a.1920x1080.jpg",
+  "ensina": "Loja: 4 cartas com preço em cima, consumíveis embaixo, removedor de cartas.",
+  "tags": "economia,layout"
+ },
+ {
+  "arquivo": "dragon_eclipse/preparacao_01.png",
+  "jogo": "Dragon Eclipse",
+  "appid": 2626860,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626860/ss_023d6ec7a74d50b0e4a71f86a8e2014c002eb936.1920x1080.jpg",
+  "ensina": "Preparação: 3 criaturas em slots, cartas à direita, cadeado e reroll com custo.",
+  "tags": "layout,UX"
+ },
+ {
+  "arquivo": "dragon_eclipse/campo_cheio_01.png",
+  "jogo": "Dragon Eclipse",
+  "appid": 2626860,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626860/ss_2a0725d19c1c11b4d60e5bf00e430e66e710b3b2.1920x1080.jpg",
+  "ensina": "Combate lateral: efeitos grandes, números de dano, ícones de status sob cada unidade.",
+  "tags": "feedback,visual"
+ },
+ {
+  "arquivo": "auto_dungeon/campo_cheio_01.png",
+  "jogo": "Auto Dungeon",
+  "appid": 2849990,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2849990/99c121f4b47ad7bb0a4ced1423e9e5afe193cbc9/ss_99c121f4b47ad7bb0a4ced1423e9e5afe193cbc9.1920x1080.jpg",
+  "ensina": "Combate automático em sala: HUD mínimo, botão BATTLE e carta de aflição no canto.",
+  "tags": "layout"
+ },
+ {
+  "arquivo": "seedborne_soldiers/campo_cheio_01.png",
+  "jogo": "Seedborne Soldiers",
+  "appid": 3039930,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3039930/1cd67e900e8c2dc63872ab5b6e47904cb42fc204/ss_1cd67e900e8c2dc63872ab5b6e47904cb42fc204.1920x1080.jpg",
+  "ensina": "Arena com muitas unidades + efeitos de área; retratos do exército nas laterais.",
+  "tags": "layout,visual"
+ },
+ {
+  "arquivo": "seedborne_soldiers/escolha_1de3_01.png",
+  "jogo": "Seedborne Soldiers",
+  "appid": 3039930,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3039930/f9d4889b83c87b911a2108e98718212ba0cffde8/ss_f9d4889b83c87b911a2108e98718212ba0cffde8.1920x1080.jpg",
+  "ensina": "Colheita: tiers I/II/III de unidades com chance por tier no tooltip.",
+  "tags": "chances,UX"
+ },
+ {
+  "arquivo": "seedborne_soldiers/loja_01.png",
+  "jogo": "Seedborne Soldiers",
+  "appid": 3039930,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3039930/2a473fd88ca17c338fac236a8fbfa985393418ce/ss_2a473fd88ca17c338fac236a8fbfa985393418ce.1920x1080.jpg",
+  "ensina": "Mercador de itens: troca 1 item por outro, contador de trocas restantes.",
+  "tags": "economia"
+ },
+ {
+  "arquivo": "seedborne_soldiers/mapa_01.png",
+  "jogo": "Seedborne Soldiers",
+  "appid": 3039930,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3039930/14c3576dbb0f8cc4088be8bb737d9cdc260a22d2/ss_14c3576dbb0f8cc4088be8bb737d9cdc260a22d2.1920x1080.jpg",
+  "ensina": "Mapa hexagonal com caminhos e tipos de nó.",
+  "tags": "estrutura"
+ },
+ {
+  "arquivo": "my_life_as_an_archeologist/equipamento_01.png",
+  "jogo": "My life as an archeologist",
+  "appid": 1689350,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1689350/ss_996828cd3f4840d73b4b7d21b4d80d70bed0ea99.1920x1080.jpg",
+  "ensina": "Inventário em grade com raridade por cor e afixos numéricos (+% ouro, +autoclicks).",
+  "tags": "gameplay,itens"
+ },
+ {
+  "arquivo": "my_life_as_an_archeologist/artefato_1de3_01.png",
+  "jogo": "My life as an archeologist",
+  "appid": 1689350,
+  "fonte": "https://video.akamai.steamstatic.com/store_trailers/1689350/431469/bf2bc56ba18f76a2bfa0b47799fffabd65584552/1751019980/hls_264_master.m3u8 @ ~26s, quadro 14 (TrailerSortie)",
+  "ensina": "Chefe vencido → 3 artefatos, escolhe 1; cada um com efeito de uma linha.",
+  "tags": "gameplay,UX"
+ },
+ {
+  "arquivo": "my_life_as_an_archeologist/bestiario_01.png",
+  "jogo": "My life as an archeologist",
+  "appid": 1689350,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1689350/ss_600beafec13a0c79340d959821f26f4de1618cf6.1920x1080.jpg",
+  "ensina": "Pesquisa/bestiário: carta por monstro com barra de progresso (6/8), check ao completar, custo em ouro.",
+  "tags": "coleção,meta"
+ },
+ {
+  "arquivo": "my_life_as_an_archeologist/arvore_permanente_01.png",
+  "jogo": "My life as an archeologist",
+  "appid": 1689350,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1689350/ss_9a52dabf338db9c05019fc8267b4ba37f1895d75.1920x1080.jpg",
+  "ensina": "Habilidades: 3 classes em colunas, pontos restantes no topo.",
+  "tags": "meta,layout"
+ },
+ {
+  "arquivo": "my_life_as_an_archeologist/escolha_1de3_01.png",
+  "jogo": "My life as an archeologist",
+  "appid": 1689350,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1689350/ss_27622078fc08d0a3281806729fc08a9b767c0058.1920x1080.jpg",
+  "ensina": "Cartas de tarô com risco/recompensa (enfrentar o chefe já, dobrar inimigo por item lendário).",
+  "tags": "gameplay"
+ },
+ {
+  "arquivo": "my_life_as_an_archeologist/campo_01.png",
+  "jogo": "My life as an archeologist",
+  "appid": 1689350,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1689350/ss_aa8d8792194ded5938765ff64280dedc1f8e8bb2.1920x1080.jpg",
+  "ensina": "Faixa de combate lateral com retratos e barras grandes nos cantos inferiores.",
+  "tags": "layout"
+ },
+ {
+  "arquivo": "slotbound/album_02.png",
+  "jogo": "Slotbound",
+  "appid": 4459590,
+  "fonte": "https://video.akamai.steamstatic.com/store_trailers/4459590/61881972/3d4feef8b4ba165d676f76197190b1cd3af96120/1793117327/hls_264_master.m3u8 @ ~12s, quadro 7 (Slotbound - Official Trailer)",
+  "ensina": "Livro de coleção com contador \"120+ unidades\": a coleção vira argumento de marketing.",
+  "tags": "coleção,marketing"
+ },
+ {
+  "arquivo": "slotbound_demo/detalhe_carta_01.png",
+  "jogo": "Slotbound Demo",
+  "appid": 4906570,
+  "fonte": "https://video.akamai.steamstatic.com/store_trailers/4906570/569465016/afb356fd1080dea9f1fe5a7d355182aa7315359c/1782920663/hls_264_master.m3u8 @ ~22s, quadro 12 (Slotbound - Gameplay Trailer)",
+  "ensina": "Itens como cartas-pergaminho: nome, ícone, raridade por texto+cor, efeito em 2 linhas, \"Use: 1/wave\".",
+  "tags": "legibilidade,layout"
+ },
+ {
+  "arquivo": "balatro/cartas_em_jogo_01.png",
+  "jogo": "Balatro",
+  "appid": 2379780,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2379780/96208723dbedef49d71bf1b0a74aee1689018c50/ss_96208723dbedef49d71bf1b0a74aee1689018c50.1920x1080.jpg",
+  "ensina": "Mão em jogo: cartas grandes embaixo, jokers no topo, pontuação \"+10\" saltando sobre a carta.",
+  "tags": "feedback,layout"
+ },
+ {
+  "arquivo": "balatro/cartas_em_jogo_02.png",
+  "jogo": "Balatro",
+  "appid": 2379780,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2379780/ss_075cb45cbfa97d8139fb11f21667d6e35f908640.1920x1080.jpg",
+  "ensina": "Mão de 8 cartas em leque com contador 8/8 e botões de ordenar; regra especial em faixa no topo.",
+  "tags": "UX,legibilidade"
+ },
+ {
+  "arquivo": "balatro/detalhe_carta_02.png",
+  "jogo": "Balatro",
+  "appid": 2379780,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2379780/d8bca9a646921db5ecd24c25571b79e4ff15aa60/ss_d8bca9a646921db5ecd24c25571b79e4ff15aa60.1920x1080.jpg",
+  "ensina": "Tabela de mãos com nível e exemplo de cartas: regra explicada com as próprias cartas.",
+  "tags": "UX,legibilidade"
+ },
+ {
+  "arquivo": "marvel_snap/album_03.png",
+  "jogo": "MARVEL SNAP",
+  "appid": 1997040,
+  "fonte": "https://video.akamai.steamstatic.com/store_trailers/1997040/598543/7c5061fb6121997d5dedbf24c3ef83808706fd11/1750744104/hls_264_master.m3u8 @ ~8s, quadro 5 (How to play)",
+  "ensina": "Duas fileiras de cartas com custo (azul) e poder (laranja) sempre no mesmo canto.",
+  "tags": "legibilidade,coleção"
+ },
+ {
+  "arquivo": "marvel_snap/revelacao_rara_03.png",
+  "jogo": "MARVEL SNAP",
+  "appid": 1997040,
+  "fonte": "https://video.akamai.steamstatic.com/store_trailers/1997040/598552/72d0dacb2ee1c96b0b5bd218610819a203ff0999/1750744105/hls_264_master.m3u8 @ ~16s, quadro 9 (Gameplay Trailer)",
+  "ensina": "Carta jogada cresce até ocupar a tela, com moldura especial e número de poder grande.",
+  "tags": "feedback,visual"
+ },
+ {
+  "arquivo": "marvel_snap/revelacao_rara_04.png",
+  "jogo": "MARVEL SNAP",
+  "appid": 1997040,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1997040/d47d1038edc8a0c2d0fe121008050d4c01adfe0d/ss_d47d1038edc8a0c2d0fe121008050d4c01adfe0d.1920x1080.jpg",
+  "ensina": "Explosão em estrela branca com o logo no centro: o \"momento de aposta\" tem efeito próprio.",
+  "tags": "feedback"
+ },
+ {
+  "arquivo": "dragon_eclipse/mao_de_cartas_01.png",
+  "jogo": "Dragon Eclipse",
+  "appid": 2626860,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626860/ss_2f4df9ccf8eac17b88746461605217358e602a39.1920x1080.jpg",
+  "ensina": "Mão de cartas: carta sob o cursor sobe e cresce; custo no canto, texto curto com número em destaque.",
+  "tags": "UX,legibilidade"
+ },
+ {
+  "arquivo": "dragon_eclipse/mao_de_cartas_02.png",
+  "jogo": "Dragon Eclipse",
+  "appid": 2626860,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626860/ss_d140b1b31fbc50b0c9e47dfdaba180482eb6f18b.1920x1080.jpg",
+  "ensina": "Mão com 4 cartas e criaturas acima: barra de vida e intenção de cada inimigo.",
+  "tags": "layout"
+ },
+ {
+  "arquivo": "cardboard_conquest/mao_de_cartas_01.png",
+  "jogo": "Cardboard Conquest",
+  "appid": 4937370,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4937370/534b2abfe14123a5e412e8da34547212ac101ffc/ss_534b2abfe14123a5e412e8da34547212ac101ffc.1920x1080.jpg",
+  "ensina": "Cartas-unidade na mão sob o tabuleiro: cada carta vira um exército na trilha.",
+  "tags": "gameplay,layout"
+ },
+ {
+  "arquivo": "my_life_as_an_archeologist/capsula_steam_01.png",
+  "jogo": "My life as an archeologist",
+  "appid": 1689350,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1689350/header.jpg",
+  "ensina": "Cápsula pixel art com personagem e logo curvo.",
+  "tags": "marketing"
+ },
+ {
+  "arquivo": "cardboard_conquest/capsula_steam_01.png",
+  "jogo": "Cardboard Conquest",
+  "appid": 4937370,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4937370/70000176c0532cbd7364aec2818603be86332106/header.jpg",
+  "ensina": "Cápsula: diorama de papelão com personagens e logo; estilo vende o tema.",
+  "tags": "marketing"
+ },
+ {
+  "arquivo": "dragon_eclipse/capsula_steam_01.png",
+  "jogo": "Dragon Eclipse",
+  "appid": 2626860,
+  "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626860/header.jpg",
+  "ensina": "Cápsula: criatura central + logo; muito detalhe some em tamanho pequeno.",
+  "tags": "marketing"
+ }
+]

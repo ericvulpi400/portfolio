@@ -1,0 +1,20 @@
+{
+  "steam": {
+    "ok": false,
+    "log": [
+      {
+        "t": "2026-11-20T23:04:59.836Z",
+        "k": "SDK redistributable_bin",
+        "ok": true,
+        "detail": "/home/user/portfolio/spike/steamworks_sdk"
+      },
+      {
+        "t": "2026-11-20T23:04:59.840Z",
+        "k": "init App ID 480",
+        "ok": false,
+        "detail": "Steam aberta e logada?"
+      }
+    ]
+  },
+  "savedAt": "2026-11-20T23:04:59.840Z"
+}
