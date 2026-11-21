@@ -1,0 +1,130 @@
+{
+ "niveis": {
+  "max": 9,
+  "xp_para_subir": [
+   2,
+   3,
+   3,
+   4,
+   4,
+   5,
+   5,
+   6
+  ],
+  "bonus_por_nivel": 0.12
+ },
+ "estrelas": [
+  {
+   "estrela": 1,
+   "nivel": 1
+  },
+  {
+   "estrela": 2,
+   "nivel": 4,
+   "marco": "subclasse"
+  },
+  {
+   "estrela": 3,
+   "nivel": 7,
+   "marco": "herdar_efeito"
+  }
+ ],
+ "xp_por_carta": {
+  "base": "raridade.xp_absorcao",
+  "mesmo_personagem_mult": 2,
+  "brilhante_mult": 2,
+  "prisma_mult": 4,
+  "nivel_da_alimentada": "+1 por nível acima de 1"
+ },
+ "trava": "unidade travada não pode ser usada como alimento nem vendida",
+ "herdar": "no ★3 escolhe 1 efeito entre as cartas que ela absorveu nesta run (efeito da carta, não atributos)",
+ "subclasses": {
+  "guerreiro": [
+   {
+    "id": "duelista",
+    "critico": 0.15,
+    "atq_alvo_unico": 0.3
+   },
+   {
+    "id": "vigia",
+    "vid": 0.4,
+    "provoca": true
+   }
+  ],
+  "defensor": [
+   {
+    "id": "muralha",
+    "bloqueio": 0.2
+   },
+   {
+    "id": "espinhoso",
+    "reflete": 0.25
+   }
+  ],
+  "lanceiro": [
+   {
+    "id": "falange",
+    "alvos": 1
+   },
+   {
+    "id": "perfurador",
+    "ignora_reducao": 0.3
+   }
+  ],
+  "atirador": [
+   {
+    "id": "elite",
+    "alc": 40,
+    "critico": 0.2
+   },
+   {
+    "id": "rajada",
+    "cad": 0.35
+   }
+  ],
+  "artilheiro": [
+   {
+    "id": "bombardeiro",
+    "area_raio_mult": 0.5
+   },
+   {
+    "id": "piromante",
+    "queimar_mult": 1.0
+   }
+  ],
+  "cavaleiro": [
+   {
+    "id": "choque",
+    "investida_mult": 1.0
+   },
+   {
+    "id": "batedor",
+    "vel": 0.5,
+    "alvo_preferido": "retaguarda"
+   }
+  ],
+  "bruto": [
+   {
+    "id": "colosso",
+    "vid": 0.5,
+    "atordoa_cada": 4,
+    "atordoar_s": 0.5
+   },
+   {
+    "id": "esmagador",
+    "atq": 0.4,
+    "area_raio": 12
+   }
+  ],
+  "lider": [
+   {
+    "id": "comandante",
+    "aura_raio_mult": 0.5
+   },
+   {
+    "id": "estandarte",
+    "aura_vid": 0.1
+   }
+  ]
+ }
+}

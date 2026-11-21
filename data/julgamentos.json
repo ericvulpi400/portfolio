@@ -1,0 +1,135 @@
+{
+ "_nota": "Avisados 1 onda antes; a regra vale só naquela onda.",
+ "lista": [
+  {
+   "id": "inspecao",
+   "estagio": 1,
+   "regra": {
+    "faccoes_que_lutam": 2,
+    "escolha_jogador": true
+   },
+   "recompensa": {
+    "carimbo": 1,
+    "ouro": 15
+   }
+  },
+  {
+   "id": "feira_cheia",
+   "estagio": 1,
+   "regra": {
+    "inimigos_vid": 0.25,
+    "ouro_por_lacrado": 8
+   },
+   "recompensa": {
+    "pacote": "povo"
+   }
+  },
+  {
+   "id": "noite",
+   "estagio": 1,
+   "regra": {
+    "alcance_atiradores": -0.5,
+    "inimigos_visiveis_a_px": 120
+   },
+   "recompensa": {
+    "item_1de3": "rara+"
+   }
+  },
+  {
+   "id": "mercado_fechado",
+   "estagio": 2,
+   "regra": {
+    "sem_pacotes": true
+   },
+   "recompensa": {
+    "renda_proxima_mult": 1.4
+   }
+  },
+  {
+   "id": "so_pequenos",
+   "estagio": 2,
+   "regra": {
+    "prateleira": "so_pequeno"
+   },
+   "recompensa": {
+    "carimbo": 2
+   }
+  },
+  {
+   "id": "chuva",
+   "estagio": 3,
+   "regra": {
+    "vel_todos": -0.3
+   },
+   "recompensa": {
+    "ouro": 30
+   }
+  },
+  {
+   "id": "lei_do_mais_forte",
+   "estagio": 3,
+   "regra": {
+    "lutam_max": 4,
+    "atributos": 0.5
+   },
+   "recompensa": {
+    "xp_todos": 8
+   }
+  },
+  {
+   "id": "espelho",
+   "estagio": 4,
+   "regra": {
+    "inimigo_copia_sua_melhor_unidade": true
+   },
+   "recompensa": {
+    "nucleo_1de3": "rara+"
+   }
+  },
+  {
+   "id": "mare",
+   "estagio": 4,
+   "regra": {
+    "entradas": 2
+   },
+   "recompensa": {
+    "pacote": "colecionador"
+   }
+  },
+  {
+   "id": "desabamento",
+   "estagio": 5,
+   "regra": {
+    "vitrine": -2
+   },
+   "recompensa": {
+    "vitrine_permanente_run": 1
+   }
+  },
+  {
+   "id": "moeda_de_cobre",
+   "estagio": 5,
+   "regra": {
+    "preco": -0.5,
+    "raridades": [
+     "comum",
+     "incomum"
+    ]
+   },
+   "recompensa": {
+    "ouro": 40
+   }
+  },
+  {
+   "id": "eclipse",
+   "estagio": 6,
+   "regra": {
+    "inimigos_atq": 0.3,
+    "brilhante_chance_mult": 5
+   },
+   "recompensa": {
+    "alvara_extra": true
+   }
+  }
+ ]
+}

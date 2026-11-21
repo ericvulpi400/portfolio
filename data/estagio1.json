@@ -1,0 +1,308 @@
+{
+ "id": "estagio1",
+ "cenario": "Vale da Estrada Velha: a feira acampa nas ruínas de um forte humano",
+ "faccoes_inimigas": [
+  "slimes",
+  "animais",
+  "bandidos"
+ ],
+ "faccoes_jogador": [
+  "humanos",
+  "anoes",
+  "elfos",
+  "vikings",
+  "aldeoes"
+ ],
+ "regra_nova": "nenhuma (estágio tutorial)",
+ "ondas": [
+  {
+   "onda": 1,
+   "tipo": "normal",
+   "grupos": [
+    [
+     "gosma",
+     6
+    ]
+   ],
+   "duracao_spawn_s": 12
+  },
+  {
+   "onda": 2,
+   "tipo": "normal",
+   "grupos": [
+    [
+     "gosma",
+     8
+    ],
+    [
+     "gosma_espinhosa",
+     2
+    ]
+   ],
+   "duracao_spawn_s": 14
+  },
+  {
+   "onda": 3,
+   "tipo": "normal",
+   "grupos": [
+    [
+     "gosma",
+     6
+    ],
+    [
+     "gosma_espinhosa",
+     4
+    ],
+    [
+     "lobo",
+     2
+    ]
+   ],
+   "duracao_spawn_s": 16
+  },
+  {
+   "onda": 4,
+   "tipo": "julgamento",
+   "julgamento": "inspecao",
+   "grupos": [
+    [
+     "gosma_espinhosa",
+     6
+    ],
+    [
+     "gosma_mutante",
+     3
+    ],
+    [
+     "gosma_grande",
+     1
+    ]
+   ],
+   "duracao_spawn_s": 16
+  },
+  {
+   "onda": 5,
+   "tipo": "normal",
+   "grupos": [
+    [
+     "lobo",
+     6
+    ],
+    [
+     "javali",
+     3
+    ],
+    [
+     "coelho",
+     1
+    ]
+   ],
+   "duracao_spawn_s": 16,
+   "vitrine_mais": 1
+  },
+  {
+   "onda": 6,
+   "tipo": "normal",
+   "grupos": [
+    [
+     "gosma_grande",
+     3
+    ],
+    [
+     "gosma_mutante",
+     4
+    ],
+    [
+     "raposa",
+     3
+    ]
+   ],
+   "duracao_spawn_s": 18
+  },
+  {
+   "onda": 7,
+   "tipo": "normal",
+   "grupos": [
+    [
+     "lobo",
+     6
+    ],
+    [
+     "javali",
+     4
+    ],
+    [
+     "urso",
+     1
+    ]
+   ],
+   "duracao_spawn_s": 18
+  },
+  {
+   "onda": 8,
+   "tipo": "julgamento",
+   "julgamento": "feira_cheia",
+   "grupos": [
+    [
+     "gosma",
+     10
+    ],
+    [
+     "gosma_mutante",
+     5
+    ],
+    [
+     "monstro_gosma",
+     1
+    ]
+   ],
+   "duracao_spawn_s": 20
+  },
+  {
+   "onda": 9,
+   "tipo": "normal",
+   "grupos": [
+    [
+     "javali",
+     5
+    ],
+    [
+     "raposa",
+     4
+    ],
+    [
+     "lobo",
+     6
+    ],
+    [
+     "coelho",
+     1
+    ]
+   ],
+   "duracao_spawn_s": 20
+  },
+  {
+   "onda": 10,
+   "tipo": "chefe",
+   "chefe": "mae_gosma",
+   "grupos": [
+    [
+     "mae_gosma",
+     1
+    ],
+    [
+     "gosma",
+     6
+    ]
+   ],
+   "duracao_spawn_s": 10,
+   "vitrine_mais": 1
+  },
+  {
+   "onda": 11,
+   "tipo": "normal",
+   "grupos": [
+    [
+     "bandido",
+     6
+    ],
+    [
+     "besteiro_bandido",
+     3
+    ]
+   ],
+   "duracao_spawn_s": 18
+  },
+  {
+   "onda": 12,
+   "tipo": "julgamento",
+   "julgamento": "noite",
+   "grupos": [
+    [
+     "bandido",
+     6
+    ],
+    [
+     "arruaceiro",
+     4
+    ],
+    [
+     "lobo",
+     4
+    ]
+   ],
+   "duracao_spawn_s": 20
+  },
+  {
+   "onda": 13,
+   "tipo": "normal",
+   "grupos": [
+    [
+     "bandido",
+     6
+    ],
+    [
+     "cavaleiro_bandido",
+     4
+    ],
+    [
+     "besteiro_bandido",
+     4
+    ],
+    [
+     "brutamontes",
+     1
+    ]
+   ],
+   "duracao_spawn_s": 22
+  },
+  {
+   "onda": 14,
+   "tipo": "normal",
+   "grupos": [
+    [
+     "arruaceiro",
+     6
+    ],
+    [
+     "besteiro_bandido",
+     5
+    ],
+    [
+     "cavaleiro_bandido",
+     4
+    ],
+    [
+     "brutamontes",
+     2
+    ]
+   ],
+   "duracao_spawn_s": 24
+  },
+  {
+   "onda": 15,
+   "tipo": "chefe",
+   "chefe": "cobrador",
+   "grupos": [
+    [
+     "cobrador",
+     1
+    ],
+    [
+     "bandido",
+     6
+    ],
+    [
+     "besteiro_bandido",
+     3
+    ],
+    [
+     "brutamontes",
+     1
+    ]
+   ],
+   "duracao_spawn_s": 16
+  }
+ ],
+ "spawn": "grupos misturados em ordem aleatória (semente), entrada pela direita em y aleatório no chão; intervalo = duração / total"
+}

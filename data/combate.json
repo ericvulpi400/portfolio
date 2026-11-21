@@ -1,0 +1,84 @@
+{
+ "campo": {
+  "area_segura": [
+   426,
+   240
+  ],
+  "chao_y": [
+   120,
+   232
+  ],
+  "barraca_x": [
+   8,
+   52
+  ],
+  "entrada_inimigos_x": "borda direita + 16",
+  "espacos_vitrine_x": [
+   70,
+   96,
+   122
+  ],
+  "passo_fixo_hz": 60
+ },
+ "dano": {
+  "formula": "dano = arred(ATQ x mult_bonus x (crítico? 1,5 : 1) x (1 - redução_alvo)); mínimo 1",
+  "critico_base": 0.05,
+  "critico_mult": 1.5,
+  "reducao_max": 0.6,
+  "bloqueio": "anula o golpe inteiro e toca 'block'"
+ },
+ "alvo": {
+  "corpo_a_corpo": "inimigo mais próximo da barraca dentro do raio de guarda; sem alvo volta ao espaço",
+  "atirador": "inimigo mais próximo da barraca dentro do alcance",
+  "inimigo": "unidade a até 40 px; senão anda até a barraca",
+  "provoca": "inimigos a até 60 px atacam quem provoca"
+ },
+ "status": [
+  {
+   "id": "queimar",
+   "dps": "% do ATQ de quem aplicou",
+   "acumula": false,
+   "cor": "#f08a3c"
+  },
+  {
+   "id": "veneno",
+   "dps": "% do ATQ, acumula até 3",
+   "acumula": true,
+   "cor": "#7ccf6b"
+  },
+  {
+   "id": "sangrar",
+   "dps": "% do ATQ; dobra se o alvo andar",
+   "acumula": false,
+   "cor": "#d9503f"
+  },
+  {
+   "id": "lentidao",
+   "efeito": "−% velocidade e cadência",
+   "acumula": false,
+   "cor": "#7fe3e0"
+  },
+  {
+   "id": "atordoar",
+   "efeito": "não age",
+   "acumula": false,
+   "cor": "#f2c14e"
+  },
+  {
+   "id": "escudo",
+   "efeito": "absorve dano",
+   "acumula": true,
+   "cor": "#e8dcc8"
+  }
+ ],
+ "barraca": {
+  "vida": 20,
+  "dano_por_inimigo": "campo 'barraca' do inimigo",
+  "derrota": "vida 0 = fim da run"
+ },
+ "entre_ondas": {
+  "unidades_curam": "100%",
+  "unidades_caidas": "voltam na próxima onda (cair não destrói a carta)"
+ },
+ "leitura": "barra no topo: VID total dos inimigos restantes / total da onda; números de dano inteiros; cor da barra de vida por lado (verde aliado, vermelho inimigo)"
+}

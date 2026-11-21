@@ -1,0 +1,49 @@
+{
+ "ouro_inicial": 25,
+ "renda_onda": {
+  "base": 18,
+  "por_onda": 4,
+  "texto": "18 + 4 x onda"
+ },
+ "abate": {
+  "normal": "campo 'ouro' do inimigo"
+ },
+ "juros": {
+  "cada": 10,
+  "por": 1,
+  "max": 4
+ },
+ "venda": {
+  "formula": "arred(preço base do Pacote da Feira na onda x fator); mínimo 1",
+  "fator": {
+   "comum": 0.05,
+   "incomum": 0.1,
+   "rara": 0.25,
+   "epica": 0.6,
+   "lendaria": 1.2
+  },
+  "brilhante_mult": 2,
+  "prisma_mult": 5
+ },
+ "bolso": {
+  "espacos": 3
+ },
+ "vitrine": {
+  "inicial": 8,
+  "maximo": 14,
+  "ganha_nas_ondas": [
+   5,
+   10
+  ]
+ },
+ "vida_barraca": 20,
+ "fichas": {
+  "onda_vencida": 2,
+  "julgamento": 4,
+  "chefe": 10,
+  "run_vencida": 25,
+  "carta_nova": 1,
+  "pagina_completa": 15,
+  "derrota_mantem": true
+ }
+}

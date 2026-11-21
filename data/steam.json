@@ -1,0 +1,269 @@
+{
+ "_nota": "App ID de teste 480 durante o desenvolvimento; ids das conquistas em MAIÚSCULAS iguais no Steamworks.",
+ "conquistas": [
+  {
+   "id": "PRIMEIRO_PACOTE",
+   "condicao": "pacotes_abertos>=1",
+   "grupo": "pacotes"
+  },
+  {
+   "id": "CEM_PACOTES",
+   "condicao": "pacotes_abertos>=100",
+   "grupo": "pacotes"
+  },
+  {
+   "id": "MIL_PACOTES",
+   "condicao": "pacotes_abertos>=1000",
+   "grupo": "pacotes"
+  },
+  {
+   "id": "PRIMEIRA_LENDARIA",
+   "condicao": "lendarias>=1",
+   "grupo": "pacotes"
+  },
+  {
+   "id": "PRIMEIRO_PRISMA",
+   "condicao": "prismas>=1",
+   "grupo": "pacotes"
+  },
+  {
+   "id": "BRILHANTE_10",
+   "condicao": "brilhantes>=10",
+   "grupo": "pacotes"
+  },
+  {
+   "id": "TRINCA",
+   "condicao": "combo_trinca>=1",
+   "grupo": "pacotes"
+  },
+  {
+   "id": "CINCO_COMBOS",
+   "condicao": "combos_num_pacote>=3",
+   "grupo": "pacotes"
+  },
+  {
+   "id": "LACRADO_7",
+   "condicao": "lacrado_7>=1",
+   "grupo": "pacotes"
+  },
+  {
+   "id": "GARANTIA",
+   "condicao": "garantia_lendaria>=1",
+   "grupo": "pacotes"
+  },
+  {
+   "id": "PAGINA_HUMANOS",
+   "condicao": "pagina.humanos",
+   "grupo": "catalogo"
+  },
+  {
+   "id": "PAGINA_ANOES",
+   "condicao": "pagina.anoes",
+   "grupo": "catalogo"
+  },
+  {
+   "id": "PAGINA_ELFOS",
+   "condicao": "pagina.elfos",
+   "grupo": "catalogo"
+  },
+  {
+   "id": "PAGINA_VIKINGS",
+   "condicao": "pagina.vikings",
+   "grupo": "catalogo"
+  },
+  {
+   "id": "PAGINA_ALDEOES",
+   "condicao": "pagina.aldeoes",
+   "grupo": "catalogo"
+  },
+  {
+   "id": "CATALOGO_25",
+   "condicao": "catalogo_pct>=25",
+   "grupo": "catalogo"
+  },
+  {
+   "id": "CATALOGO_50",
+   "condicao": "catalogo_pct>=50",
+   "grupo": "catalogo"
+  },
+  {
+   "id": "CATALOGO_100",
+   "condicao": "catalogo_pct>=100",
+   "grupo": "catalogo"
+  },
+  {
+   "id": "PAGINA_BRILHANTE",
+   "condicao": "pagina_brilhante>=1",
+   "grupo": "catalogo"
+  },
+  {
+   "id": "CREDITO",
+   "condicao": "carta_por_credito>=1",
+   "grupo": "catalogo"
+  },
+  {
+   "id": "BESTIARIO_GOSMAS",
+   "condicao": "bestiario.slimes",
+   "grupo": "bestiario"
+  },
+  {
+   "id": "BESTIARIO_ANIMAIS",
+   "condicao": "bestiario.animais",
+   "grupo": "bestiario"
+  },
+  {
+   "id": "BESTIARIO_BANDIDOS",
+   "condicao": "bestiario.bandidos",
+   "grupo": "bestiario"
+  },
+  {
+   "id": "COELHO",
+   "condicao": "coelhos>=10",
+   "grupo": "bestiario"
+  },
+  {
+   "id": "CHEFE_GOSMA",
+   "condicao": "chefe.mae_gosma",
+   "grupo": "run"
+  },
+  {
+   "id": "CHEFE_COBRADOR",
+   "condicao": "chefe.cobrador",
+   "grupo": "run"
+  },
+  {
+   "id": "ESTAGIO1",
+   "condicao": "estagio1_vencido",
+   "grupo": "run"
+  },
+  {
+   "id": "ESTAGIO1_MAGNATA",
+   "condicao": "estagio1_magnata",
+   "grupo": "run"
+  },
+  {
+   "id": "ESTAGIO1_LENDA",
+   "condicao": "estagio1_lenda",
+   "grupo": "run"
+  },
+  {
+   "id": "SEM_DANO",
+   "condicao": "estagio1_sem_dano",
+   "grupo": "run"
+  },
+  {
+   "id": "SO_UM_POVO",
+   "condicao": "estagio1_uma_faccao",
+   "grupo": "build"
+  },
+  {
+   "id": "ESTRELA3",
+   "condicao": "estrela3>=1",
+   "grupo": "build"
+  },
+  {
+   "id": "NIVEL9",
+   "condicao": "nivel9>=1",
+   "grupo": "build"
+  },
+  {
+   "id": "SINERGIA6",
+   "condicao": "sinergia6>=1",
+   "grupo": "build"
+  },
+  {
+   "id": "VITRINE_CHEIA",
+   "condicao": "vitrine>=14",
+   "grupo": "build"
+  },
+  {
+   "id": "TRES_NUCLEOS",
+   "condicao": "nucleos>=3",
+   "grupo": "build"
+  },
+  {
+   "id": "RICO",
+   "condicao": "ouro_max>=200",
+   "grupo": "economia"
+  },
+  {
+   "id": "AMALDICOADA",
+   "condicao": "amaldicoadas_run>=3&vitoria",
+   "grupo": "economia"
+  },
+  {
+   "id": "INFINITO_25",
+   "condicao": "infinito_onda>=25",
+   "grupo": "modos"
+  },
+  {
+   "id": "DIARIO",
+   "condicao": "diario>=1",
+   "grupo": "modos"
+  },
+  {
+   "id": "ARVORE",
+   "condicao": "ramo_completo>=1",
+   "grupo": "meta"
+  },
+  {
+   "id": "EQUIP_LENDARIO",
+   "condicao": "equip_lendario>=1",
+   "grupo": "meta"
+  }
+ ],
+ "estatisticas": [
+  "pacotes_abertos",
+  "cartas_reveladas",
+  "lendarias",
+  "prismas",
+  "brilhantes",
+  "ondas_vencidas",
+  "runs",
+  "vitorias",
+  "ouro_gasto",
+  "inimigos_abatidos",
+  "catalogo_pct",
+  "maior_onda_infinito",
+  "combos",
+  "coelhos"
+ ],
+ "placares": [
+  {
+   "id": "infinito_estagio1",
+   "ordem": "desc",
+   "exibir": "numerico"
+  },
+  {
+   "id": "diario_AAAAMMDD",
+   "ordem": "desc",
+   "exibir": "numerico",
+   "criado_sob_demanda": true
+  }
+ ],
+ "rich_presence": {
+  "steam_display": "#Status",
+  "chaves": {
+   "menu": "No menu",
+   "prep": "Onda %onda% — preparando a barraca",
+   "pacote": "Abrindo pacotes (onda %onda%)",
+   "combate": "Defendendo a feira — onda %onda%",
+   "catalogo": "Folheando o catálogo (%pct%%)"
+  }
+ },
+ "cloud": {
+  "arquivos": [
+   "save/perfil.json",
+   "save/run.json",
+   "save/config.json"
+  ],
+  "cota_bytes": 1048576
+ },
+ "cartas_colecionaveis": {
+  "planejadas": 6,
+  "origem": "arte de cartas do jogo com MiniFolks em moldura; liberadas só após a Valve aprovar"
+ },
+ "demo_next_fest": {
+  "conteudo": "ondas 1-10 do estágio 1 (até a Mãe Gosma), facções Humanos, Anões e Aldeões; catálogo e conquistas desligados; save separado"
+ }
+}

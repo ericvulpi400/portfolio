@@ -1,0 +1,56 @@
+{
+ "_nota": "Depois de cada onda NORMAL (não em julgamento nem chefe): 3 propostas sorteadas por peso; aceite 1 ou recuse. ≤10 s.",
+ "ofertas": [
+  {
+   "id": "pacote_antigo",
+   "peso": 30,
+   "custo": {
+    "cartas": 2,
+    "de": "bolso, vitrine ou balcão (não travadas)"
+   },
+   "ganha": {
+    "pacote": "antigo"
+   }
+  },
+  {
+   "id": "reliquia",
+   "peso": 25,
+   "custo": {
+    "ouro": "25 + 3 x onda"
+   },
+   "ganha": {
+    "item_raridade_min": "rara"
+   }
+  },
+  {
+   "id": "pesquisa",
+   "peso": 15,
+   "custo": {
+    "ouro": 10
+   },
+   "ganha": {
+    "carta_pesquisa": "inimigo mais abatido nesta run"
+   }
+  },
+  {
+   "id": "carimbo",
+   "peso": 15,
+   "custo": {
+    "ouro": 12
+   },
+   "ganha": {
+    "carga": "à escolha"
+   }
+  },
+  {
+   "id": "comprador",
+   "peso": 15,
+   "custo": {
+    "carta": 1
+   },
+   "ganha": {
+    "ouro": "2 x valor de venda da carta"
+   }
+  }
+ ]
+}

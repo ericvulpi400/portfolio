@@ -1,0 +1,529 @@
+{
+ "_nota": "Unidades jogáveis no estágio 1. Atributos saem de classes.json × raridades.json (ver GDD §5); 'ajuste' sobrescreve.",
+ "lista": [
+  {
+   "id": "h_espadachim",
+   "tipo": "unidade",
+   "faccao": "humanos",
+   "sprite": "humans/sword",
+   "classe": "guerreiro",
+   "raridade": "comum",
+   "anim_ataque": "attack"
+  },
+  {
+   "id": "h_lanceiro",
+   "tipo": "unidade",
+   "faccao": "humanos",
+   "sprite": "humans/spear",
+   "classe": "lanceiro",
+   "raridade": "comum",
+   "anim_ataque": "attack"
+  },
+  {
+   "id": "h_escudeiro",
+   "tipo": "unidade",
+   "faccao": "humanos",
+   "sprite": "humans/shield",
+   "classe": "defensor",
+   "raridade": "comum",
+   "anim_ataque": "attack",
+   "efeito": {
+    "bloqueio_anim": "block"
+   }
+  },
+  {
+   "id": "h_arqueiro",
+   "tipo": "unidade",
+   "faccao": "humanos",
+   "sprite": "humans/archer",
+   "classe": "atirador",
+   "raridade": "comum",
+   "anim_ataque": "attack",
+   "efeito": {
+    "corpo_a_corpo": "attack2"
+   }
+  },
+  {
+   "id": "h_alabardeiro",
+   "tipo": "unidade",
+   "faccao": "humanos",
+   "sprite": "humans/halberd",
+   "classe": "lanceiro",
+   "raridade": "incomum",
+   "anim_ataque": "attack",
+   "efeito": {
+    "alvos": 3
+   }
+  },
+  {
+   "id": "h_besteiro",
+   "tipo": "unidade",
+   "faccao": "humanos",
+   "sprite": "humans/crossbow",
+   "classe": "atirador",
+   "raridade": "incomum",
+   "anim_ataque": "attack",
+   "efeito": {
+    "perfura": 1,
+    "corpo_a_corpo": "attack2"
+   }
+  },
+  {
+   "id": "h_cavaleiro",
+   "tipo": "unidade",
+   "faccao": "humanos",
+   "sprite": "humans/horse",
+   "classe": "cavaleiro",
+   "raridade": "incomum",
+   "anim_ataque": "attack",
+   "efeito": {
+    "investida": true
+   }
+  },
+  {
+   "id": "h_mago",
+   "tipo": "unidade",
+   "faccao": "humanos",
+   "sprite": "humans/mage",
+   "classe": "artilheiro",
+   "raridade": "rara",
+   "anim_ataque": "attack",
+   "efeito": {
+    "queimar": {
+     "dps_pct": 0.1,
+     "s": 3
+    },
+    "anim_magia": "spell"
+   }
+  },
+  {
+   "id": "h_cavaleiro_real",
+   "tipo": "unidade",
+   "faccao": "humanos",
+   "sprite": "humans/cavalier",
+   "classe": "cavaleiro",
+   "raridade": "rara",
+   "anim_ataque": "attack",
+   "efeito": {
+    "investida": true,
+    "atordoar_s": 0.8
+   }
+  },
+  {
+   "id": "h_principe",
+   "tipo": "unidade",
+   "faccao": "humanos",
+   "sprite": "humans/prince",
+   "classe": "lider",
+   "raridade": "epica",
+   "anim_ataque": "attack",
+   "efeito": {
+    "aura": {
+     "atq": 0.15,
+     "alvo": "humanos"
+    }
+   }
+  },
+  {
+   "id": "h_arquimago",
+   "tipo": "unidade",
+   "faccao": "humanos",
+   "sprite": "humans/archmage",
+   "classe": "artilheiro",
+   "raridade": "epica",
+   "anim_ataque": "attack",
+   "efeito": {
+    "meteoro": {
+     "cada_s": 8,
+     "dano_mult": 3.0,
+     "raio": 30
+    },
+    "anim_magia": "spell2"
+   }
+  },
+  {
+   "id": "h_rei",
+   "tipo": "unidade",
+   "faccao": "humanos",
+   "sprite": "humans/king",
+   "classe": "lider",
+   "raridade": "lendaria",
+   "anim_ataque": "attack",
+   "efeito": {
+    "aura": {
+     "vid": 0.2,
+     "alvo": "humanos"
+    },
+    "ao_entrar": {
+     "nivel_faccao": 1
+    }
+   }
+  },
+  {
+   "id": "a_minerador",
+   "tipo": "unidade",
+   "faccao": "anoes",
+   "sprite": "dwarfs/dwarfminer",
+   "classe": "guerreiro",
+   "raridade": "comum",
+   "anim_ataque": "attack",
+   "efeito": {
+    "ouro_por_abate": 1
+   }
+  },
+  {
+   "id": "a_guerreiro",
+   "tipo": "unidade",
+   "faccao": "anoes",
+   "sprite": "dwarfs/dwarfwarrior",
+   "classe": "guerreiro",
+   "raridade": "comum",
+   "anim_ataque": "attack"
+  },
+  {
+   "id": "a_cacador",
+   "tipo": "unidade",
+   "faccao": "anoes",
+   "sprite": "dwarfs/dwarfhunter",
+   "classe": "atirador",
+   "raridade": "comum",
+   "anim_ataque": "attack",
+   "efeito": {
+    "corpo_a_corpo": "attack2"
+   }
+  },
+  {
+   "id": "a_quebra_escudos",
+   "tipo": "unidade",
+   "faccao": "anoes",
+   "sprite": "dwarfs/dwarfshieldbreaker",
+   "classe": "defensor",
+   "raridade": "incomum",
+   "anim_ataque": "attack",
+   "efeito": {
+    "bloqueio_anim": "block",
+    "ignora_reducao": 0.3
+   }
+  },
+  {
+   "id": "a_fuzileiro",
+   "tipo": "unidade",
+   "faccao": "anoes",
+   "sprite": "dwarfs/dwarfrifle",
+   "classe": "atirador",
+   "raridade": "incomum",
+   "anim_ataque": "attack",
+   "efeito": {
+    "corpo_a_corpo": "attack2"
+   },
+   "ajuste": {
+    "alc": 140
+   }
+  },
+  {
+   "id": "a_granadeiro",
+   "tipo": "unidade",
+   "faccao": "anoes",
+   "sprite": "dwarfs/dwarfgrenadier",
+   "classe": "artilheiro",
+   "raridade": "incomum",
+   "anim_ataque": "attack",
+   "efeito": {
+    "projetil": "dwarfs/grenade"
+   }
+  },
+  {
+   "id": "a_urso",
+   "tipo": "unidade",
+   "faccao": "anoes",
+   "sprite": "dwarfs/dwarfbearrider",
+   "classe": "bruto",
+   "raridade": "rara",
+   "anim_ataque": "attack",
+   "efeito": {
+    "anim_ataque2": "attack2"
+   }
+  },
+  {
+   "id": "a_demolidor",
+   "tipo": "unidade",
+   "faccao": "anoes",
+   "sprite": "dwarfs/dwarfdemolitionist",
+   "classe": "artilheiro",
+   "raridade": "rara",
+   "anim_ataque": "attack",
+   "efeito": {
+    "barril": {
+     "cada_s": 10,
+     "dano_mult": 4.0,
+     "raio": 28
+    },
+    "anim_magia": "barrel"
+   }
+  },
+  {
+   "id": "a_urso_encouracado",
+   "tipo": "unidade",
+   "faccao": "anoes",
+   "sprite": "dwarfs/dwarfarmoredbearrider",
+   "classe": "bruto",
+   "raridade": "epica",
+   "anim_ataque": "attack",
+   "efeito": {
+    "reducao_dano": 0.3
+   }
+  },
+  {
+   "id": "a_rei",
+   "tipo": "unidade",
+   "faccao": "anoes",
+   "sprite": "dwarfs/dwarfking",
+   "classe": "lider",
+   "raridade": "lendaria",
+   "anim_ataque": "attack",
+   "efeito": {
+    "grito": {
+     "cada_s": 15,
+     "dur_s": 6,
+     "atq": 0.25,
+     "alvo": "todos"
+    },
+    "anim_magia": "warcry"
+   }
+  },
+  {
+   "id": "e_lanceiro",
+   "tipo": "unidade",
+   "faccao": "elfos",
+   "sprite": "elves/elfspear",
+   "classe": "lanceiro",
+   "raridade": "comum",
+   "anim_ataque": "attack"
+  },
+  {
+   "id": "e_espadachim",
+   "tipo": "unidade",
+   "faccao": "elfos",
+   "sprite": "elves/elfsword",
+   "classe": "guerreiro",
+   "raridade": "comum",
+   "anim_ataque": "attack",
+   "efeito": {
+    "combo": {
+     "cada": 3,
+     "anim": "attack2",
+     "dano_mult": 1.5
+    }
+   }
+  },
+  {
+   "id": "e_arqueiro",
+   "tipo": "unidade",
+   "faccao": "elfos",
+   "sprite": "elves/elfarcher",
+   "classe": "atirador",
+   "raridade": "comum",
+   "anim_ataque": "attack",
+   "efeito": {
+    "corpo_a_corpo": "attack2"
+   }
+  },
+  {
+   "id": "e_guardiao",
+   "tipo": "unidade",
+   "faccao": "elfos",
+   "sprite": "elves/elfwarden",
+   "classe": "defensor",
+   "raridade": "incomum",
+   "anim_ataque": "attack",
+   "efeito": {
+    "bloqueio_anim": "block",
+    "reflete": 0.2
+   }
+  },
+  {
+   "id": "e_cavaleiro",
+   "tipo": "unidade",
+   "faccao": "elfos",
+   "sprite": "elves/elfhorse",
+   "classe": "cavaleiro",
+   "raridade": "incomum",
+   "anim_ataque": "attack",
+   "efeito": {
+    "investida": true
+   }
+  },
+  {
+   "id": "e_arqueiro_arcano",
+   "tipo": "unidade",
+   "faccao": "elfos",
+   "sprite": "elves/elfarcanearcher",
+   "classe": "atirador",
+   "raridade": "rara",
+   "anim_ataque": "attack",
+   "efeito": {
+    "perfura": 2,
+    "corpo_a_corpo": "attack2"
+   }
+  },
+  {
+   "id": "e_mago",
+   "tipo": "unidade",
+   "faccao": "elfos",
+   "sprite": "elves/elfmage",
+   "classe": "artilheiro",
+   "raridade": "rara",
+   "anim_ataque": "attack",
+   "efeito": {
+    "lentidao": {
+     "pct": 0.3,
+     "s": 2
+    },
+    "anim_magia": "spell",
+    "corpo_a_corpo": "attack_melee"
+   }
+  },
+  {
+   "id": "e_lamina_arcana",
+   "tipo": "unidade",
+   "faccao": "elfos",
+   "sprite": "elves/elfspellsword",
+   "classe": "guerreiro",
+   "raridade": "epica",
+   "anim_ataque": "attack",
+   "efeito": {
+    "onda": {
+     "cada": 4,
+     "anim": "spell",
+     "dano_mult": 2.0,
+     "alcance": 60
+    }
+   }
+  },
+  {
+   "id": "e_pegaso",
+   "tipo": "unidade",
+   "faccao": "elfos",
+   "sprite": "elves/elfpegasusrider",
+   "classe": "cavaleiro",
+   "raridade": "epica",
+   "anim_ataque": "attack",
+   "efeito": {
+    "voa": true,
+    "alvo_preferido": "atiradores",
+    "anim_mover": "fly"
+   }
+  },
+  {
+   "id": "e_rainha",
+   "tipo": "unidade",
+   "faccao": "elfos",
+   "sprite": "elves/elfqueen",
+   "classe": "lider",
+   "raridade": "lendaria",
+   "anim_ataque": "attack",
+   "efeito": {
+    "cura": {
+     "cada_s": 6,
+     "pct": 0.15,
+     "raio": 70
+    },
+    "anim_magia": "spell",
+    "aura": {
+     "alc": 20,
+     "alvo": "elfos"
+    }
+   }
+  },
+  {
+   "id": "v_espadachim",
+   "tipo": "unidade",
+   "faccao": "vikings",
+   "sprite": "vikings/vikingsword",
+   "classe": "defensor",
+   "raridade": "comum",
+   "anim_ataque": "attack",
+   "efeito": {
+    "bloqueio_anim": "block"
+   }
+  },
+  {
+   "id": "v_lanceiro",
+   "tipo": "unidade",
+   "faccao": "vikings",
+   "sprite": "vikings/vikingspear",
+   "classe": "lanceiro",
+   "raridade": "comum",
+   "anim_ataque": "attack"
+  },
+  {
+   "id": "v_arqueiro",
+   "tipo": "unidade",
+   "faccao": "vikings",
+   "sprite": "vikings/vikingarcher",
+   "classe": "atirador",
+   "raridade": "incomum",
+   "anim_ataque": "attack",
+   "efeito": {
+    "corpo_a_corpo": "attack2"
+   }
+  },
+  {
+   "id": "v_cavaleiro",
+   "tipo": "unidade",
+   "faccao": "vikings",
+   "sprite": "vikings/vikinghorse",
+   "classe": "cavaleiro",
+   "raridade": "rara",
+   "anim_ataque": "attack",
+   "efeito": {
+    "investida": true,
+    "sangrar": {
+     "dps_pct": 0.08,
+     "s": 4
+    }
+   }
+  },
+  {
+   "id": "v_berserker",
+   "tipo": "unidade",
+   "faccao": "vikings",
+   "sprite": "vikings/vikingberserker",
+   "classe": "guerreiro",
+   "raridade": "epica",
+   "anim_ataque": "attack",
+   "efeito": {
+    "arremesso": {
+     "anim": "throw",
+     "alcance": 70,
+     "cada_s": 5,
+     "projetil": "vikings/vikingaxe"
+    },
+    "furia": {
+     "abaixo": 0.5,
+     "cad": 0.5,
+     "anim": "rage"
+    }
+   }
+  },
+  {
+   "id": "v_jarl",
+   "tipo": "unidade",
+   "faccao": "vikings",
+   "sprite": "vikings/vikingjarl",
+   "classe": "lider",
+   "raridade": "lendaria",
+   "anim_ataque": "attack",
+   "efeito": {
+    "grito": {
+     "cada_s": 12,
+     "dur_s": 5,
+     "atq": 0.2,
+     "vid_cura": 0.1,
+     "alvo": "todos"
+    },
+    "anim_magia": "warcry"
+   }
+  }
+ ]
+}

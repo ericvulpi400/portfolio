@@ -1,0 +1,230 @@
+{
+ "_nota": "Ajudantes ficam no balcão (3 espaços, até 5), não lutam e não ocupam a vitrine. Sinergia de Aldeões: 3/5 tipos únicos = +2/+5 ouro por onda.",
+ "balcao": {
+  "inicial": 3,
+  "maximo": 5
+ },
+ "lista": [
+  {
+   "id": "al_aldeao",
+   "tipo": "especial",
+   "faccao": "aldeoes",
+   "sprite": "villagers/villager",
+   "raridade": "comum",
+   "efeito": {
+    "ouro_por_onda": 2
+   },
+   "anim_balcao": "idle"
+  },
+  {
+   "id": "al_aldea",
+   "tipo": "especial",
+   "faccao": "aldeoes",
+   "sprite": "villagers/villagerwo",
+   "raridade": "comum",
+   "efeito": {
+    "ouro_por_onda": 2
+   },
+   "anim_balcao": "idle"
+  },
+  {
+   "id": "al_mineiro",
+   "tipo": "especial",
+   "faccao": "aldeoes",
+   "sprite": "villagers2/miner",
+   "raridade": "comum",
+   "efeito": {
+    "ouro_por_onda": 4
+   },
+   "anim_balcao": "work"
+  },
+  {
+   "id": "al_coveiro",
+   "tipo": "especial",
+   "faccao": "aldeoes",
+   "sprite": "villagers2/gravedigger",
+   "raridade": "comum",
+   "efeito": {
+    "ouro_por_morte_aliada": 3
+   },
+   "anim_balcao": "work"
+  },
+  {
+   "id": "al_cacador",
+   "tipo": "especial",
+   "faccao": "aldeoes",
+   "sprite": "villagers2/hunter",
+   "raridade": "comum",
+   "efeito": {
+    "ouro_por_abate_animal": 2
+   },
+   "anim_balcao": "skinning"
+  },
+  {
+   "id": "al_lenhador",
+   "tipo": "especial",
+   "faccao": "aldeoes",
+   "sprite": "villagers2/lumberjack",
+   "raridade": "comum",
+   "efeito": {
+    "vida_barraca_por_onda": 1
+   },
+   "anim_balcao": "work"
+  },
+  {
+   "id": "al_velho",
+   "tipo": "especial",
+   "faccao": "aldeoes",
+   "sprite": "villagers/old",
+   "raridade": "comum",
+   "efeito": {
+    "xp_absorcao_mult": 0.15
+   },
+   "anim_balcao": "idle"
+  },
+  {
+   "id": "al_velha",
+   "tipo": "especial",
+   "faccao": "aldeoes",
+   "sprite": "villagers/oldwo",
+   "raridade": "comum",
+   "efeito": {
+    "fichas_por_onda": 1
+   },
+   "anim_balcao": "idle"
+  },
+  {
+   "id": "al_trabalhador",
+   "tipo": "especial",
+   "faccao": "aldeoes",
+   "sprite": "villagers/worker",
+   "raridade": "incomum",
+   "efeito": {
+    "vida_barraca_max": 3
+   },
+   "anim_balcao": "work"
+  },
+  {
+   "id": "al_mercador",
+   "tipo": "especial",
+   "faccao": "aldeoes",
+   "sprite": "villagers2/merchant",
+   "raridade": "incomum",
+   "efeito": {
+    "preco_pacotes": -0.1
+   },
+   "anim_balcao": "idle_b"
+  },
+  {
+   "id": "al_freira",
+   "tipo": "especial",
+   "faccao": "aldeoes",
+   "sprite": "villagers2/nun",
+   "raridade": "incomum",
+   "efeito": {
+    "salva_primeira_morte": true
+   },
+   "anim_balcao": "idle_b"
+  },
+  {
+   "id": "al_coletora",
+   "tipo": "especial",
+   "faccao": "aldeoes",
+   "sprite": "villagers2/gatherer",
+   "raridade": "rara",
+   "efeito": {
+    "carimbo_cada_ondas": 3
+   },
+   "anim_balcao": "work"
+  },
+  {
+   "id": "al_ferreiro",
+   "tipo": "especial",
+   "faccao": "aldeoes",
+   "sprite": "villagers2/blacksmith",
+   "raridade": "rara",
+   "efeito": {
+    "itens_bonus": 0.25
+   },
+   "anim_balcao": "work"
+  },
+  {
+   "id": "al_suspeito",
+   "tipo": "especial",
+   "faccao": "aldeoes",
+   "sprite": "villagers2/suspiciousmerchant",
+   "raridade": "rara",
+   "efeito": {
+    "ve_ultima_carta": true
+   },
+   "anim_balcao": "idle_b"
+  },
+  {
+   "id": "al_nobre",
+   "tipo": "especial",
+   "faccao": "aldeoes",
+   "sprite": "villagers/noble",
+   "raridade": "rara",
+   "efeito": {
+    "juros_max": 3
+   },
+   "anim_balcao": "idle"
+  },
+  {
+   "id": "al_nobre_dama",
+   "tipo": "especial",
+   "faccao": "aldeoes",
+   "sprite": "villagers/noblewo",
+   "raridade": "rara",
+   "efeito": {
+    "preco_colecionador": -0.2,
+    "chance_colecionador": 0.15
+   },
+   "anim_balcao": "idle"
+  },
+  {
+   "id": "al_campones",
+   "tipo": "especial",
+   "faccao": "aldeoes",
+   "sprite": "villagers/peasant",
+   "raridade": "epica",
+   "efeito": {
+    "vitrine": 1
+   },
+   "anim_balcao": "idle"
+  },
+  {
+   "id": "al_ladrao",
+   "tipo": "especial",
+   "faccao": "aldeoes",
+   "sprite": "villagers2/thief",
+   "raridade": "epica",
+   "efeito": {
+    "carta_extra_por_onda": 1
+   },
+   "anim_balcao": "steal"
+  },
+  {
+   "id": "al_princesa",
+   "tipo": "especial",
+   "faccao": "aldeoes",
+   "sprite": "villagers/princess",
+   "raridade": "epica",
+   "efeito": {
+    "pacote_povo_cartas": 1
+   },
+   "anim_balcao": "idle"
+  },
+  {
+   "id": "al_rainha",
+   "tipo": "especial",
+   "faccao": "aldeoes",
+   "sprite": "villagers/queen",
+   "raridade": "lendaria",
+   "efeito": {
+    "pacotes_por_onda": 1
+   },
+   "anim_balcao": "idle"
+  }
+ ]
+}

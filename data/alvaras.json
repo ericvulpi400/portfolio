@@ -1,0 +1,95 @@
+{
+ "_nota": "Depois de cada chefe: 3 alvarás sorteados (sem repetir os que você tem), escolha 1. 1 reroll grátis por run.",
+ "lista": [
+  {
+   "id": "licenca_dourada",
+   "raridade": "epica",
+   "efeito": {
+    "ultima_tabela": "ultima_plus_rara",
+    "preco_todos": 0.25
+   }
+  },
+  {
+   "id": "alvara_estoque",
+   "raridade": "rara",
+   "efeito": {
+    "lacrado_cresce": 2
+   }
+  },
+  {
+   "id": "selo_povo",
+   "raridade": "epica",
+   "efeito": {
+    "sinergia_tipo_extra": 1
+   }
+  },
+  {
+   "id": "carta_branca",
+   "raridade": "epica",
+   "efeito": {
+    "pacotes_por_onda": 1
+   }
+  },
+  {
+   "id": "balanca_viciada",
+   "raridade": "rara",
+   "efeito": {
+    "troca_gratis_ultima": true
+   }
+  },
+  {
+   "id": "bandeira",
+   "raridade": "incomum",
+   "efeito": {
+    "vida_barraca": 10,
+    "cura_total": true
+   }
+  },
+  {
+   "id": "polvora",
+   "raridade": "rara",
+   "efeito": {
+    "classe": "artilheiro",
+    "atq": 0.4,
+    "area_raio_mult": 0.4
+   }
+  },
+  {
+   "id": "ferraduras",
+   "raridade": "rara",
+   "efeito": {
+    "classe": "cavaleiro",
+    "investidas_por_onda": 2
+   }
+  },
+  {
+   "id": "mercenarios",
+   "raridade": "epica",
+   "efeito": {
+    "vitrine": 2
+   }
+  },
+  {
+   "id": "olho_lince",
+   "raridade": "incomum",
+   "efeito": {
+    "lupa_recarga_por_onda": 1
+   }
+  },
+  {
+   "id": "fundo_reserva",
+   "raridade": "incomum",
+   "efeito": {
+    "juros_max": 6
+   }
+  },
+  {
+   "id": "absorcao_gananciosa",
+   "raridade": "rara",
+   "efeito": {
+    "xp_absorcao_mult": 0.5,
+    "ouro_por_absorcao": 3
+   }
+  }
+ ]
+}

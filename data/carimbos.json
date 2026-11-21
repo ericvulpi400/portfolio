@@ -1,0 +1,27 @@
+{
+ "lista": [
+  {
+   "id": "lupa",
+   "cargas": 3,
+   "max": 5,
+   "uso": "Antes de virar: mostra a próxima carta. Na prateleira: mostra a última carta de 1 pacote."
+  },
+  {
+   "id": "troca",
+   "cargas": 2,
+   "max": 4,
+   "uso": "Depois de virar: sorteia de novo 1 carta, mesmo tipo e mesma raridade."
+  },
+  {
+   "id": "lacre",
+   "cargas": 1,
+   "max": 3,
+   "uso": "Depois de virar: guarda 1 carta (máx. 1 guardada); ela entra como 1ª carta do próximo pacote aberto."
+  }
+ ],
+ "recarga": {
+  "chefe_vencido": 1,
+  "julgamento_vencido": 1,
+  "combo_caravana": 1
+ }
+}

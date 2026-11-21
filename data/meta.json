@@ -1,0 +1,145 @@
+{
+ "catalogo": {
+  "paginas": "uma por facção jogável (estágio 1: humanos, anoes, elfos, vikings, aldeoes = 58 cartas)",
+  "versoes": [
+   "normal",
+   "brilhante",
+   "prisma"
+  ],
+  "bonus_pagina": {
+   "normal": {
+    "pacote_povo_fixo": true,
+    "bonus": "+5% VID da facção"
+   },
+   "brilhante": {
+    "bonus": "+5% ATQ da facção",
+    "moldura": "dourada"
+   },
+   "prisma": {
+    "titulo": true,
+    "verso_de_carta": true
+   }
+  },
+  "silhueta": "carta faltante aparece preta com dica de onde cai (tipo de pacote, onda mínima)",
+  "creditos": {
+   "origem": "no fim da run, cada carta obtida que já estava no catálogo vira créditos = raridade.credito_catalogo (x2 brilhante)",
+   "preco_carta_faltante": {
+    "comum": 10,
+    "incomum": 20,
+    "rara": 50,
+    "epica": 120,
+    "lendaria": 300
+   }
+  },
+  "contador": "sempre visível no menu e na prateleira: X/58 (estágio 1)"
+ },
+ "bestiario": {
+  "por_especie": [
+   10,
+   50,
+   150
+  ],
+  "cartas": [
+   "pesquisa_I",
+   "pesquisa_II",
+   "pesquisa_III"
+  ],
+  "efeito_pesquisa": {
+   "pesquisa_I": "+5% dano contra a espécie",
+   "pesquisa_II": "+10% ouro da espécie",
+   "pesquisa_III": "+10% dano contra a espécie (total 15%)"
+  },
+  "pagina_completa": "todas as espécies da facção com Pesquisa I -> a facção vira recrutável (pós-fatia)",
+  "comprar_pesquisa_fichas": {
+   "pesquisa_I": 0,
+   "pesquisa_II": 10,
+   "pesquisa_III": 25
+  }
+ },
+ "dificuldades": [
+  {
+   "id": "aprendiz",
+   "inimigos_vid": -0.25,
+   "inimigos_atq": -0.15,
+   "vida_barraca": 5,
+   "desbloqueio": "inicial"
+  },
+  {
+   "id": "mercador",
+   "inimigos_vid": 0.0,
+   "inimigos_atq": 0.0,
+   "desbloqueio": "inicial"
+  },
+  {
+   "id": "magnata",
+   "inimigos_vid": 0.3,
+   "inimigos_atq": 0.15,
+   "preco_pacotes": 0.1,
+   "desbloqueio": "vencer_estagio1_mercador"
+  },
+  {
+   "id": "lenda",
+   "inimigos_vid": 0.6,
+   "inimigos_atq": 0.3,
+   "preco_pacotes": 0.2,
+   "garantia_rara": 4,
+   "cliente_noite": "so_ondas_impares",
+   "desbloqueio": "vencer_estagio1_magnata"
+  }
+ ],
+ "desbloqueios": [
+  {
+   "o_que": "faccao.elfos",
+   "quando": "concluir a 1ª run (qualquer resultado)"
+  },
+  {
+   "o_que": "faccao.vikings",
+   "quando": "vencer a Mãe Gosma pela 1ª vez"
+  },
+  {
+   "o_que": "comandante.contrabandista",
+   "quando": "vencer a Mãe Gosma pela 1ª vez"
+  },
+  {
+   "o_que": "comandante.ferreiro",
+   "quando": "vencer o estágio 1"
+  },
+  {
+   "o_que": "pacote.colecionador",
+   "quando": "chegar à onda 6"
+  },
+  {
+   "o_que": "pacote.grande",
+   "quando": "abrir 10 pacotes"
+  },
+  {
+   "o_que": "modo.infinito",
+   "quando": "vencer o estágio 1"
+  },
+  {
+   "o_que": "modo.diario",
+   "quando": "vencer o estágio 1"
+  },
+  {
+   "o_que": "estagio2",
+   "quando": "vencer o estágio 1 (pós-fatia)"
+  }
+ ],
+ "infinito": {
+  "apos_onda": 15,
+  "escala_extra": "VID x 1,12^(onda-15), ATQ x 1,05^(onda-15)",
+  "composicao": "sorteada do bestiário do estágio, orçamento de VID = 900 x 1,12^(onda-15)",
+  "chefe_a_cada": 5,
+  "pontuacao": "1000 x onda + ouro_total/10 + 50 x combos"
+ },
+ "diario": {
+  "semente": "AAAAMMDD (UTC) -> hash 32 bits",
+  "fixos": {
+   "comandante": "mascate",
+   "dificuldade": "mercador",
+   "equipamento": "desligado"
+  },
+  "tentativas_no_placar": 1,
+  "placar": "diario_AAAAMMDD"
+ }
+}

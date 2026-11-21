@@ -1,0 +1,170 @@
+{
+ "_regra": "sinergia conta tipos ÚNICOS de personagem da facção em campo (cópias não contam)",
+ "lista": [
+  {
+   "id": "humanos",
+   "pack": "humans",
+   "papel": "jogador",
+   "estagio": 1,
+   "inicial": true,
+   "limiares": [
+    2,
+    4,
+    6
+   ],
+   "efeito": "vid",
+   "valores": [
+    0.1,
+    0.2,
+    0.35
+   ]
+  },
+  {
+   "id": "anoes",
+   "pack": "dwarfs",
+   "papel": "jogador",
+   "estagio": 1,
+   "inicial": true,
+   "limiares": [
+    2,
+    4,
+    6
+   ],
+   "efeito": "reducao_dano",
+   "valores": [
+    0.08,
+    0.16,
+    0.28
+   ]
+  },
+  {
+   "id": "elfos",
+   "pack": "elves",
+   "papel": "jogador",
+   "estagio": 1,
+   "desbloqueio": "run_1_concluida",
+   "limiares": [
+    2,
+    4,
+    6
+   ],
+   "efeito": "atq_atiradores_e_magos",
+   "valores": [
+    0.15,
+    0.3,
+    0.5
+   ]
+  },
+  {
+   "id": "vikings",
+   "pack": "vikings",
+   "papel": "jogador",
+   "estagio": 1,
+   "desbloqueio": "vencer_mae_gosma",
+   "limiares": [
+    2,
+    4,
+    6
+   ],
+   "efeito": "furia_abaixo_50pct",
+   "valores": [
+    0.15,
+    0.3,
+    0.5
+   ]
+  },
+  {
+   "id": "aldeoes",
+   "pack": "villagers+villagers2",
+   "papel": "ajudante",
+   "estagio": 1,
+   "inicial": true,
+   "limiares": [
+    3,
+    5
+   ],
+   "efeito": "ouro_por_onda",
+   "valores": [
+    2,
+    5
+   ]
+  },
+  {
+   "id": "slimes",
+   "pack": "slimes",
+   "papel": "inimigo",
+   "estagio": 1,
+   "vira_jogador": "bestiario_completo"
+  },
+  {
+   "id": "animais",
+   "pack": "forest_animals",
+   "papel": "inimigo",
+   "estagio": 1,
+   "vira_jogador": "bestiario_completo"
+  },
+  {
+   "id": "bandidos",
+   "pack": "bandits",
+   "papel": "inimigo",
+   "estagio": 1,
+   "vira_jogador": "bestiario_completo"
+  },
+  {
+   "id": "piratas",
+   "pack": "pirates",
+   "papel": "inimigo",
+   "estagio": 2,
+   "vira_jogador": "bestiario_completo"
+  },
+  {
+   "id": "mortos_vivos",
+   "pack": "undead",
+   "papel": "inimigo",
+   "estagio": 2,
+   "vira_jogador": "bestiario_completo"
+  },
+  {
+   "id": "golens",
+   "pack": "golems",
+   "papel": "inimigo",
+   "estagio": 3,
+   "vira_jogador": "bestiario_completo"
+  },
+  {
+   "id": "goblins",
+   "pack": "goblins",
+   "papel": "inimigo",
+   "estagio": 3,
+   "vira_jogador": "bestiario_completo"
+  },
+  {
+   "id": "protetores",
+   "pack": "forest_protectors",
+   "papel": "inimigo",
+   "estagio": 4,
+   "vira_jogador": "bestiario_completo"
+  },
+  {
+   "id": "lagartos",
+   "pack": "lizardmen",
+   "papel": "inimigo",
+   "estagio": 5,
+   "vira_jogador": "bestiario_completo"
+  },
+  {
+   "id": "orcs",
+   "pack": "orcs",
+   "papel": "inimigo",
+   "estagio": 6,
+   "vira_jogador": "bestiario_completo"
+  },
+  {
+   "id": "demonios",
+   "pack": "demons",
+   "papel": "inimigo",
+   "estagio": 6,
+   "vira_jogador": "bestiario_completo"
+  }
+ ]
+}

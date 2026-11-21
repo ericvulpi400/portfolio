@@ -1,0 +1,62 @@
+{
+ "_nota": "Só saem em Pacotes Antigos e com o Núcleo Arriscado. Ao virar, o efeito vale na hora (não dá para recusar; a Troca pode trocá-la).",
+ "lista": [
+  {
+   "id": "x_contrato",
+   "tipo": "amaldicoada",
+   "raridade": "rara",
+   "efeito": {
+    "vida_barraca": -2,
+    "proximo_pacote": "lendaria_garantida"
+   }
+  },
+  {
+   "id": "x_divida",
+   "tipo": "amaldicoada",
+   "raridade": "rara",
+   "efeito": {
+    "ouro": 40,
+    "juros_negativos": 3,
+    "ondas": 3
+   }
+  },
+  {
+   "id": "x_moeda_falsa",
+   "tipo": "amaldicoada",
+   "raridade": "rara",
+   "efeito": {
+    "preco_todos": 0.25,
+    "ondas": 2,
+    "carimbos": 2
+   }
+  },
+  {
+   "id": "x_maldicao_vitrine",
+   "tipo": "amaldicoada",
+   "raridade": "rara",
+   "efeito": {
+    "vitrine": -1,
+    "ondas": 2,
+    "xp_todos": 6
+   }
+  },
+  {
+   "id": "x_rato",
+   "tipo": "amaldicoada",
+   "raridade": "rara",
+   "efeito": {
+    "come_carta_ultima": true,
+    "ouro": 15
+   }
+  },
+  {
+   "id": "x_gemeos",
+   "tipo": "amaldicoada",
+   "raridade": "rara",
+   "efeito": {
+    "duplica_inimigos_proxima_onda": true,
+    "pacote_gratis": "grande"
+   }
+  }
+ ]
+}

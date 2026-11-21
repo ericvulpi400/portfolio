@@ -1,0 +1,246 @@
+{
+ "_nota": "3 ramos x 8 nós; cada nó exige o anterior do mesmo ramo.",
+ "custo_total": 2595,
+ "nos": [
+  {
+   "id": "barraca.vida1",
+   "ramo": "barraca",
+   "ordem": 1,
+   "requer": null,
+   "custo": 15,
+   "efeito": {
+    "vida_barraca": 3
+   }
+  },
+  {
+   "id": "barraca.cura1",
+   "ramo": "barraca",
+   "ordem": 2,
+   "requer": "barraca.vida1",
+   "custo": 25,
+   "efeito": {
+    "cura_entre_ondas": 1
+   }
+  },
+  {
+   "id": "barraca.vida2",
+   "ramo": "barraca",
+   "ordem": 3,
+   "requer": "barraca.cura1",
+   "custo": 45,
+   "efeito": {
+    "vida_barraca": 5
+   }
+  },
+  {
+   "id": "barraca.balcao1",
+   "ramo": "barraca",
+   "ordem": 4,
+   "requer": "barraca.vida2",
+   "custo": 70,
+   "efeito": {
+    "balcao": 1
+   }
+  },
+  {
+   "id": "barraca.vitrine1",
+   "ramo": "barraca",
+   "ordem": 5,
+   "requer": "barraca.balcao1",
+   "custo": 100,
+   "efeito": {
+    "vitrine": 1
+   }
+  },
+  {
+   "id": "barraca.vida3",
+   "ramo": "barraca",
+   "ordem": 6,
+   "requer": "barraca.vitrine1",
+   "custo": 140,
+   "efeito": {
+    "vida_barraca": 7
+   }
+  },
+  {
+   "id": "barraca.balcao2",
+   "ramo": "barraca",
+   "ordem": 7,
+   "requer": "barraca.vida3",
+   "custo": 190,
+   "efeito": {
+    "balcao": 1
+   }
+  },
+  {
+   "id": "barraca.vitrine2",
+   "ramo": "barraca",
+   "ordem": 8,
+   "requer": "barraca.balcao2",
+   "custo": 250,
+   "efeito": {
+    "vitrine": 1
+   }
+  },
+  {
+   "id": "prateleira.ouro1",
+   "ramo": "prateleira",
+   "ordem": 1,
+   "requer": null,
+   "custo": 15,
+   "efeito": {
+    "ouro_inicial": 10
+   }
+  },
+  {
+   "id": "prateleira.oferta1",
+   "ramo": "prateleira",
+   "ordem": 2,
+   "requer": "prateleira.ouro1",
+   "custo": 30,
+   "efeito": {
+    "ofertas": 1
+   }
+  },
+  {
+   "id": "prateleira.reroll1",
+   "ramo": "prateleira",
+   "ordem": 3,
+   "requer": "prateleira.oferta1",
+   "custo": 50,
+   "efeito": {
+    "reroll_gratis": 1
+   }
+  },
+  {
+   "id": "prateleira.pacote1",
+   "ramo": "prateleira",
+   "ordem": 4,
+   "requer": "prateleira.reroll1",
+   "custo": 90,
+   "efeito": {
+    "pacotes_por_onda": 1
+   }
+  },
+  {
+   "id": "prateleira.juros1",
+   "ramo": "prateleira",
+   "ordem": 5,
+   "requer": "prateleira.pacote1",
+   "custo": 120,
+   "efeito": {
+    "juros_max": 2
+   }
+  },
+  {
+   "id": "prateleira.colecionador1",
+   "ramo": "prateleira",
+   "ordem": 6,
+   "requer": "prateleira.juros1",
+   "custo": 160,
+   "efeito": {
+    "colecionador_onda_minima": -3
+   }
+  },
+  {
+   "id": "prateleira.ouro2",
+   "ramo": "prateleira",
+   "ordem": 7,
+   "requer": "prateleira.colecionador1",
+   "custo": 200,
+   "efeito": {
+    "renda_onda": 3
+   }
+  },
+  {
+   "id": "prateleira.garantia1",
+   "ramo": "prateleira",
+   "ordem": 8,
+   "requer": "prateleira.ouro2",
+   "custo": 260,
+   "efeito": {
+    "garantia_rara": -1
+   }
+  },
+  {
+   "id": "vitrine.lupa1",
+   "ramo": "vitrine",
+   "ordem": 1,
+   "requer": null,
+   "custo": 15,
+   "efeito": {
+    "carga_lupa": 1
+   }
+  },
+  {
+   "id": "vitrine.xp1",
+   "ramo": "vitrine",
+   "ordem": 2,
+   "requer": "vitrine.lupa1",
+   "custo": 25,
+   "efeito": {
+    "xp_absorcao": 0.1
+   }
+  },
+  {
+   "id": "vitrine.troca1",
+   "ramo": "vitrine",
+   "ordem": 3,
+   "requer": "vitrine.xp1",
+   "custo": 45,
+   "efeito": {
+    "carga_troca": 1
+   }
+  },
+  {
+   "id": "vitrine.brilho1",
+   "ramo": "vitrine",
+   "ordem": 4,
+   "requer": "vitrine.troca1",
+   "custo": 70,
+   "efeito": {
+    "chance_brilhante": 0.01
+   }
+  },
+  {
+   "id": "vitrine.lacre1",
+   "ramo": "vitrine",
+   "ordem": 5,
+   "requer": "vitrine.brilho1",
+   "custo": 100,
+   "efeito": {
+    "carga_lacre": 1
+   }
+  },
+  {
+   "id": "vitrine.bolso1",
+   "ramo": "vitrine",
+   "ordem": 6,
+   "requer": "vitrine.lacre1",
+   "custo": 140,
+   "efeito": {
+    "bolso": 2
+   }
+  },
+  {
+   "id": "vitrine.xp2",
+   "ramo": "vitrine",
+   "ordem": 7,
+   "requer": "vitrine.bolso1",
+   "custo": 190,
+   "efeito": {
+    "xp_absorcao": 0.15
+   }
+  },
+  {
+   "id": "vitrine.nivel1",
+   "ramo": "vitrine",
+   "ordem": 8,
+   "requer": "vitrine.xp2",
+   "custo": 250,
+   "efeito": {
+    "nivel_inicial": 1
+   }
+  }
+ ]
+}

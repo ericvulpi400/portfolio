@@ -1,0 +1,175 @@
+{
+ "_base": {
+  "vid": 40,
+  "atq": 6,
+  "int_s": 1.0,
+  "alc": 14,
+  "vel": 22
+ },
+ "lista": [
+  {
+   "id": "guerreiro",
+   "vid": 1.0,
+   "atq": 1.0,
+   "int_s": 1.0,
+   "alc": 14,
+   "vel": 22,
+   "guarda": 60,
+   "espacos": 1,
+   "manual": "item.manual_guerreiro"
+  },
+  {
+   "id": "defensor",
+   "vid": 1.6,
+   "atq": 0.6,
+   "int_s": 1.1,
+   "alc": 14,
+   "vel": 18,
+   "guarda": 45,
+   "espacos": 1,
+   "bloqueio": 0.25
+  },
+  {
+   "id": "lanceiro",
+   "vid": 1.1,
+   "atq": 0.9,
+   "int_s": 1.1,
+   "alc": 24,
+   "vel": 20,
+   "guarda": 55,
+   "espacos": 1,
+   "alvos": 2
+  },
+  {
+   "id": "atirador",
+   "vid": 0.6,
+   "atq": 1.0,
+   "int_s": 1.4,
+   "alc": 110,
+   "vel": 20,
+   "guarda": 0,
+   "espacos": 1
+  },
+  {
+   "id": "artilheiro",
+   "vid": 0.55,
+   "atq": 1.4,
+   "int_s": 1.9,
+   "alc": 90,
+   "vel": 18,
+   "guarda": 0,
+   "espacos": 1,
+   "area_raio": 18
+  },
+  {
+   "id": "cavaleiro",
+   "vid": 1.2,
+   "atq": 1.1,
+   "int_s": 1.0,
+   "alc": 16,
+   "vel": 40,
+   "guarda": 90,
+   "espacos": 1,
+   "investida_mult": 2.0
+  },
+  {
+   "id": "bruto",
+   "vid": 2.2,
+   "atq": 1.8,
+   "int_s": 1.5,
+   "alc": 18,
+   "vel": 16,
+   "guarda": 50,
+   "espacos": 2
+  },
+  {
+   "id": "lider",
+   "vid": 1.3,
+   "atq": 1.0,
+   "int_s": 1.0,
+   "alc": 14,
+   "vel": 22,
+   "guarda": 40,
+   "espacos": 1,
+   "aura_raio": 50
+  }
+ ],
+ "sinergia": {
+  "limiares": [
+   2,
+   4
+  ],
+  "efeitos": {
+   "guerreiro": [
+    {
+     "atq": 0.1
+    },
+    {
+     "atq": 0.25
+    }
+   ],
+   "defensor": [
+    {
+     "bloqueio": 0.1
+    },
+    {
+     "bloqueio": 0.2,
+     "provoca": true
+    }
+   ],
+   "lanceiro": [
+    {
+     "alvos": 1
+    },
+    {
+     "alvos": 2,
+     "atq": 0.1
+    }
+   ],
+   "atirador": [
+    {
+     "cad": 0.1
+    },
+    {
+     "cad": 0.25,
+     "alc": 20
+    }
+   ],
+   "artilheiro": [
+    {
+     "area_raio": 4
+    },
+    {
+     "area_raio": 8,
+     "atq": 0.15
+    }
+   ],
+   "cavaleiro": [
+    {
+     "investida_mult": 0.5
+    },
+    {
+     "investida_mult": 1.0,
+     "vel": 0.2
+    }
+   ],
+   "bruto": [
+    {
+     "vid": 0.15
+    },
+    {
+     "vid": 0.3,
+     "atordoar_s": 0.6
+    }
+   ],
+   "lider": [
+    {
+     "aura": 0.05
+    },
+    {
+     "aura": 0.1
+    }
+   ]
+  }
+ }
+}

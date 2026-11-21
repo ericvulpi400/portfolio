@@ -1,0 +1,163 @@
+{
+ "_nota": "Tabelas por posição de carta. 'ultima' vale para a última carta de cada pacote. Somas = 1.",
+ "tabelas_raridade": {
+  "padrao": {
+   "comum": 0.6265,
+   "incomum": 0.28,
+   "rara": 0.08,
+   "epica": 0.012,
+   "lendaria": 0.0015
+  },
+  "ultima": {
+   "comum": 0.417,
+   "incomum": 0.35,
+   "rara": 0.18,
+   "epica": 0.045,
+   "lendaria": 0.008
+  },
+  "ultima_plus": {
+   "comum": 0.0,
+   "incomum": 0.45,
+   "rara": 0.38,
+   "epica": 0.14,
+   "lendaria": 0.03
+  },
+  "colecionador": {
+   "comum": 0.0,
+   "incomum": 0.0,
+   "rara": 0.7,
+   "epica": 0.25,
+   "lendaria": 0.05
+  },
+  "antigo": {
+   "comum": 0.0,
+   "incomum": 0.3,
+   "rara": 0.45,
+   "epica": 0.2,
+   "lendaria": 0.05
+  }
+ },
+ "tabelas_tipo": {
+  "padrao": {
+   "unidade": 0.72,
+   "item": 0.14,
+   "especial": 0.1,
+   "nucleo": 0.04
+  },
+  "ultima": {
+   "unidade": 0.7,
+   "item": 0.12,
+   "especial": 0.08,
+   "nucleo": 0.1
+  },
+  "antigo": {
+   "unidade": 0.6,
+   "item": 0.14,
+   "especial": 0.08,
+   "nucleo": 0.08,
+   "amaldicoada": 0.1
+  }
+ },
+ "tipos": [
+  {
+   "id": "feira",
+   "cartas": 5,
+   "preco_mult": 1.0,
+   "ultima": "ultima",
+   "peso_prateleira": 50
+  },
+  {
+   "id": "pequeno",
+   "cartas": 3,
+   "preco_mult": 0.6,
+   "ultima": "ultima",
+   "peso_prateleira": 15
+  },
+  {
+   "id": "grande",
+   "cartas": 7,
+   "preco_mult": 1.6,
+   "ultima": "ultima",
+   "peso_prateleira": 12
+  },
+  {
+   "id": "povo",
+   "cartas": 5,
+   "preco_mult": 1.3,
+   "ultima": "ultima",
+   "peso_prateleira": 18,
+   "faccao_alvo_unidades": 0.8
+  },
+  {
+   "id": "colecionador",
+   "cartas": 5,
+   "preco_mult": 2.2,
+   "ultima": "colecionador",
+   "peso_prateleira": 5,
+   "onda_minima": 6
+  },
+  {
+   "id": "antigo",
+   "cartas": 5,
+   "preco_mult": null,
+   "ultima": "antigo",
+   "tipos_todas": "antigo",
+   "peso_prateleira": 0,
+   "origem": "cliente_da_noite"
+  }
+ ],
+ "prateleira": {
+  "ofertas": 3,
+  "minimo_feira": 1,
+  "reroll_ouro": 5,
+  "reroll_incremento": 5
+ },
+ "preco": {
+  "base": 8,
+  "por_onda": 2,
+  "texto": "8 + 2 x onda",
+  "escada_na_onda": [
+   1.0,
+   1.5,
+   2.2,
+   3.0,
+   4.0
+  ],
+  "arredonda": "inteiro"
+ },
+ "limite_por_onda": 3,
+ "lacrado": {
+  "cresce_por_onda": 1,
+  "maximo_extra": 2,
+  "ocupa_vitrine": 1
+ },
+ "versoes": {
+  "brilhante": 0.04,
+  "prisma": 0.0005,
+  "so_unidades_e_especiais": true
+ },
+ "garantias": [
+  {
+   "id": "rara",
+   "sem_por": 3,
+   "garante": "rara",
+   "onde": "ultima",
+   "escopo": "run"
+  },
+  {
+   "id": "epica",
+   "sem_por": 12,
+   "garante": "epica",
+   "onde": "ultima",
+   "escopo": "run"
+  },
+  {
+   "id": "lendaria",
+   "sem_por": 40,
+   "garante": "lendaria",
+   "onde": "ultima",
+   "escopo": "perfil"
+  }
+ ],
+ "regra_garantia": "Se N pacotes seguidos terminarem sem uma carta daquela raridade ou melhor, a última carta do próximo pacote é sorteada só entre essa raridade e as acima (pesos relativos da tabela). O contador zera quando sai a raridade, por sorte ou por garantia."
+}

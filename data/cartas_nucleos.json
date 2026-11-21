@@ -1,0 +1,111 @@
+{
+ "_nota": "Até 3 núcleos ativos; o 4º substitui um à escolha. Valem até o fim da run.",
+ "espacos": 3,
+ "lista": [
+  {
+   "id": "n_abundancia",
+   "tipo": "nucleo",
+   "raridade": "incomum",
+   "efeito": {
+    "cartas_feira": 1,
+    "preco_feira": 0.2
+   }
+  },
+  {
+   "id": "n_povo",
+   "tipo": "nucleo",
+   "raridade": "incomum",
+   "efeito": {
+    "peso_faccao_escolhida": 2.0
+   }
+  },
+  {
+   "id": "n_repeticao",
+   "tipo": "nucleo",
+   "raridade": "incomum",
+   "efeito": {
+    "xp_copia_mult": 2.0
+   }
+  },
+  {
+   "id": "n_prateleira",
+   "tipo": "nucleo",
+   "raridade": "incomum",
+   "efeito": {
+    "ofertas": 1
+   }
+  },
+  {
+   "id": "n_lupa",
+   "tipo": "nucleo",
+   "raridade": "rara",
+   "efeito": {
+    "lupa_ultima_sempre": true
+   }
+  },
+  {
+   "id": "n_colecionador",
+   "tipo": "nucleo",
+   "raridade": "rara",
+   "efeito": {
+    "chance_brilhante_mult": 3.0
+   }
+  },
+  {
+   "id": "n_tardio",
+   "tipo": "nucleo",
+   "raridade": "rara",
+   "efeito": {
+    "ultima_rara_mais": 0.15
+   }
+  },
+  {
+   "id": "n_estoque",
+   "tipo": "nucleo",
+   "raridade": "rara",
+   "efeito": {
+    "lacrado_ocupa": 0,
+    "lacrado_cresce": false
+   }
+  },
+  {
+   "id": "n_enxuto",
+   "tipo": "nucleo",
+   "raridade": "rara",
+   "efeito": {
+    "preco_pequeno": -0.5,
+    "ultima_pequeno": "ultima_plus"
+   }
+  },
+  {
+   "id": "n_arriscado",
+   "tipo": "nucleo",
+   "raridade": "epica",
+   "efeito": {
+    "amaldicoada_chance": 0.1,
+    "epica_mais_mult": 2.0
+   }
+  },
+  {
+   "id": "n_carimbos",
+   "tipo": "nucleo",
+   "raridade": "epica",
+   "efeito": {
+    "cargas_extra": {
+     "lupa": 1,
+     "troca": 1,
+     "lacre": 1
+    }
+   }
+  },
+  {
+   "id": "n_prisma",
+   "tipo": "nucleo",
+   "raridade": "lendaria",
+   "efeito": {
+    "chance_prisma_mult": 4.0,
+    "preco_todos": 0.3
+   }
+  }
+ ]
+}

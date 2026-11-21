@@ -1,0 +1,219 @@
+{
+ "_nota": "Itens 'unidade'/'classe' são equipados numa unidade (1 por unidade; trocar descarta o antigo). Manuais são globais.",
+ "lista": [
+  {
+   "id": "i_espada",
+   "tipo": "item",
+   "raridade": "comum",
+   "alvo": "unidade",
+   "efeito": {
+    "atq": 0.25
+   }
+  },
+  {
+   "id": "i_escudo",
+   "tipo": "item",
+   "raridade": "comum",
+   "alvo": "unidade",
+   "efeito": {
+    "vid": 0.4
+   }
+  },
+  {
+   "id": "i_botas",
+   "tipo": "item",
+   "raridade": "comum",
+   "alvo": "unidade",
+   "efeito": {
+    "vel": 0.3,
+    "cad": 0.1
+   }
+  },
+  {
+   "id": "i_arco_longo",
+   "tipo": "item",
+   "raridade": "incomum",
+   "alvo": "atirador",
+   "efeito": {
+    "alc": 30,
+    "atq": 0.1
+   }
+  },
+  {
+   "id": "i_elmo",
+   "tipo": "item",
+   "raridade": "incomum",
+   "alvo": "unidade",
+   "efeito": {
+    "reducao_dano": 0.15
+   }
+  },
+  {
+   "id": "i_tomo_fogo",
+   "tipo": "item",
+   "raridade": "incomum",
+   "alvo": "unidade",
+   "efeito": {
+    "queimar": {
+     "dps_pct": 0.1,
+     "s": 3
+    }
+   }
+  },
+  {
+   "id": "i_presa",
+   "tipo": "item",
+   "raridade": "incomum",
+   "alvo": "unidade",
+   "efeito": {
+    "veneno": {
+     "dps_pct": 0.06,
+     "s": 5,
+     "acumula": 3
+    }
+   }
+  },
+  {
+   "id": "i_amuleto",
+   "tipo": "item",
+   "raridade": "rara",
+   "alvo": "unidade",
+   "efeito": {
+    "roubo_vida": 0.12
+   }
+  },
+  {
+   "id": "i_trompa",
+   "tipo": "item",
+   "raridade": "rara",
+   "alvo": "lider",
+   "efeito": {
+    "aura_mult": 0.5
+   }
+  },
+  {
+   "id": "i_lanca_real",
+   "tipo": "item",
+   "raridade": "rara",
+   "alvo": "cavaleiro",
+   "efeito": {
+    "investida_mult": 1.0,
+    "atordoar_s": 0.5
+   }
+  },
+  {
+   "id": "i_coroa",
+   "tipo": "item",
+   "raridade": "epica",
+   "alvo": "unidade",
+   "efeito": {
+    "nivel": 2
+   }
+  },
+  {
+   "id": "i_pena_fenix",
+   "tipo": "item",
+   "raridade": "lendaria",
+   "alvo": "unidade",
+   "efeito": {
+    "revive_pct": 0.5
+   }
+  },
+  {
+   "id": "m_guerreiro",
+   "tipo": "item",
+   "raridade": "incomum",
+   "alvo": "global",
+   "efeito": {
+    "classe": "guerreiro",
+    "atq": 0.15,
+    "vid": 0.15,
+    "acumula_max": 3
+   }
+  },
+  {
+   "id": "m_defensor",
+   "tipo": "item",
+   "raridade": "incomum",
+   "alvo": "global",
+   "efeito": {
+    "classe": "defensor",
+    "atq": 0.15,
+    "vid": 0.15,
+    "acumula_max": 3
+   }
+  },
+  {
+   "id": "m_lanceiro",
+   "tipo": "item",
+   "raridade": "incomum",
+   "alvo": "global",
+   "efeito": {
+    "classe": "lanceiro",
+    "atq": 0.15,
+    "vid": 0.15,
+    "acumula_max": 3
+   }
+  },
+  {
+   "id": "m_atirador",
+   "tipo": "item",
+   "raridade": "incomum",
+   "alvo": "global",
+   "efeito": {
+    "classe": "atirador",
+    "atq": 0.15,
+    "vid": 0.15,
+    "acumula_max": 3
+   }
+  },
+  {
+   "id": "m_artilheiro",
+   "tipo": "item",
+   "raridade": "incomum",
+   "alvo": "global",
+   "efeito": {
+    "classe": "artilheiro",
+    "atq": 0.15,
+    "vid": 0.15,
+    "acumula_max": 3
+   }
+  },
+  {
+   "id": "m_cavaleiro",
+   "tipo": "item",
+   "raridade": "incomum",
+   "alvo": "global",
+   "efeito": {
+    "classe": "cavaleiro",
+    "atq": 0.15,
+    "vid": 0.15,
+    "acumula_max": 3
+   }
+  },
+  {
+   "id": "m_bruto",
+   "tipo": "item",
+   "raridade": "incomum",
+   "alvo": "global",
+   "efeito": {
+    "classe": "bruto",
+    "atq": 0.15,
+    "vid": 0.15,
+    "acumula_max": 3
+   }
+  },
+  {
+   "id": "m_lider",
+   "tipo": "item",
+   "raridade": "incomum",
+   "alvo": "global",
+   "efeito": {
+    "classe": "lider",
+    "atq": 0.15,
+    "vid": 0.15,
+    "acumula_max": 3
+   }
+  }
+ ]
+}

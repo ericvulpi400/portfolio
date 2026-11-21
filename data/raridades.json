@@ -1,0 +1,75 @@
+{
+ "_formula": "atributo = base_classe x mult_raridade x (1 + 0,12 x (nível-1)); números inteiros arredondados",
+ "lista": [
+  {
+   "id": "comum",
+   "mult": 1.0,
+   "cor": "#8b7b9a",
+   "cor_escura": "#5a4468",
+   "forma": "circulo",
+   "xp_absorcao": 1,
+   "credito_catalogo": 1
+  },
+  {
+   "id": "incomum",
+   "mult": 1.3,
+   "cor": "#7ccf6b",
+   "cor_escura": "#3c7a3a",
+   "forma": "quadrado",
+   "xp_absorcao": 2,
+   "credito_catalogo": 2
+  },
+  {
+   "id": "rara",
+   "mult": 1.7,
+   "cor": "#5aa7e0",
+   "cor_escura": "#2c5d9e",
+   "forma": "losango",
+   "xp_absorcao": 4,
+   "credito_catalogo": 5
+  },
+  {
+   "id": "epica",
+   "mult": 2.2,
+   "cor": "#a86ad8",
+   "cor_escura": "#5e3a8a",
+   "forma": "triangulo",
+   "xp_absorcao": 8,
+   "credito_catalogo": 12
+  },
+  {
+   "id": "lendaria",
+   "mult": 2.9,
+   "cor": "#f2c14e",
+   "cor_escura": "#b07a28",
+   "forma": "estrela",
+   "xp_absorcao": 16,
+   "credito_catalogo": 30
+  }
+ ],
+ "versoes": [
+  {
+   "id": "normal",
+   "chance": 0.9595,
+   "bonus_atributos": 0.0,
+   "conta_como_copias": 1
+  },
+  {
+   "id": "brilhante",
+   "chance": 0.04,
+   "bonus_atributos": 0.2,
+   "conta_como_copias": 2
+  },
+  {
+   "id": "prisma",
+   "chance": 0.0005,
+   "bonus_atributos": 0.5,
+   "conta_como_copias": 4,
+   "nivel_inicial": 4,
+   "jackpot": {
+    "ouro": 50,
+    "nivel_faccao": 1
+   }
+  }
+ ]
+}

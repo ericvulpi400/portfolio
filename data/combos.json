@@ -1,0 +1,52 @@
+{
+ "_nota": "Conferidos quando a última carta vira; vários podem valer juntos. O painel do pacote mostra os combos possíveis.",
+ "lista": [
+  {
+   "id": "par",
+   "condicao": "2 cartas do mesmo personagem",
+   "efeito": {
+    "funde": true,
+    "nivel_extra": 1
+   }
+  },
+  {
+   "id": "trinca",
+   "condicao": "3+ cartas do mesmo personagem",
+   "efeito": {
+    "funde": true,
+    "nivel_extra": 3,
+    "ouro": 10
+   }
+  },
+  {
+   "id": "povo",
+   "condicao": "4+ unidades da mesma facção",
+   "efeito": {
+    "ouro": 12,
+    "sinergia_tipo_extra": 1,
+    "dura": "onda"
+   }
+  },
+  {
+   "id": "caravana",
+   "condicao": "4+ facções diferentes (unidades e ajudantes)",
+   "efeito": {
+    "carga_carimbo": 1
+   }
+  },
+  {
+   "id": "escada",
+   "condicao": "4 raridades diferentes",
+   "efeito": {
+    "desconto_proximo": 0.3
+   }
+  },
+  {
+   "id": "mao_dourada",
+   "condicao": "2+ cartas Épica ou melhor",
+   "efeito": {
+    "ouro": 25
+   }
+  }
+ ]
+}

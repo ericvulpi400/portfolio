@@ -1,0 +1,334 @@
+{
+ "_escala": "no estágio 1: VID x 1,10^(onda-1), ATQ x 1,06^(onda-1); chefes usam valores absolutos. Estágio s: x 2,4^(s-1) em VID e x 1,7^(s-1) em ATQ.",
+ "cores_gosma_por_onda": {
+  "1-5": "Green",
+  "6-10": "Blue",
+  "11-15": "Orange"
+ },
+ "lista": [
+  {
+   "id": "gosma",
+   "faccao": "slimes",
+   "sprite": "slimes/slime",
+   "vid": 18,
+   "atq": 3,
+   "int_s": 1.0,
+   "alc": 8,
+   "vel": 14,
+   "barraca": 1,
+   "ouro": 1,
+   "papel": "normal",
+   "efeito": {
+    "contato": true,
+    "anim_mover": "jump"
+   }
+  },
+  {
+   "id": "gosma_espinhosa",
+   "faccao": "slimes",
+   "sprite": "slimes/spikedslime",
+   "vid": 26,
+   "atq": 5,
+   "int_s": 1.2,
+   "alc": 12,
+   "vel": 14,
+   "barraca": 1,
+   "ouro": 1,
+   "papel": "normal",
+   "efeito": {
+    "anim_mover": "jump"
+   }
+  },
+  {
+   "id": "gosma_mutante",
+   "faccao": "slimes",
+   "sprite": "slimes/mutantslime",
+   "vid": 30,
+   "atq": 6,
+   "int_s": 1.6,
+   "alc": 70,
+   "vel": 12,
+   "barraca": 1,
+   "ouro": 1,
+   "papel": "normal",
+   "efeito": {
+    "cuspe": true,
+    "projetil_linha": "loop"
+   }
+  },
+  {
+   "id": "gosma_grande",
+   "faccao": "slimes",
+   "sprite": "slimes/bigslime",
+   "vid": 70,
+   "atq": 8,
+   "int_s": 1.4,
+   "alc": 12,
+   "vel": 12,
+   "barraca": 2,
+   "ouro": 2,
+   "papel": "normal",
+   "efeito": {
+    "ao_morrer": {
+     "anim": "split",
+     "gera": "gosma",
+     "qtd": 2
+    }
+   }
+  },
+  {
+   "id": "monstro_gosma",
+   "faccao": "slimes",
+   "sprite": "slimes/slimemonster",
+   "vid": 220,
+   "atq": 16,
+   "int_s": 1.5,
+   "alc": 16,
+   "vel": 12,
+   "barraca": 4,
+   "ouro": 6,
+   "papel": "elite",
+   "efeito": {
+    "grito": {
+     "anim": "scream",
+     "cada_s": 8,
+     "atordoar_s": 0.6,
+     "raio": 30
+    }
+   }
+  },
+  {
+   "id": "lobo",
+   "faccao": "animais",
+   "sprite": "forest_animals/wolf",
+   "vid": 28,
+   "atq": 6,
+   "int_s": 0.9,
+   "alc": 12,
+   "vel": 32,
+   "barraca": 1,
+   "ouro": 1,
+   "papel": "normal",
+   "efeito": {
+    "uivo_ao_entrar": {
+     "anim": "howl",
+     "vel": 0.2,
+     "alvo": "lobos"
+    }
+   }
+  },
+  {
+   "id": "javali",
+   "faccao": "animais",
+   "sprite": "forest_animals/boar",
+   "vid": 45,
+   "atq": 9,
+   "int_s": 1.3,
+   "alc": 12,
+   "vel": 26,
+   "barraca": 1,
+   "ouro": 1,
+   "papel": "normal",
+   "efeito": {
+    "investida": true
+   }
+  },
+  {
+   "id": "raposa",
+   "faccao": "animais",
+   "sprite": "forest_animals/fox",
+   "vid": 20,
+   "atq": 5,
+   "int_s": 0.8,
+   "alc": 12,
+   "vel": 34,
+   "barraca": 0,
+   "ouro": 1,
+   "papel": "normal",
+   "efeito": {
+    "rouba_ouro": 3
+   }
+  },
+  {
+   "id": "coelho",
+   "faccao": "animais",
+   "sprite": "forest_animals/bunny",
+   "vid": 30,
+   "atq": 0,
+   "int_s": 1.0,
+   "alc": 0,
+   "vel": 30,
+   "barraca": 0,
+   "ouro": 15,
+   "papel": "bonus",
+   "efeito": {
+    "nao_ataca": true,
+    "foge": true
+   }
+  },
+  {
+   "id": "urso",
+   "faccao": "animais",
+   "sprite": "forest_animals/bear",
+   "vid": 260,
+   "atq": 20,
+   "int_s": 1.6,
+   "alc": 16,
+   "vel": 18,
+   "barraca": 4,
+   "ouro": 6,
+   "papel": "elite",
+   "efeito": {
+    "rugido": {
+     "anim": "warcry",
+     "cada_s": 10,
+     "atq": 0.25,
+     "dur_s": 4,
+     "raio": 60
+    }
+   }
+  },
+  {
+   "id": "bandido",
+   "faccao": "bandidos",
+   "sprite": "bandits/bandit",
+   "vid": 40,
+   "atq": 7,
+   "int_s": 1.0,
+   "alc": 14,
+   "vel": 22,
+   "barraca": 1,
+   "ouro": 1,
+   "papel": "normal",
+   "efeito": {
+    "bloqueio": 0.2,
+    "anim_bloqueio": "block"
+   }
+  },
+  {
+   "id": "arruaceiro",
+   "faccao": "bandidos",
+   "sprite": "bandits/banditthug",
+   "vid": 50,
+   "atq": 8,
+   "int_s": 1.1,
+   "alc": 14,
+   "vel": 22,
+   "barraca": 1,
+   "ouro": 1,
+   "papel": "normal",
+   "efeito": {
+    "arremesso": {
+     "anim": "throw",
+     "alcance": 70,
+     "cada_s": 5,
+     "projetil": "bandits/throwingknife"
+    }
+   }
+  },
+  {
+   "id": "besteiro_bandido",
+   "faccao": "bandidos",
+   "sprite": "bandits/banditcrossbow",
+   "vid": 30,
+   "atq": 8,
+   "int_s": 1.5,
+   "alc": 100,
+   "vel": 20,
+   "barraca": 1,
+   "ouro": 1,
+   "papel": "normal",
+   "efeito": {
+    "corpo_a_corpo": "attack2"
+   }
+  },
+  {
+   "id": "cavaleiro_bandido",
+   "faccao": "bandidos",
+   "sprite": "bandits/bandithorse",
+   "vid": 60,
+   "atq": 10,
+   "int_s": 1.0,
+   "alc": 16,
+   "vel": 38,
+   "barraca": 2,
+   "ouro": 2,
+   "papel": "normal",
+   "efeito": {
+    "investida": true,
+    "alvo_preferido": "retaguarda"
+   }
+  },
+  {
+   "id": "brutamontes",
+   "faccao": "bandidos",
+   "sprite": "bandits/banditbrute",
+   "vid": 160,
+   "atq": 16,
+   "int_s": 1.6,
+   "alc": 18,
+   "vel": 16,
+   "barraca": 3,
+   "ouro": 5,
+   "papel": "elite",
+   "efeito": {
+    "area_raio": 14
+   }
+  },
+  {
+   "id": "mae_gosma",
+   "faccao": "slimes",
+   "sprite": "slimes/giantslimer",
+   "vid": 1400,
+   "atq": 24,
+   "int_s": 2.2,
+   "alc": 20,
+   "vel": 10,
+   "barraca": 10,
+   "ouro": 40,
+   "papel": "chefe",
+   "efeito": {
+    "salto": {
+     "anim": "attack",
+     "cada_s": 4,
+     "raio": 26,
+     "dano_mult": 1.5
+    },
+    "divide": {
+     "anim": "split",
+     "a_cada_pct": 0.25,
+     "gera": "gosma_grande",
+     "qtd": 2
+    }
+   },
+   "variante_cor": "Red"
+  },
+  {
+   "id": "cobrador",
+   "faccao": "bandidos",
+   "sprite": "bandits/banditleader",
+   "vid": 2200,
+   "atq": 30,
+   "int_s": 1.2,
+   "alc": 16,
+   "vel": 18,
+   "barraca": 10,
+   "ouro": 60,
+   "papel": "chefe",
+   "efeito": {
+    "grito": {
+     "anim": "warcry",
+     "cada_s": 12,
+     "atq": 0.3,
+     "dur_s": 5,
+     "raio": 80
+    },
+    "taxa_ao_entrar": {
+     "confisca_lacrado": 1,
+     "senao_ouro_pct": 0.2
+    },
+    "atrai_escolta": true
+   }
+  }
+ ]
+}
