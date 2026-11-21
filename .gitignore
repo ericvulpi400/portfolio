@@ -21,3 +21,6 @@ referencias/**/*.jpg
 
 # prancha de assets de terceiros (local)
 assets/pesquisa_prancha.png
+
+# fontes de terceiros (baixar com tools/assets/baixar_fontes.py)
+assets/fonts/*.ttf

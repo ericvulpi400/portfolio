@@ -5,20 +5,30 @@
    240
   ],
   "chao_y": [
-   120,
-   232
+   92,
+   226
   ],
   "barraca_x": [
    8,
    52
   ],
   "entrada_inimigos_x": "borda direita + 16",
-  "espacos_vitrine_x": [
-   70,
-   96,
-   122
-  ],
-  "passo_fixo_hz": 60
+  "passo_fixo_hz": 60,
+  "vitrine": {
+   "colunas_x": [
+    132,
+    106,
+    80
+   ],
+   "linhas_y": [
+    110,
+    124,
+    138,
+    152,
+    166
+   ],
+   "nota": "3 colunas x 5 linhas; a frente é a coluna da direita"
+  }
  },
  "dano": {
   "formula": "dano = arred(ATQ x mult_bonus x (crítico? 1,5 : 1) x (1 - redução_alvo)); mínimo 1",

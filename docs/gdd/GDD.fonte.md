@@ -82,8 +82,7 @@ Toda carta pode ir para o **bolso** (3 espaços, decide depois) ou ser **vendida
 ││                    ││
 │└────────────────────┘│
 │ ⚔ Guerreiro  [H] 1▢ │  ← ícone de classe · ícone de facção · custo de espaço
-│ VID 40 ATQ 6  1,0s   │  ← atributos inteiros (m3x6)
-│ Sem efeito.          │  ← efeito em ≤ 2 linhas
+│ ♥40  ⚔6              │  ← na carta pequena só VID e ATQ com ícone (o efeito fica no detalhe e na dica)
 └──────────────────────┘
 ```
 
@@ -212,7 +211,7 @@ Sinergia de Aldeões: 3 tipos = +2 ouro por onda; 5 tipos = +5.
 - **Pesado**: classe Bruto e sprites maiores que 32×32 ocupam **2 espaços**.
 - **Vitrine** (limite do campo): **8 espaços** no início, +1 nas ondas 5 e 10, +1/+1 na árvore, +1 Camponês, +2 Mercenários; **máximo 14**. Pacote lacrado ocupa 1.
 - Se o exército + lacrados passarem do limite, **a prateleira trava** ("Vitrine cheia") até vender, absorver ou abrir/vender um lacrado.
-- Posições: 3 colunas (frente x=122, meio x=96, fundo x=70) × 5 linhas; corpo a corpo vai para a frente, atiradores e artilheiros para o fundo (o jogador pode arrastar).
+- Posições: 3 colunas (frente x=132, meio x=106, fundo x=80) × 5 linhas (y 110–166, a cada 14 px, acima do painel de baixo da preparação); corpo a corpo vai para a frente, atiradores e artilheiros para o fundo (o jogador pode arrastar).
 
 ---
 
@@ -267,7 +266,7 @@ Só em Pacotes Antigos e com o Núcleo Arriscado; o efeito vale ao virar (a Troc
 
 ## 8. Combate de defesa automático
 
-**Campo** (área segura 426×240): a **barraca** fica à esquerda (x 8–52) com **20 de vida**; o chão vai de y 120 a 232;
+**Campo** (área segura 426×240): a **barraca** fica à esquerda (x 8–52) com **20 de vida**; o chão vai de y 92 a 226;
 inimigos entram pela borda direita em y sorteado (semente da run).
 
 **Vitória e derrota.** A onda termina quando todo inimigo cai ou chega à barraca. Cada inimigo que chega tira o seu
@@ -559,7 +558,7 @@ com layout padrão publicado.
 | Rasgar | tira de cima voa, 30 partículas de papel, flash branco 2 quadros | papel rasgando (ruído filtrado descendente) | 0,4 s |
 | Cartas saem | leque de 5 de costas, 0,06 s entre cartas | "tic" por carta | 0,4 s |
 | Antes de virar | verso brilha na cor da raridade, pulsando (Comum não brilha) | zumbido grave crescente por raridade | 0,4 s |
-| Virar | carta "achata" e abre (escala X 1→0→1), 0,3 s | nota por raridade (dó, mi, sol, si, dó agudo) | 0,3 s |
+| Virar | carta "achata" e abre (escala X 1→0→1), 0,3 s; rótulo de 1 s com a raridade e a chance daquela posição ("Rara · 18%") | nota por raridade (dó, mi, sol, si, dó agudo) | 0,3 s |
 | Rara | 12 partículas azuis, carta sobe 2 px | acorde maior curto | 0,4 s |
 | Épica | tela escurece 30%, raios roxos atrás, 30 partículas | acorde + "whoosh" | 0,8 s |
 | Lendária | escurece 50%, feixe dourado de cima, tremor de 2 px, 60 partículas | fanfarra de 4 notas | 1,2 s |
@@ -597,8 +596,8 @@ Botões **Pular** (B/Esc: corta para o resumo) e **Virar tudo** (Y). Opção "An
 ### 17.1 Grade, tipografia e paleta
 
 - **Resolução**: área segura **426×240** (lógica variável até 480×270; escala inteira 3× no Deck, 4× em 1080p, 6× em 1440p). Grade de **4 px**; margem 6 px; painéis 9-slice com canto de 4 px.
-- **Fontes** (bitmap, desenhadas por inteiro): **m5x7** (texto e botões, linha de 9 px), **m3x6** (números pequenos, atributos), **m6x11** (títulos, nome da carta no detalhe). Créditos a Daniel Linssen.
-- **Paleta única** (32 cores em rampas de 4–5 tons, do escuro ao claro): noite `#14101c #221a30 #3a2a4a #5a4468 #8b7b9a`, osso `#e8dcc8 #fff8ec`, terra `#3b281f #5b3f2e #7a5638 #a8774d`, grama `#2e4a2c #3f6b3a #5f8f45 #8fbf5a`, pedra `#45434d #6d6a74 #9a97a3`, ouro `#7a4f1c #b07a28 #f2c14e #ffe9a3`, vermelho `#5a1e22 #8a2a2a #d9503f`, azul `#1e3a66 #2c5d9e #5aa7e0`, roxo `#3a2357 #5e3a8a #a86ad8`, verde `#3c7a3a #7ccf6b`, ciano `#7fe3e0`, laranja `#f08a3c`, rosa `#ef8fc8`. Os sprites MiniFolks mantêm as cores originais; tudo que é gerado em código sai daqui.
+- **Fontes** (bitmap, desenhadas por inteiro): **m5x7** (texto e botões, linha de 9 px; 2× para títulos), **m3x6** (números pequenos), **m6x11** (títulos). Créditos a Daniel Linssen. **Nunca `fillText`**: os mockups mostraram que só a m5x7 rasteriza sem pixel parcial (16/32 px); a Fase 3 gera um **atlas de bitmap** dos contornos do TTF e compõe os acentos que faltam (´ ` ^ ~ ¸) em código.
+- **Paleta única** (32 cores em rampas de 4–5 tons, do escuro ao claro): noite `#14101c #221a30 #3a2a4a #5a4468 #8b7b9a`, osso `#e8dcc8 #fff8ec`, terra `#3b281f #5b3f2e #7a5638 #a8774d`, grama `#2e4a2c #3f6b3a #5f8f45 #8fbf5a`, pedra `#45434d #6d6a74 #9a97a3`, ouro `#7a4f1c #b07a28 #f2c14e #ffe9a3`, vermelho `#5a1e22 #8a2a2a #d9503f`, azul `#1e3a66 #2c5d9e #5aa7e0`, roxo `#3a2357 #5e3a8a #a86ad8`, verde `#3c7a3a #7ccf6b`, ciano `#7fe3e0`, laranja `#f08a3c`, rosa `#ef8fc8`. Mais `#24402a` (verde fundo) e a rampa azul-petróleo `#123640 #1f4f5c` do Prisma. Os sprites MiniFolks mantêm as cores originais; tudo que é gerado em código sai daqui. **Sem transparência**: escurecer a tela é pontilhado com a cor mais escura; brilhos, raios e o holográfico do Prisma ciclam cores da paleta (vermelho → laranja → ouro → verde → ciano → azul → roxo → rosa).
 - **Componentes**: carta (72×100 e 128×176 no detalhe), botão 9-slice (altura 15 px, estados normal/foco/apertado/desligado), tooltip (fundo `#221a30`, borda `#8b7b9a`, largura máx. 160 px), barra (vida, XP, garantia; 3 px de altura no campo, 5 px nos painéis), selo de raridade (9×9), ícone de facção/classe (9×9 e 16×16).
 
 ### 17.2 Telas
@@ -636,7 +635,7 @@ Hierarquia: 1) prateleira e botão de começar; 2) vitrine e sinergias; 3) HUD d
 
 **Comandante e equipamento** — dono no centro (2×); 5 encaixes em volta; inventário em grade 6×5 à direita; comparação de afixos ao focar.
 
-**Catálogo** — livro aberto: abas por facção (ícones) e bestiário; página da esquerda grade 4×3 de cartas (silhuetas nas que faltam); página da direita detalhe da carta focada; contador e bônus da página no rodapé; filtro de versão (Normal/Brilhante/Prisma); botão "Comprar com créditos".
+**Catálogo** — **fichário de colecionador** (folhas com plástico, 3×3 cartas em cada página; o mockup ainda usa livro e ficou parecido demais com o do Slotbound — trocar na fatia): abas por facção (ícones) e bestiário; silhuetas nas que faltam; detalhe da carta numa janela por cima; contador e bônus da página no rodapé; filtro de versão (Normal/Brilhante/Prisma); botão "Comprar com créditos".
 
 **Árvore** — 3 colunas (Barraca, Prateleira, Vitrine) de 8 nós; fichas no topo; nó focado mostra efeito e custo.
 
@@ -742,6 +741,19 @@ noite, 1 alvará; sem catálogo persistente, sem conquistas, save separado; tela
 | Árvore, pausa, configurações, fim de run, placar, créditos | ícones de facção feitos de sprites | fontes | painéis 9-slice, botões, ícones |
 | Efeitos de combate | — | DK-Corp Pixel VFX (grátis 15 / pago 228) | golpes, faíscas, status, explosões |
 | Áudio | — | (referência: Kenney Casino, 512 SFX) | todos os sons e músicas em Web Audio |
+
+---
+
+## 22.1 Mockups
+
+`docs/mockups/` (preparação, abertura, prisma, combate, catálogo e 3 cartas: Comum, Rara, Prisma) e a comparação com as pranchas em `docs/mockups/COMPARACAO.md`.
+
+![Preparação](mockups/preparacao.png)
+![Abertura](mockups/abertura.png)
+![Prisma](mockups/prisma.png)
+![Combate](mockups/combate.png)
+![Catálogo](mockups/catalogo.png)
+![Cartas](mockups/cartas.png)
 
 ---
 
