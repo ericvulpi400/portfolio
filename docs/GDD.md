@@ -1177,14 +1177,16 @@ noite, 1 alvará; sem catálogo persistente, sem conquistas, save separado; tela
 
 ## 22.1 Mockups
 
+> **v0 recusados** (21/11): visual abaixo do padrão pedido. A direção nova está em `docs/DIRECAO_DE_ARTE.md` e o teste de estilo v1 em `docs/mockups/estilo_*.png`; as telas serão refeitas nesse estilo depois da aprovação.
+
 `docs/mockups/` (preparação, abertura, prisma, combate, catálogo e 3 cartas: Comum, Rara, Prisma) e a comparação com as pranchas em `docs/mockups/COMPARACAO.md`.
 
-![Preparação](mockups/preparacao.png)
-![Abertura](mockups/abertura.png)
-![Prisma](mockups/prisma.png)
-![Combate](mockups/combate.png)
-![Catálogo](mockups/catalogo.png)
-![Cartas](mockups/cartas.png)
+![Preparação](mockups/v0/preparacao.png)
+![Abertura](mockups/v0/abertura.png)
+![Prisma](mockups/v0/prisma.png)
+![Combate](mockups/v0/combate.png)
+![Catálogo](mockups/v0/catalogo.png)
+![Cartas](mockups/v0/cartas.png)
 
 ---
 
