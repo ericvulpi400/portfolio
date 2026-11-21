@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Bazar das Ruínas — Telas</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #120c18; overflow: hidden; cursor: none; }
+  canvas { image-rendering: pixelated; image-rendering: crisp-edges; position: absolute; }
+</style>
+</head>
+<body>
+<canvas id="tela"></canvas>
+<script src="arte.js"></script>
+<script src="ui.js"></script>
+<script src="som.js"></script>
+<script>
+'use strict';
+// Demonstração visual: menu inicial, preparação (barraca, vitrine, prateleira, estoque, bolso, chances, sino) e prancha
+// de peças. 480x270 lógicos, escala inteira. ?cena=menu|prep|pecas  ?auto=1 roda o roteiro sozinho (para gravar vídeo).
+const { R, P, pont, circ, elip, linha, texto, largura, icone, gema, botao, placa, pergaminho, etiqueta, balao, toldo, poste, lampiao, luzes, bandeirinhas, caixote, barril, saco, vaso, miniPacote, barraca, sino, tapete, ceu, sol, nuvem, morros, torre, arvore, arbusto, pedra, spr, cursor, camada, ease, mola, tabua, prego, corda, catenaria, quedaEm, estoura, passoPart, pintaPart, semear, rnd } = UI;
+const RP = UI.RP, INK = UI.INK, CLARO = UI.CLARO, TINTA = UI.TINTA, ARCO = UI.ARCO;
+const W = 480, H = 270, Q = new URLSearchParams(location.search), AUTO = Q.get('auto') === '1';
+const tela = document.getElementById('tela'), tg = tela.getContext('2d');
+const buf = document.createElement('canvas'); buf.width = W; buf.height = H; const g = buf.getContext('2d'); UI.alvo(g);
+let esc = 1;
+function ajusta() { esc = Math.max(1, Math.floor(Math.min(innerWidth / W, innerHeight / H))); tela.width = W * esc; tela.height = H * esc; tela.style.left = ((innerWidth - W * esc) >> 1) + 'px'; tela.style.top = ((innerHeight - H * esc) >> 1) + 'px'; tg.imageSmoothingEnabled = false; }
+addEventListener('resize', ajusta); ajusta();
+
+// ------------------------------------------------------------------ pacotes (arte de arte.js) e brilho que varre
+const { pacote, escudo, arco, coroa } = window.ARTE;
+const PAC = [
+  { id: 'feira', nome: 'FEIRA', titulo: 'PACOTE DA FEIRA', preco: 14, P: pacote('verde', escudo), claro: RP.verde[5], rp: RP.verdona, linhas: ['5 cartas da feira', '1 incomum ou melhor', 'garantia: rara em 2'] },
+  { id: 'povo', nome: 'POVO', titulo: 'PACOTE DO POVO', preco: 18, P: pacote('azul', arco), claro: RP.azul[5], rp: RP.azulona, linhas: ['5 cartas de Aldeões', '+ chance de combos', 'garantia: rara em 2'] },
+  { id: 'colec', nome: 'COLECION.', titulo: 'COLECIONADOR', preco: 40, P: pacote('roxo', coroa, true), claro: RP.ouro[5], rp: RP.roxo, linhas: ['5 cartas, 2 raras+', 'chance de PRISMA x3', 'só 1 por onda'] },
+];
+for (const p of PAC) { p.cv = document.createElement('canvas'); p.cv.width = 30; p.cv.height = 50; p.base = document.createElement('canvas'); p.base.width = 30; p.base.height = 50; p.P.draw(p.base.getContext('2d')); }
+function pacoteBrilho(p, t, forte) {
+  const c = p.cv.getContext('2d'); c.clearRect(0, 0, 30, 50); c.drawImage(p.base, 0, 0);
+  const per = forte ? 1300 : 3600, pos = ((t % per) / per) * (30 + 50 * 1.6) - 50; const img = c.getImageData(0, 0, 30, 50), d = img.data;
+  const cc = [1, 3, 5].map(i => parseInt(p.claro.slice(i, i + 2), 16));
+  for (let y = 0; y < 50; y++) for (let x = 0; x < 30; x++) { const i = (y * 30 + x) * 4; if (!d[i + 3]) continue; const u = x + y * 0.6 - pos; if (u < 0 || u > (forte ? 3.2 : 2.2)) continue; if (d[i] + d[i + 1] + d[i + 2] < 120) continue; d[i] = cc[0]; d[i + 1] = cc[1]; d[i + 2] = cc[2]; }
+  c.putImageData(img, 0, 0); return p.cv;
+}
+
+// ------------------------------------------------------------------ estado geral, cursor e alvos
+const st = { cena: Q.get('cena') || 'menu', t: 0, tc: 0, cur: { x: 330, y: 300, vx: 330, vy: 300, aperta: false, visivel: false }, foco: null, trans: null };
+const SPRITES = ['villagers2/merchant', 'villagers2/suspiciousmerchant', 'villagers2/blacksmith', 'villagers/villager', 'villagers/villagerwo', 'villagers/old', 'villagers/noble', 'villagers/peasant', 'villagers2/nun', 'villagers2/gatherer',
+  'humans/sword', 'humans/shield', 'humans/archer', 'humans/mage', 'humans/spear', 'humans/crossbow', 'dwarfs/dwarfwarrior', 'dwarfs/dwarfminer', 'dwarfs/dwarfhunter', 'elves/elfarcher', 'elves/elfsword',
+  'goblins/goblin1', 'goblins/goblinwarrior', 'goblins/goblinsha', 'goblins/goblinclu', 'goblins/goblincrossbow', 'forest_animals/bird'];
+
+// ================================================================== MENU INICIAL (feira ao entardecer)
+const CREP = RP.crep, ROXO_SOMBRA = ['#140c24', '#1e1230', '#2a1a40', '#36224e', '#422a5c', '#52366c'];
+const PISO = ['#24182c', '#34263e', '#46364e', '#5a4862', '#6e5a74'];
+const BOT = [{ id: 'jogar', r: 'JOGAR', ic: 'bandeira', rp: RP.lona }, { id: 'colecao', r: 'COLEÇÃO', ic: 'livro', rp: RP.balcao }, { id: 'opcoes', r: 'OPÇÕES', ic: 'engrenagem', rp: RP.balcao }, { id: 'sair', r: 'SAIR', ic: 'porta', rp: RP.balcao }];
+const BX = 176, BW = 128, BH = 24, BY0 = 116, BDY = 26;
+let menuFundo, menuFrente;
+function montaMenu() {
+  menuFundo = camada(W, H, () => {
+    ceu(0, 0, W, 214, [[CREP[0], 0], [CREP[1], 0.17], [CREP[2], 0.34], [CREP[3], 0.5], [CREP[4], 0.64], [CREP[5], 0.77], [CREP[6], 0.88]]);
+    sol(352, 178, 26, ['#e0645a', '#f8a058', '#ffd27a', '#ffe9a8', '#fff8d8']);
+    const rosa = ['#6a2462', '#8e2e62', '#c45a6e', '#f08e84', '#ffc4a0'];
+    nuvem(70, 92, 4, rosa); nuvem(430, 70, 5, rosa); nuvem(150, 150, 3, rosa); nuvem(300, 128, 3, rosa);
+    morros(W, H, 176, 10, ['#3a1a52', '#4a2262', '#5c2c6e', 1], 3);
+    // ruínas do forte em silhueta, com janelas acesas
+    const sil = ['#1e1230', '#2a1a40', '#36224e', '#46305e', '#56406e'];
+    torre(64, 128, 22, 44, 1, sil, false); UI.tijolos(86, 146, 34, 26, true, sil); for (let i = 0; i < 34; i += 8) UI.tijolos(86 + i, 142, 5, 4, true, sil); torre(120, 120, 20, 52, 0, sil, false); torre(404, 150, 18, 26, 1, sil, false);
+    for (const [x, y] of [[69, 136], [125, 128], [131, 140], [409, 156]]) { R(x, y, 2, 3, RP.sol[3]); P(x, y, RP.sol[4]); }
+    morros(W, H, 196, 7, ['#24143a', '#2e1a46', '#3a2254'], 11);
+    for (const [x, b, s] of [[24, 200, 7], [200, 196, 5], [252, 198, 6], [456, 200, 8]]) arvore(x, b, s, ROXO_SOMBRA, ['#140c24', '#1e1230', '#2a1a40', '#36224e', '#422a5c']);
+    // praça de pedras
+    R(0, 204, W, H - 204, PISO[1]); R(0, 204, W, 1, PISO[0]);
+    semear(4); for (let y = 206; y < H; y += 5) { const off = ((y / 5) | 0) % 2 ? 4 : 0; for (let x = -off; x < W; x += 9) { const w = 6 + Math.floor(rnd() * 2); R(x + 1, y, w, 3, PISO[2]); R(x + 1, y, w, 1, PISO[3]); if (rnd() < 0.2) P(x + 2, y, PISO[4]); R(x + 1, y + 3, w, 1, PISO[0]); } }
+    // poças de luz dos lampiões
+    for (const cx of [68, 412]) { g.save(); g.beginPath(); g.ellipse(cx, 222, 70, 16, 0, 0, Math.PI * 2); g.clip(); pont(cx - 70, 206, 140, 34, '#8a5a52', 0.5); g.restore(); g.save(); g.beginPath(); g.ellipse(cx, 220, 40, 9, 0, 0, Math.PI * 2); g.clip(); pont(cx - 40, 210, 80, 20, '#b4785a', 0.5); g.restore(); }
+    // barracas (fundo)
+    barraca(8, 214, 120, { alt: 96, parte: 'fundo', cores: [RP.lona, RP.creme], listra: 12, fundo: (x, topo) => { for (let i = 0; i < 4; i++) miniPacote(x + 14 + i * 24, topo + 26, [RP.verdona, RP.azulona, RP.roxo, RP.lona][i]); tabua(x + 8, topo + 41, 104, 4, RP.balcao, 5, { contorno: INK, semNo: true }); } });
+    barraca(352, 214, 120, { alt: 96, parte: 'fundo', cores: [RP.azulona, RP.creme], listra: 12, fundo: (x, topo) => { for (let i = 0; i < 5; i++) { vaso(x + 12 + i * 20, topo + 32, [RP.telha, RP.azulona, RP.telha, RP.verdona, RP.telha][i]); } tabua(x + 8, topo + 43, 104, 4, RP.balcao, 6, { contorno: INK, semNo: true }); } });
+  });
+  menuFrente = camada(W, H, () => {
+    barraca(8, 214, 120, { alt: 96, parte: 'frente', placa: 'PACOTES', mercadoria: (x, by) => { caixote(x + 4, by - 14, 24, 14); miniPacote(x + 8, by - 26, RP.verdona); miniPacote(x + 16, by - 24, RP.lona); saco(x + 96, by - 13, { moedas: true }); miniPacote(x + 40, by - 15, RP.azulona); miniPacote(x + 52, by - 15, RP.roxo); } });
+    barraca(352, 214, 120, { alt: 96, parte: 'frente', placa: 'RELÍQUIAS', mercadoria: (x, by) => { barril(x + 100, by - 18); vaso(x + 6, by - 11, RP.verdona); saco(x + 20, by - 13); caixote(x + 72, by - 12, 22, 12); } });
+  });
+}
+const PASSANTES = [];
+function criaPassantes() { const refs = ['villagers/villager', 'villagers/villagerwo', 'villagers/old', 'villagers/noble', 'villagers/peasant', 'villagers2/nun', 'villagers2/gatherer', 'humans/sword', 'dwarfs/dwarfminer'];
+  semear(21); for (let i = 0; i < 6; i++) { const dir = i % 2 ? -1 : 1; PASSANTES.push({ ref: refs[i % refs.length], x: (i * 97) % W, y: 238 + (i * 7) % 26, dir, v: 14 + (i * 5) % 9, para: 0 }); } }
+const VAGALUMES = Array.from({ length: 14 }, (_, i) => ({ x: (i * 53) % W, y: 120 + (i * 29) % 80, f: i * 0.7 }));
+const ESTRELAS = Array.from({ length: 50 }, (_, i) => ({ x: (i * 137 + 11) % W, y: (i * 61 + 7) % 92, f: i }));
+const menu = { foco: 0, aperta: -1, t0: 0 };
+function alvosMenu() { return BOT.map((b, i) => ({ id: b.id, x: BX, y: BY0 + i * BDY, w: BW, h: BH, i })); }
+function cenaMenu(t, dt) {
+  const tm = t - menu.t0;
+  g.drawImage(menuFundo, 0, 0);
+  for (const e of ESTRELAS) { const b = Math.sin(t / 500 + e.f * 1.7); if (b > -0.2) P(e.x, e.y, b > 0.7 ? '#ffffff' : RP.papel[3]); if (b > 0.93) { P(e.x - 1, e.y, RP.papel[2]); P(e.x + 1, e.y, RP.papel[2]); P(e.x, e.y - 1, RP.papel[2]); P(e.x, e.y + 1, RP.papel[2]); } }
+  // donos das barracas (atrás do balcão)
+  spr('villagers2/merchant', 'idle_b', t, 76, 190, 2); spr('villagers2/suspiciousmerchant', 'idle', t + 300, 408, 190, 2, { vira: true });
+  g.drawImage(menuFrente, 0, 0);
+  for (const [x, y] of [[14, 130], [112, 130], [358, 130], [456, 130]]) lampiao(x, y, t);
+  luzes(-4, W + 4, 4, 26, t, { n: 22 });
+  // logotipo: placa grande pendurada no varal, cai com mola
+  const pl = mola(Math.min(1, Math.max(0, (tm - 300) / 900))); const ly = Math.round(-110 + 128 * pl);
+  if (tm > 300) logo(ly, t);
+  // botões entram um a um
+  alvosMenu().forEach((a, i) => { const k = ease((tm - 1300 - i * 140) / 300); if (k <= 0) return; const yy = Math.round(a.y + (1 - k) * 30);
+    const est = menu.aperta === i ? 'apertado' : menu.foco === i && tm > 1900 ? 'foco' : 'normal'; botao(a.x, yy, a.w, a.h, BOT[i].r, { rp: BOT[i].rp, estado: est, t, icone: BOT[i].ic }); });
+  // passantes
+  for (const p of PASSANTES) { if (p.para > 0) p.para -= dt; else { p.x += p.dir * p.v * dt; if (p.x > W + 20) p.x = -20; if (p.x < -20) p.x = W + 20; } }
+  [...PASSANTES].sort((a, b) => a.y - b.y).forEach(p => spr(p.ref, p.para > 0 ? 'idle' : 'walk', t + p.y * 37, p.x, p.y, 2, { vira: p.dir < 0, sombra: PISO[0] }));
+  for (const v of VAGALUMES) { const x = Math.round(v.x + Math.sin(t / 900 + v.f) * 10), y = Math.round(v.y + Math.cos(t / 700 + v.f) * 6); if (Math.sin(t / 300 + v.f * 3) > 0) { P(x, y, RP.sol[4]); P(x + 1, y, RP.sol[2]); } }
+  // rodapé
+  texto('v0.1 · demonstração visual', 6, 260, PISO[4], { sombra: INK });
+  const dica = 'ENTER  confirmar     ESC  voltar'; texto(dica, W - 6, 260, PISO[4], { al: 'dir', sombra: INK });
+}
+function logo(y, t) {
+  const x = 112, w = 256, h = 80;
+  // cordas até o varal
+  for (const cx of [x + 26, x + w - 27]) corda(cx, quedaEm(-4, W + 4, 4, 26, cx) + 3, cx, y + 2);
+  // placa: moldura de madeira escura + miolo de madeira clara + cantoneiras de ouro
+  R(x + 2, y + h, w - 4, 2, '#140c1c');
+  tabua(x, y, w, h, RP.madeira, 31, { contorno: INK });
+  R(x + 1, y + 1, w - 2, 1, RP.madeira[4]);
+  tabua(x + 6, y + 6, w - 12, h - 12, RP.balcao, 32, { contorno: RP.madeira[0] });
+  for (let yy = y + 20; yy < y + h - 8; yy += 14) R(x + 7, yy, w - 14, 1, RP.balcao[1]);
+  for (const [cx, cy, fx, fy] of [[x, y, 1, 1], [x + w - 1, y, -1, 1], [x, y + h - 1, 1, -1], [x + w - 1, y + h - 1, -1, -1]]) { for (let i = 0; i < 9; i++) { P(cx + fx * i, cy, RP.ouro[i < 2 ? 5 : 3]); P(cx, cy + fy * i, RP.ouro[i < 2 ? 5 : 3]); P(cx + fx * i, cy + fy, RP.ouro[1]); P(cx + fx, cy + fy * i, RP.ouro[1]); } prego(cx + fx * 3 - (fx < 0 ? 1 : 0), cy + fy * 3 - (fy < 0 ? 1 : 0)); }
+  // título
+  texto('BAZAR DAS', x + w / 2, y + 9, RP.creme[4], { k: 2, al: 'centro', contorno: INK, sombra: RP.madeira[0] });
+  texto('RUÍNAS', x + w / 2, y + 37, RP.ouro[3], { k: 4, al: 'centro', contorno: INK, sombra: RP.madeira[0], queda: 2, rampa: [RP.ouro[5], RP.ouro[4], RP.ouro[4], RP.ouro[3], RP.ouro[3], RP.ouro[2], RP.ouro[1]] });
+  // brilho que corre pelas letras grandes
+  const per = 3200, pos = ((t % per) / per) * 360 - 60; g.save(); g.beginPath(); for (let j = 0; j < 44; j++) g.rect(Math.round(x + 40 + pos - j * 0.5), y + 24 + j, 3, 1); g.clip(); texto('RUÍNAS', x + w / 2, y + 37, '#ffffff', { k: 4, al: 'centro' }); g.restore();
+  // pacotes "encostados" nas laterais da placa
+  const b1 = Math.round(Math.sin(t / 500) * 1), b2 = Math.round(Math.sin(t / 500 + 2) * 1);
+  g.drawImage(pacoteBrilho(PAC[0], t, false), x - 18, y + 22 + b1); g.drawImage(pacoteBrilho(PAC[2], t + 1200, false), x + w - 12, y + 22 + b2);
+  // fita do subtítulo
+  const fw = 150, fx = x + w / 2 - fw / 2, fy = y + h - 7; R(fx - 6, fy + 2, 8, 9, INK); R(fx + fw - 2, fy + 2, 8, 9, INK); R(fx - 5, fy + 3, 6, 7, RP.lona[1]); R(fx + fw - 1, fy + 3, 6, 7, RP.lona[1]);
+  R(fx, fy, fw, 11, INK); R(fx + 1, fy + 1, fw - 2, 9, RP.lona[2]); R(fx + 1, fy + 1, fw - 2, 1, RP.lona[4]); R(fx + 1, fy + 9, fw - 2, 1, RP.lona[1]);
+  texto('um roguelite de pacotes', x + w / 2, fy + 2, CLARO, { al: 'centro', sombra: RP.lona[0] });
+}
+
+// ================================================================== PREPARAÇÃO (dia, onda 3)
+const VIT = { cols: [134, 166, 198], lin: [124, 141, 158, 175, 192] };
+const EXERCITO = [['humans/shield', 0, 0, 'comum'], ['humans/sword', 0, 1, 'comum'], ['dwarfs/dwarfwarrior', 0, 3, 'incomum'], ['humans/spear', 0, 4, 'comum'], ['dwarfs/dwarfminer', 1, 0, 'comum'], ['humans/crossbow', 1, 2, 'incomum'],
+  ['humans/archer', 2, 1, 'comum'], ['humans/mage', 2, 2, 'rara'], ['dwarfs/dwarfhunter', 2, 4, 'comum']];
+const INIMIGOS = [['goblins/goblinwarrior', 404, 134], ['goblins/goblin1', 430, 146], ['goblins/goblinclu', 386, 152], ['goblins/goblinsha', 452, 136], ['goblins/goblincrossbow', 416, 164], ['goblins/goblin1', 446, 170]];
+const prep = { ouro: 42, ouroMostra: 42, estoque: 1, bolso: [{ ref: 'elves/elfarcher', rar: 'rara' }, { ref: 'humans/sword', rar: 'comum' }], arrasto: null, novas: [], voando: [], sinoBal: 0, sinoT: -1e9, aberta: -1, t0: 0, tip: null };
+let prepFundo, prepFrente;
+const SHELF_Y = 210, PX = [16, 66, 116];
+function montaPrep() {
+  prepFundo = camada(W, H, () => {
+    ceu(0, 0, W, 112, [[RP.ceu[1], 0], [RP.ceu[2], 0.3], [RP.ceu[3], 0.6], [RP.ceu[4], 0.86]]);
+    sol(392, 54, 18); nuvem(120, 46, 4); nuvem(260, 34, 3); nuvem(450, 84, 3); nuvem(330, 92, 2);
+    morros(W, H, 98, 9, ['#3e5c9c', '#5274b4', '#6a8cc8'], 3); morros(W, H, 106, 7, ['#2f5a5a', '#3c6e62', '#4f846c'], 11);
+    torre(250, 62, 24, 48, 1); UI.tijolos(274, 80, 38, 30, true); R(274, 79, 38, 1, RP.pedra[0]); for (let i = 0; i < 38; i += 8) UI.tijolos(274 + i, 76, 5, 4, true); torre(312, 56, 20, 54); torre(440, 74, 18, 36, 1);
+    arvore(232, 110, 7); arvore(348, 108, 6); arvore(470, 112, 8); arvore(108, 108, 6);
+    // chão: grama em aglomerados
+    const y0 = 108; R(0, y0, W, H - y0, RP.grama[2]);
+    semear(99); for (let i = 0; i < 900; i++) { const x = Math.floor(rnd() * W), y = y0 + 4 + Math.floor(rnd() * (H - y0)); const c = rnd() < 0.5 ? RP.grama[1] : RP.grama[3]; R(x, y, 2 + Math.floor(rnd() * 3), 1, c); if (c === RP.grama[3]) P(x, y - 1, RP.grama[4]); }
+    for (let x = 0; x < W; x++) { const tt = Math.round(Math.sin(x * 0.7) + Math.sin(x * 0.23) * 1.5); R(x, y0 - 1 + tt, 1, 3, RP.grama[3]); P(x, y0 - 2 + tt, x % 3 ? RP.grama[4] : RP.grama[3]); }
+    // estrada de terra: vem da direita até a barraca
+    for (let x = 80; x < W; x++) { const u = (x - 80) / (W - 80); const cy = Math.round(158 - u * 6 + Math.sin(x / 38) * 5); const hw = Math.round(12 - u * 4); R(x, cy - hw, 1, hw * 2, RP.terra[2]); P(x, cy - hw, RP.terra[3]); P(x, cy - hw + 1, RP.terra[3]); P(x, cy + hw, RP.terra[1]); if (x % 7 === 0) P(x, cy - 3 + (x % 5), RP.terra[1]); if (x % 11 === 0) P(x, cy + 2, RP.terra[4]); }
+    for (const [x, y, r] of [[240, 128, 3], [300, 186, 3], [362, 122, 2], [466, 192, 3], [104, 186, 2]]) pedra(x, y, r);
+    for (const [x, y, r] of [[262, 182, 5], [344, 128, 4], [478, 128, 5], [226, 152, 4]]) arbusto(x, y, r);
+    semear(5); for (let i = 0; i < 40; i++) { const x = Math.floor(rnd() * W), y = 116 + Math.floor(rnd() * 80); const c = [RP.lona[3], RP.sol[3], CLARO, RP.roxo[4]][i % 4]; P(x, y, c); P(x, y + 1, RP.grama[1]); }
+    // barraca que se defende (fundo)
+    barraca(18, 168, 84, { alt: 64, parte: 'fundo', cores: [RP.lona, RP.creme], listra: 12, fundo: (x, topo) => { for (let i = 0; i < 3; i++) miniPacote(x + 14 + i * 20, topo + 20, [RP.verdona, RP.azulona, RP.roxo][i]); tabua(x + 8, topo + 35, 68, 4, RP.balcao, 7, { contorno: INK, semNo: true }); } });
+    // placa "próxima onda" na beira da estrada
+    poste(372, 108, 30, { w: 4 }); placa(350, 100, 50, 13, {}); texto('ONDA 3', 375, 103, CLARO, { al: 'centro', sombra: INK });
+  });
+  prepFrente = camada(W, H, () => {
+    barraca(18, 168, 84, { alt: 64, parte: 'frente', balcao: 20, mercadoria: (x, by) => { saco(x + 64, by - 13, { moedas: true }); caixote(x + 4, by - 10, 18, 10); } });
+    // moldura: toldo do topo e postes laterais
+    toldo(0, -2, W, { listra: 20, alt: 12, onda: 5, cores: [RP.lona, RP.creme] });
+    poste(0, 20, 180, {}); poste(W - 10, 20, 180, {});
+    // balcão
+    R(0, 196, W, H - 196, INK);
+    for (let x = 0; x < W; x += 48) tabua(x, 204, 48, H - 204, RP.balcao, x + 3, { contorno: RP.balcao[0] });
+    tabua(-2, 194, W + 4, 10, RP.balcao, 77, { contorno: INK, brilho: true }); R(0, 204, W, 1, INK); pont(0, 205, W, 3, INK, 0.5);
+    // prateleira dos pacotes (nicho escuro + tábua)
+    R(8, 206, 152, 56, INK); R(9, 207, 150, 54, '#2a160e'); pont(9, 207, 150, 6, '#140a06', 0.5); for (let i = 0; i < 3; i++) R(9 + i * 50 + 49, 207, 1, 48, '#3a2014');
+    tabua(4, 258, 160, 6, RP.madeira, 12, { contorno: INK, brilho: true, semNo: true });
+    // pergaminho de chances (estático)
+    pergaminho(282, 206, 112, 58);
+    texto('CHANCES', 290, 209, TINTA, {}); texto('1–4', 356, 209, RP.papel[0], { al: 'centro' }); texto('ÚLT.', 382, 209, RP.papel[0], { al: 'centro' }); R(286, 217, 104, 1, RP.papel[1]);
+    const CH = [['comum', RP.pedra, '63', '42'], ['incomum', RP.verde, '28', '35'], ['rara', RP.azulm, '8', '18'], ['épica', RP.roxo, '1,2', '4,5'], ['lendária', RP.ouro, '0,2', '0,8']];
+    CH.forEach(([n, rp, a, b], i) => { const y = 220 + i * 8; gema(287, y, rp); texto(n, 297, y, rp === RP.pedra ? TINTA : rp[1], {}); texto(a, 356, y, TINTA, { al: 'centro' }); texto(b, 382, y, rp === RP.pedra ? TINTA : rp[1], { al: 'centro' }); });
+  });
+}
+function alvosPrep() {
+  const L = PAC.map((p, i) => ({ id: 'pac' + i, x: PX[i], y: SHELF_Y, w: 30, h: 50, i }));
+  L.push({ id: 'estoque', x: 166, y: 214, w: 54, h: 46 }, { id: 'bolso', x: 226, y: 210, w: 52, h: 52 }, { id: 'sino', x: 404, y: 196, w: 40, h: 48 }, { id: 'abrir', x: 396, y: 244, w: 78, h: 22 });
+  for (let c = 0; c < 3; c++) for (let l = 0; l < 5; l++) L.push({ id: 'casa', c, l, x: VIT.cols[c] - 14, y: VIT.lin[l] - 26, w: 28, h: 30 });
+  return L;
+}
+const ocupada = (c, l) => EXERCITO.find(u => u[1] === c && u[2] === l) || prep.novas.find(u => u.c === c && u.l === l);
+function miniCarta(x, y, ref, rar, t) { // 22x30
+  const rp = { comum: RP.pedra, incomum: RP.verde, rara: RP.azulm, epica: RP.roxo, lendaria: RP.ouro }[rar];
+  UI.caixa(x, y, 22, 30, INK, 1); R(x + 1, y + 1, 20, 28, rp[2]); R(x + 1, y + 1, 20, 1, rp[4]); R(x + 1, y + 1, 1, 28, rp[3]); R(x + 20, y + 2, 1, 27, rp[1]); R(x + 2, y + 28, 19, 1, rp[1]);
+  R(x + 3, y + 3, 16, 16, INK); R(x + 4, y + 4, 14, 14, RP.janela[3]); R(x + 4, y + 15, 14, 3, RP.grama[2]);
+  g.save(); g.beginPath(); g.rect(x + 4, y + 4, 14, 14); g.clip(); spr(ref, 'idle', t, x + 11, y + 17, 1); g.restore();
+  R(x + 4, y + 21, 14, 5, RP.papel[3]); R(x + 4, y + 21, 14, 1, RP.papel[4]); gema(x + 8, y + 20, rp);
+}
+function bolsa(x, y, t) { // bolsa de couro 52x46 com as cartas espiando
+  const C = ['#3a1e14', '#5e3420', '#86502e', '#ac7244', '#d09a64'];
+  prep.bolso.forEach((b, i) => { if (prep.arrasto && prep.arrasto.i === i) return; miniCarta(x + 6 + i * 18, y + 2 - (i ? 0 : 3) + Math.round(Math.sin(t / 600 + i) * 1), b.ref, b.rar, t); });
+  elip(x + 26, y + 33, 25, 15, INK); elip(x + 26, y + 33, 24, 14, C[2]); elip(x + 22, y + 30, 16, 9, C[3]); elip(x + 18, y + 27, 6, 3, C[4]); R(x + 2, y + 24, 48, 3, INK); R(x + 3, y + 22, 46, 3, C[1]); R(x + 3, y + 22, 46, 1, C[3]);
+  for (let i = 0; i < 46; i += 4) P(x + 4 + i, y + 23, C[4]); R(x + 22, y + 26, 9, 9, INK); R(x + 23, y + 27, 7, 7, RP.ouro[3]); R(x + 23, y + 27, 7, 1, RP.ouro[5]); R(x + 25, y + 29, 3, 3, RP.ouro[1]);
+  elip(x + 26, y + 46, 22, 1, '#140a06');
+  texto('BOLSO ' + prep.bolso.length + '/3', x + 26, y + 38, CLARO, { al: 'centro', contorno: C[0] });
+}
+function cenaPrep(t, dt) {
+  const tp = t - prep.t0;
+  g.drawImage(prepFundo, 0, 0);
+  // vitrine: tapetes 3x5 e o exército (ordem por profundidade)
+  for (let l = 0; l < 5; l++) for (let c = 0; c < 3; c++) { const f = st.foco && st.foco.id === 'casa' && st.foco.c === c && st.foco.l === l && prep.arrasto; tapete(VIT.cols[c], VIT.lin[l], (c + l) % 2 ? RP.rubi : RP.safira, f ? 'foco' : ocupada(c, l) ? 'ocupado' : 'livre', t); }
+  const corpos = [];
+  for (const [ref, c, l, rar] of EXERCITO) corpos.push({ ref, x: VIT.cols[c], y: VIT.lin[l] + 1, anim: 'idle', t: t + c * 210 + l * 90 });
+  for (const n of prep.novas) corpos.push({ ref: n.ref, x: VIT.cols[n.c], y: VIT.lin[n.l] + 1, anim: t - n.t0 < 500 ? 'jump' : 'idle', t: t - n.t0, sobe: Math.round(Math.max(0, Math.sin(Math.min(1, (t - n.t0) / 400) * Math.PI)) * 6) });
+  for (const [ref, x, y] of INIMIGOS) corpos.push({ ref, x, y, anim: 'idle', t: t + x * 7, vira: true, sombra: RP.terra[1] });
+  corpos.push({ ref: 'villagers2/merchant', x: 60, y: 160, anim: 'idle_b', t, atras: true });
+  corpos.sort((a, b) => a.y - b.y).forEach(c => spr(c.ref, c.anim, c.t, c.x, c.y - (c.sobe || 0), 2, { vira: c.vira, sombra: c.atras ? null : (c.sombra || RP.grama[1]) }));
+  g.drawImage(prepFrente, 0, 0);
+  // HUD pendurado no toldo
+  lampiao(1, 50, t); lampiao(W - 8, 50, t);
+  placa(18, 26, 74, 20, { corda: 16 }); icone('moeda', 24, 31, { adesivo: true }); texto(String(Math.round(prep.ouroMostra)), 38, 30, RP.ouro[4], { k: 2, contorno: INK }); texto('+4', 74, 34, RP.verde[4], { contorno: INK });
+  placa(26, 82, 54, 14, { corda: 70 }); icone('coracao', 31, 85); texto('18/20', 58, 85, CLARO, { al: 'centro', contorno: INK });
+  const ondas = Array.from({ length: 15 }, (_, i) => ({ n: i + 1, feita: i < 2, atual: i === 2, tipo: i === 3 || i === 7 || i === 11 ? 'julg' : i === 9 || i === 14 ? 'chefe' : 'n' }));
+  bandeirinhas(140, 340, 22, 6, ondas, t);
+  texto('ONDA 3 DE 15', 240, 50, CLARO, { al: 'centro', contorno: INK }); texto('JULGAMENTO NA PRÓXIMA', 240, 60, RP.ouro[4], { al: 'centro', contorno: INK });
+  placa(350, 26, 118, 20, { corda: 16 }); let hx = 357; for (const [ic, n] of [['lupa', 3], ['troca', 2], ['lacre', 1]]) { icone(ic, hx, 31); hx += 11; hx += texto(String(n), hx, 32, CLARO, { contorno: INK }) + 6; }
+  for (let i = 0; i < 3; i++) { const sx = 422 + i * 14; R(sx, 30, 10, 10, INK); R(sx + 1, 31, 8, 8, RP.madeira[0]); if (i === 0) gema(sx + 1, 31, RP.rubi); }
+  // pacotes na prateleira + etiquetas
+  PAC.forEach((p, i) => { const f = st.foco && st.foco.id === 'pac' + i; const ly = f ? -3 : 0; const x = PX[i], y = SHELF_Y + ly;
+    elip(x + 15, 257, 13, 1, '#140a06'); g.drawImage(pacoteBrilho(p, t + i * 900, f), x, y);
+    if (f) { const on = (t / 150 | 0) % 2; for (let k = -3; k < 33; k += 2) { P(x + k + on, y - 3, RP.ouro[5]); P(x + k + on, y + 52, RP.ouro[5]); } for (let k = -3; k < 53; k += 2) { P(x - 3, y + k + on, RP.ouro[5]); P(x + 32, y + k + on, RP.ouro[5]); } }
+    etiqueta(x + 15, 205, p.preco, { caro: p.preco > prep.ouro }); });
+  for (const v of prep.voando) { const k = ease((t - v.t0) / 600); const x = v.x0 + (v.x1 - v.x0) * k, y = v.y0 + (v.y1 - v.y0) * k - Math.sin(k * Math.PI) * 40; g.drawImage(PAC[v.i].base, Math.round(x), Math.round(y)); }
+  prep.voando = prep.voando.filter(v => t - v.t0 < 600);
+  // estoque: caixote com os pacotes lacrados
+  for (let i = 0; i < prep.estoque; i++) { const x = 172 + i * 12, y = 214 + (i % 2) * 3; g.drawImage(PAC[i === 1 ? 0 : 0].base, x, y); }
+  caixote(166, 230, 54, 30); R(170, 236, 46, 10, INK); R(171, 237, 44, 8, RP.lona[2]); R(171, 237, 44, 1, RP.lona[4]); texto('ESTOQUE', 193, 238, CLARO, { al: 'centro', sombra: RP.lona[0] }); circ(216, 233, 6, INK); circ(216, 233, 5, RP.ouro[3]); P(214, 230, RP.ouro[5]); texto(String(prep.estoque), 217, 230, INK, { al: 'centro' });
+  bolsa(226, 212, t);
+  // sino e botão de abrir a feira
+  const bt = t - prep.sinoT; const bal = bt < 1400 ? Math.round(Math.sin(bt / 70) * 4 * (1 - bt / 1400)) : st.foco && (st.foco.id === 'sino' || st.foco.id === 'abrir') ? Math.round(Math.sin(t / 160) * 1) : 0;
+  sino(404, 196, bal);
+  const fAbr = st.foco && (st.foco.id === 'abrir' || st.foco.id === 'sino'); botao(396, 244, 78, 22, 'ABRIR!', { rp: RP.lona, estado: st.cur.aperta && fAbr ? 'apertado' : fAbr ? 'foco' : 'normal', t, setas: false });
+  // carta sendo arrastada
+  if (prep.arrasto) { const b = prep.bolso[prep.arrasto.i]; miniCarta(st.cur.x - 11, st.cur.y - 8, b.ref, b.rar, t); }
+  // dicas
+  dica(t);
+  if (prep.aberta >= 0) { const k = ease((t - prep.aberta) / 400); const fw = 220, fx = W / 2 - fw / 2, fy = Math.round(70 + (1 - k) * -40); R(fx, fy, fw, 28, INK); R(fx + 1, fy + 1, fw - 2, 26, RP.lona[2]); R(fx + 1, fy + 1, fw - 2, 2, RP.lona[4]); R(fx + 1, fy + 24, fw - 2, 3, RP.lona[1]); texto('A FEIRA ABRIU!', W / 2, fy + 7, RP.ouro[5], { k: 2, al: 'centro', contorno: INK, sombra: RP.lona[0] }); }
+}
+function dica(t) {
+  const f = st.foco; if (!f || prep.arrasto || prep.aberta >= 0 || t - (st.focoT || 0) < 260) return;
+  if (f.id.startsWith('pac')) { const p = PAC[f.i], x = Math.max(4, PX[f.i] + 15 - 62), y = 134; balao(x, y, 124, 62, { titulo: p.titulo, bico: PX[f.i] + 15, rpTitulo: p.rp });
+    p.linhas.forEach((s, i) => texto(s, x + 7, y + 17 + i * 9, TINTA, {})); icone('moeda', x + 7, y + 46); texto(String(p.preco), x + 19, y + 47, p.preco > prep.ouro ? RP.lona[1] : TINTA, {}); texto('clique: comprar', x + 117, y + 47, RP.papel[0], { al: 'dir' }); }
+  else if (f.id === 'bolso') { const x = 196, y = 150; balao(x, y, 112, 44, { titulo: 'BOLSO', bico: 252 }); texto('guarda até 3 cartas', x + 7, y + 17, TINTA, {}); texto('arraste para a vitrine', x + 7, y + 27, RP.papel[0], {}); }
+  else if (f.id === 'estoque') { const x = 140, y = 150; balao(x, y, 108, 44, { titulo: 'ESTOQUE', bico: 193 }); texto('pacotes lacrados', x + 7, y + 17, TINTA, {}); texto('abra quando quiser', x + 7, y + 27, RP.papel[0], {}); }
+  else if (f.id === 'sino' || f.id === 'abrir') { const x = 352, y = 140; balao(x, y, 120, 44, { titulo: 'TOCAR O SINO', bico: 424, rpTitulo: RP.lona }); texto('a onda 3 começa:', x + 7, y + 17, TINTA, {}); texto('6 goblins na estrada', x + 7, y + 27, RP.lona[1], {}); }
+  else if (f.id === 'casa') { const u = ocupada(f.c, f.l); if (!u) return; const nome = { 'humans/shield': 'ESCUDEIRO', 'humans/sword': 'ESPADACHIM', 'dwarfs/dwarfwarrior': 'GUERREIRO ANÃO', 'humans/spear': 'LANCEIRO', 'dwarfs/dwarfminer': 'MINERADOR', 'humans/crossbow': 'BESTEIRO', 'humans/archer': 'ARQUEIRO', 'humans/mage': 'MAGO', 'dwarfs/dwarfhunter': 'CAÇADOR ANÃO', 'elves/elfarcher': 'ARQUEIRA ELFA' }[u[0] || u.ref] || 'UNIDADE';
+    const rar = u[3] || u.rar; const rp = { comum: RP.pedra, incomum: RP.verde, rara: RP.azulm }[rar]; const x = Math.min(W - 112, VIT.cols[f.c] - 50), y = VIT.lin[f.l] - 76; balao(x, y, 104, 44, { titulo: nome, bico: VIT.cols[f.c], rpTitulo: rp });
+    icone('coracao', x + 7, y + 17); texto(rar === 'rara' ? '62' : rar === 'incomum' ? '48' : '40', x + 19, y + 18, TINTA, {}); icone('espada', x + 44, y + 17); texto(rar === 'rara' ? '11' : rar === 'incomum' ? '8' : '6', x + 56, y + 18, TINTA, {}); texto(rar, x + 7, y + 28, rp === RP.pedra ? RP.papel[0] : rp[1], {}); }
+}
+
+// ================================================================== PRANCHA DE PEÇAS (tudo lado a lado)
+function cenaPecas(t) {
+  R(0, 0, W, H, RP.noite[1]); pont(0, 0, W, H, RP.noite[2], 0.25);
+  const rot = (s, x, y) => texto(s, x, y, RP.papel[2], { sombra: INK });
+  rot('BOTÕES: normal · foco · apertado · desligado', 8, 6);
+  ['normal', 'foco', 'apertado', 'off'].forEach((e, i) => botao(10 + i * 100, 18, 88, 24, 'JOGAR', { rp: RP.lona, estado: e, t, icone: i === 3 ? null : 'bandeira', setas: false }));
+  ['normal', 'foco', 'apertado'].forEach((e, i) => botao(10 + i * 100, 48, 88, 24, 'LOJA', { rp: RP.balcao, estado: e, t, icone: 'livro', setas: false }));
+  botao(310, 48, 40, 24, 'OK', { rp: RP.verdona, estado: 'normal', t }); botao(356, 48, 40, 24, 'X', { rp: RP.azulona, estado: 'normal', t }); botao(402, 48, 70, 24, 'ABRIR!', { rp: RP.lona, estado: 'foco', t, setas: false });
+  rot('ÍCONES', 8, 80); ['moeda', 'coracao', 'sino', 'lupa', 'troca', 'lacre', 'espada', 'livro', 'engrenagem', 'porta', 'bandeira', 'carta', 'gota'].forEach((n, i) => icone(n, 10 + i * 22, 92, { adesivo: true, k: 2 }));
+  rot('PLACAS · ETIQUETA · DICA', 300, 80); placa(300, 96, 74, 20, { corda: 88 }); icone('moeda', 306, 101, { adesivo: true }); texto('42', 320, 100, RP.ouro[4], { k: 2, contorno: INK });
+  etiqueta(382, 101, 14); etiqueta(408, 101, 40, { caro: true });
+  balao(300, 122, 126, 34, { titulo: 'DICA', bico: 330 }); texto('texto escuro no papel', 306, 139, TINTA, {});
+  rot('TOLDOS · LAMPIÃO · LUZES', 8, 118); toldo(8, 128, 140, { listra: 14, alt: 10, onda: 4 }); toldo(154, 128, 140, { listra: 14, alt: 10, onda: 4, cores: [RP.azulona, RP.creme] });
+  luzes(10, 240, 152, 8, t, { n: 12, halo: false }); lampiao(250, 150, t, { halo: false }); lampiao(266, 150, t + 500, { halo: false });
+  rot('MERCADORIAS', 8, 178); caixote(10, 190, 26, 18); barril(42, 190); saco(60, 194, { moedas: true }); vaso(80, 196); vaso(94, 196, RP.azulona); miniPacote(110, 193, RP.verdona); miniPacote(122, 193, RP.roxo);
+  rot('VITRINE', 110, 214); for (let i = 0; i < 3; i++) tapete(132 + i * 32, 252, i % 2 ? RP.rubi : RP.safira, ['livre', 'ocupado', 'foco'][i], t); spr('humans/sword', 'idle', t, 164, 253, 2, { sombra: RP.rubi[0] });
+  rot('SINO', 252, 178); sino(250, 192, Math.round(Math.sin(t / 200) * 2));
+  rot('PERGAMINHO', 300, 166); pergaminho(304, 180, 70, 34); texto('CHANCES', 312, 184, TINTA, {});
+  rot('PACOTES', 386, 166); PAC.forEach((p, i) => g.drawImage(pacoteBrilho(p, t + i * 700, i === 0), 384 + i * 31, 180));
+  rot('BARRACA', 8, 214); barraca(16, 268, 88, { alt: 44, cores: [RP.lona, RP.creme], listra: 12, balcao: 16, mercadoria: (x, by) => { miniPacote(x + 10, by - 15, RP.verdona); miniPacote(x + 24, by - 15, RP.azulona); saco(x + 70, by - 13, { moedas: true }); } });
+  rot('BOLSO', 196, 178); bolsa(190, 196, t);
+  rot('CARTAS', 300, 222); miniCarta(304, 234, 'humans/mage', 'rara', t); miniCarta(330, 234, 'dwarfs/dwarfwarrior', 'incomum', t);
+  rot('CURSOR', 364, 238); cursor(368, 250); cursor(384, 250, true);
+}
+
+// ================================================================== transições (cortina listrada do toldo)
+function cortina(p) { // p 0..1 cobre de cima para baixo
+  const y1 = Math.round(p * (H + 12)); if (y1 <= 0) return;
+  for (let x = 0, i = 0; x < W; x += 20, i++) { const rp = i % 2 ? RP.creme : RP.lona; R(x, 0, 20, y1 - 6, rp[2]); R(x, 0, 3, y1 - 6, rp[3]); R(x + 16, 0, 4, y1 - 6, rp[1]); for (let k = 0; k < 20; k++) { const d = Math.round(Math.sqrt(Math.max(0, 100 - (k - 9.5) ** 2)) / 10 * 6); R(x + k, y1 - 6, 1, d, k < 3 ? rp[3] : k > 15 ? rp[1] : rp[2]); P(x + k, y1 - 6 + d, INK); } }
+}
+function escurece(a) { if (a > 0) pont(0, 0, W, H, INK, Math.min(1, a)); }
+
+// ================================================================== interação (mouse real ou roteiro automático)
+function alvos() { return st.cena === 'menu' ? alvosMenu() : st.cena === 'prep' ? alvosPrep() : []; }
+function achaAlvo(x, y) { const L = alvos(); for (let i = L.length - 1; i >= 0; i--) { const a = L[i]; if (x >= a.x && x < a.x + a.w && y >= a.y && y < a.y + a.h) return a; } return null; }
+function mexe(x, y) {
+  st.cur.x = x; st.cur.y = y; const a = achaAlvo(x, y); const id = a ? a.id + (a.c ?? '') + (a.l ?? '') + (a.i ?? '') : null, ant = st.foco ? st.foco.id + (st.foco.c ?? '') + (st.foco.l ?? '') + (st.foco.i ?? '') : null;
+  if (id !== ant) { st.foco = a; st.focoT = st.t; if (a && !(a.id === 'casa' && !ocupada(a.c, a.l) && !prep.arrasto)) SOM.toca('foco'); }
+  if (st.cena === 'menu' && a) menu.foco = a.i;
+}
+function aperta() {
+  st.cur.aperta = true; const a = st.foco; if (!a) return;
+  if (st.cena === 'menu') { menu.aperta = a.i; SOM.toca('clique'); if (a.id === 'jogar') { st.trans = { t0: st.t, para: 'prep' }; } }
+  if (st.cena === 'prep') {
+    if (a.id.startsWith('pac')) { const p = PAC[a.i]; if (p.preco > prep.ouro) { SOM.toca('voltar'); return; } SOM.toca('clique'); SOM.toca('moeda'); prep.ouro -= p.preco; prep.voando.push({ i: a.i, t0: st.t, x0: PX[a.i], y0: SHELF_Y, x1: 184, y1: 214 }); setTimeout(() => { prep.estoque++; SOM.toca('sai'); }, 600); estoura(PX[a.i] + 15, SHELF_Y + 10, 14, [RP.ouro[5], RP.ouro[3], '#ffffff'], 50, 0.6); }
+    else if (a.id === 'bolso') { prep.arrasto = { i: 0 }; SOM.toca('sai'); }
+    else if (a.id === 'sino' || a.id === 'abrir') { SOM.toca('clique'); SOM.toca('sino'); prep.sinoT = st.t; prep.aberta = st.t + 300; estoura(424, 206, 24, [RP.ouro[5], RP.ouro[3], '#ffffff'], 70, 0.8); st.trans = { t0: st.t + 1700, para: 'fim' }; }
+  }
+}
+function solta() {
+  st.cur.aperta = false; if (st.cena === 'menu') menu.aperta = -1;
+  if (st.cena === 'prep' && prep.arrasto) { const a = st.foco; if (a && a.id === 'casa' && !ocupada(a.c, a.l)) { const b = prep.bolso.splice(prep.arrasto.i, 1)[0]; prep.novas.push({ ref: b.ref, rar: b.rar, c: a.c, l: a.l, t0: st.t }); SOM.toca('carimbo'); estoura(VIT.cols[a.c], VIT.lin[a.l] - 6, 22, [RP.papel[4], RP.papel[3], RP.azulm[4]], 50, 0.6, 20); } else SOM.toca('voltar'); prep.arrasto = null; }
+}
+const lg = (e) => [Math.floor((e.clientX - tela.offsetLeft) / esc), Math.floor((e.clientY - tela.offsetTop) / esc)];
+addEventListener('pointermove', (e) => { if (AUTO) return; st.cur.visivel = true; mexe(...lg(e)); });
+addEventListener('pointerdown', (e) => { if (AUTO) return; mexe(...lg(e)); aperta(); });
+addEventListener('pointerup', () => { if (!AUTO) solta(); });
+
+// roteiro automático: lista de [ms, ação]; o cursor desliza até o alvo
+const ROTEIRO = {
+  menu: [[2200, ['vai', BX + 100, BY0 + BDY + 12]], [3000, ['vai', BX + 104, BY0 + 2 * BDY + 12]], [3700, ['vai', BX + 98, BY0 + 3 * BDY + 12]], [4500, ['vai', BX + 96, BY0 + 12]], [5600, ['aperta']], [5800, ['solta']]],
+  prep: [[900, ['vai', PX[0] + 15, SHELF_Y + 26]], [2100, ['vai', PX[1] + 15, SHELF_Y + 26]], [3100, ['vai', PX[2] + 15, SHELF_Y + 26]], [4100, ['vai', PX[0] + 15, SHELF_Y + 26]], [4800, ['aperta']], [4950, ['solta']],
+    [5700, ['vai', 192, 248]], [6900, ['vai', 240, 228]], [8000, ['aperta']], [8150, ['vai', VIT.cols[1], VIT.lin[3] - 8]], [9300, ['solta']], [9900, ['vai', VIT.cols[2], VIT.lin[2] - 10]],
+    [11300, ['vai', 430, 256]], [12600, ['aperta']], [12750, ['solta']]],
+};
+let fila = [];
+function iniciaRoteiro(nome) { fila = ROTEIRO[nome].map(([ms, a]) => ({ em: st.t + ms, a })); }
+function passoRoteiro() {
+  while (fila.length && st.t >= fila[0].em) { const { a } = fila.shift(); if (a[0] === 'vai') { st.cur.dest = { x: a[1], y: a[2], t0: st.t, x0: st.cur.x, y0: st.cur.y }; st.cur.visivel = true; } else if (a[0] === 'aperta') aperta(); else if (a[0] === 'solta') solta(); }
+  const d = st.cur.dest; if (d) { const k = ease((st.t - d.t0) / (prep.arrasto ? 900 : 550)); mexe(Math.round(d.x0 + (d.x - d.x0) * k), Math.round(d.y0 + (d.y - d.y0) * k)); if (k >= 1) st.cur.dest = null; }
+}
+
+// ================================================================== laço
+function entra(cena) {
+  st.cena = cena; st.foco = null; st.cur.dest = null;
+  if (cena === 'menu') { menu.t0 = st.t; SOM.musica('menu'); setTimeout(() => SOM.toca('carimbo'), 1000); [0, 1, 2, 3].forEach(i => setTimeout(() => SOM.toca('foco'), 1300 + i * 140)); if (AUTO) iniciaRoteiro('menu'); else st.cur.visivel = false; }
+  if (cena === 'prep') { prep.t0 = st.t; SOM.musica('prep'); st.cur.x = 300; st.cur.y = 240; if (AUTO) iniciaRoteiro('prep'); }
+}
+let ultimo = performance.now();
+function laco(now) {
+  const dt = Math.min(0.05, (now - ultimo) / 1000); ultimo = now; st.t += dt * 1000; const t = st.t;
+  if (tela.width !== W * Math.max(1, Math.floor(Math.min(innerWidth / W, innerHeight / H)))) ajusta();
+  if (AUTO) passoRoteiro();
+  passoPart(dt);
+  prep.ouroMostra += (prep.ouro - prep.ouroMostra) * Math.min(1, dt * 6);
+  if (st.cena === 'menu') cenaMenu(t, dt); else if (st.cena === 'prep') cenaPrep(t, dt); else if (st.cena === 'pecas') cenaPecas(t); else { R(0, 0, W, H, INK); }
+  pintaPart();
+  if (st.cur.visivel && st.cena !== 'pecas') cursor(st.cur.x, st.cur.y, st.cur.aperta);
+  // transições
+  const tr = st.trans; if (tr && t >= tr.t0) { const k = (t - tr.t0) / 500; cortina(Math.min(1, ease(k))); if (k >= 1 && !tr.trocou) { tr.trocou = true; tr.t1 = t; if (tr.para === 'fim') { window.__fim = true; st.cena = 'fim'; } else { entra(tr.para); SOM.toca('rasgo'); } } if (tr.trocou) { const k2 = (t - tr.t1) / 500; if (tr.para !== 'fim') { cortina(1 - ease(k2)); if (k2 >= 1) st.trans = null; } } }
+  const ent = (t - (st.entrada || 0)) / 700; if (ent < 1) escurece(1 - ent);
+  tg.drawImage(buf, 0, 0, W * esc, H * esc);
+  requestAnimationFrame(laco);
+}
+(async () => {
+  const ff = new FontFace('m5x7', 'url(../../assets/fonts/m5x7.ttf)'); await ff.load(); document.fonts.add(ff); UI.calibra();
+  await UI.carregaSprites(SPRITES);
+  montaMenu(); montaPrep(); criaPassantes();
+  st.entrada = st.t; entra(st.cena);
+  window.__congelar = (ms) => { st.t = ms; };
+  window.__pronto = true;
+  requestAnimationFrame(laco);
+})();
+</script>
+</body>
+</html>

@@ -27,3 +27,4 @@ assets/fonts/*.ttf
 
 # prévias de assets de terceiros (só para teste local)
 tools/mockups/_terceiros/
+docs/mockups/v2/*.mp4

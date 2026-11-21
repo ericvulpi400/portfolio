@@ -11,6 +11,8 @@
 <body>
 <canvas id="tela"></canvas>
 <script src="arte.js"></script>
+<script src="ui.js"></script>
+<script src="som.js"></script>
 <script>
 'use strict';
 // Protótipo visual da abertura de pacote (480x270 lógicos, escala inteira). Clique/Espaço avança; ?auto=1 roda sozinho.
@@ -42,7 +44,7 @@ function texto(s, x, y, cor, sombra = INK, alinha = 'centro', px = 16) { s = s.n
 let M = null; const IMG = {};
 async function carregar() {
   M = await (await fetch('../../assets/minifolks/manifest.json')).json();
-  const ff = new FontFace('m5x7', 'url(../../assets/fonts/m5x7.ttf)'); await ff.load(); document.fonts.add(ff);
+  const ff = new FontFace('m5x7', 'url(../../assets/fonts/m5x7.ttf)'); await ff.load(); document.fonts.add(ff); UI.alvo(g); UI.calibra();
   tcv.width = 40; tcv.height = 40; tcx.font = '16px m5x7'; tcx.textBaseline = 'top'; tcx.fillText('H', 2, 2); const d = tcx.getImageData(0, 0, 40, 40).data; let top = 99; for (let y = 0; y < 40; y++) for (let x = 0; x < 40; x++) if (d[(y * 40 + x) * 4 + 3] > 110) top = Math.min(top, y); TOPO = top - 2;
   for (const c of CARTAS) { const s = sp(c.sprite); const v = Object.keys(s.files.pngs).find(v => /outline/i.test(v) && !/without/i.test(v)); s._src = '../../assets/minifolks/' + s.files.pngs[v]; await new Promise(r => { const i = new Image(); i.onload = () => { IMG[s._src] = i; r(); }; i.src = s._src; }); }
 }
@@ -95,8 +97,8 @@ function pintaPart() { for (const p of PART) { R(p.x, p.y, p.s, p.conf && ((p.m 
 const XS = [36, 120, 204, 288, 372], YC = 86;
 const st = { fase: 'fechado', t: 0, rasgo: -1, virada: 0, vir: [-1, -1, -1, -1, -1], sai: [], flash: 0, tremor: 0, fim: -1, escurece: 0 };
 function avancar() {
-  if (st.fase === 'fechado') { st.fase = 'rasgando'; st.rasgo = st.t; st.flash = 0.25; estoura(W / 2, 84, 50, [RP.prata[4], RP.prata[3], RP.verde[4], '#ffffff'], 120, 0.8, 40); return; }
-  if (st.fase === 'leque') { const i = st.virada; if (i >= 5) return; if (i === 4 && st.suspense < 0) { st.suspense = st.t; return; } st.vir[i] = st.t; st.virada++; return; }
+  if (st.fase === 'fechado') { st.fase = 'rasgando'; st.rasgo = st.t; st.flash = 0.25; SOM.toca('rasgo'); estoura(W / 2, 84, 50, [RP.prata[4], RP.prata[3], RP.verde[4], '#ffffff'], 120, 0.8, 40); return; }
+  if (st.fase === 'leque') { const i = st.virada; if (i >= 5) return; if (i === 4 && st.suspense < 0) { st.suspense = st.t; SOM.toca('rufar'); SOM.toca('brilho', 'prisma'); return; } st.vir[i] = st.t; st.virada++; SOM.toca('virar', CARTAS[i].rar); return; }
 }
 st.suspense = -1;
 addEventListener('pointerdown', avancar); addEventListener('keydown', (e) => { if (e.code === 'Space' || e.code === 'Enter') avancar(); });
@@ -134,6 +136,7 @@ function quadroCena(t, dt) {
     // pacote 2x no centro: flutua e treme a cada 1,6 s
     const ts = st.fase === 'rasgando' ? t - st.rasgo : 0;
     const bob = Math.round(Math.sin(t / 400) * 2), treme = st.fase === 'fechado' && (t % 1600) < 180 ? Math.round(Math.sin(t / 18) * 2) : 0;
+    if (st.fase === 'fechado' && (t % 1600) < (t - dt * 1000) % 1600) SOM.toca('treme');
     const px = W / 2 - 30 + treme, py = 34 + bob + Math.round(ease(ts / 500) * 120);
     R(px + 8, 214, 44, 3, RP.madeira[0]);
     if (st.fase === 'fechado') g.drawImage(pacoteCv, px, py, 60, 100);
@@ -144,7 +147,7 @@ function quadroCena(t, dt) {
       g.drawImage(pacoteCv, 0, 0, 30, 7, tx, ty, 60, 14);
     }
     if (st.fase === 'fechado') { texto('PACOTE DA FEIRA', W / 2, 150, RP.ouro[4]); texto('clique para abrir', W / 2, 166, RP.papel[2]); }
-    if (st.fase === 'rasgando' && ts > 350) { st.fase = 'saindo'; st.saida = t; }
+    if (st.fase === 'rasgando' && ts > 350) { st.fase = 'saindo'; st.saida = t; for (let i = 0; i < 5; i++) setTimeout(() => SOM.toca('sai'), i * 90); }
   }
   if (st.fase === 'saindo' || st.fase === 'leque') {
     const ts = t - (st.saida || 0);
@@ -164,14 +167,18 @@ function quadroCena(t, dt) {
     }
     if (st.fase === 'saindo' && ts > 900) st.fase = 'leque';
     if (st.fase === 'leque' && st.virada < 5) texto(st.virada === 4 ? (st.suspense >= 0 ? '...' : 'a ultima carta!') : 'clique para virar', W / 2, 236, RP.papel[3]);
-    if (st.suspense >= 0 && st.vir[4] < 0 && t - st.suspense > 900) { st.vir[4] = t; st.virada = 5; }
+    if (st.suspense >= 0 && st.vir[4] < 0 && t - st.suspense > 900) { st.vir[4] = t; st.virada = 5; SOM.toca('virar', 'prisma'); SOM.toca('jackpot'); }
     if (st.vir[4] >= 0 && t - st.vir[4] > 600) {
       texto('JACKPOT!', W / 2, 26, RP.ouro[4], INK, 'centro', 32);
+      if (t - st.vir[4] > 1400 && !st.comboSom) { st.comboSom = true; SOM.toca('combo'); }
       if (t - st.vir[4] > 1400) { R(W / 2 - 110, 228, 220, 22, INK); R(W / 2 - 109, 229, 218, 20, RP.roxo[1]); texto('ESCADA: 4 raridades  proximo pacote -30%', W / 2, 235, RP.ouro[4], INK); }
     }
   }
   if (escuro > 0 && !(st.vir[4] >= 0)) pontilha(0, 0, W, H, INK, escuro * 0.5);
   pintaPart();
+  // botões da abertura: pular, virar tudo e guardar
+  if (st.fase === 'leque' && st.virada < 5 && st.suspense < 0) { UI.botao(8, 246, 64, 18, 'PULAR', { rp: UI.RP.balcao, k: 1, t }); UI.botao(W - 100, 246, 92, 18, 'VIRAR TUDO', { rp: UI.RP.lona, k: 1, estado: 'foco', t, setas: false }); }
+  if (st.vir[4] >= 0 && t - st.vir[4] > 2200) UI.botao(W - 100, 246, 92, 18, 'GUARDAR', { rp: UI.RP.verdona, k: 1, estado: 'foco', t, setas: false });
   if (st.flash > 0) pontilha(0, 0, W, H, '#ffffff', Math.min(0.9, st.flash * 3));
   tg.drawImage(buf, 0, 0, W * esc, H * esc);
 }
@@ -181,6 +188,7 @@ let ultimo = performance.now(), T = 0;
 window.__tempo = null;
 function laco(now) { if (tela.width !== W * Math.max(1, Math.floor(Math.min(innerWidth / W, innerHeight / H)))) ajusta(); const dt = Math.min(0.05, (now - ultimo) / 1000); ultimo = now; T += dt * 1000; quadroCena(T, dt); requestAnimationFrame(laco); }
 carregar().then(() => {
+  SOM.musica('prep');
   requestAnimationFrame(laco);
   if (AUTO) { const passos = [1500, 2700, 3500, 4300, 5100, 5900, 6600]; passos.forEach(ms => setTimeout(avancar, ms)); }
   window.__pronto = true;
