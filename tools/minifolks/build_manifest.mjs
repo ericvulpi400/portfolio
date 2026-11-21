@@ -114,6 +114,26 @@ function analyseSheet(img, cw, ch) {
   return { cols, rows, rowsInfo: out };
 }
 
+
+// Sem .ase: escolhe a célula que divide a imagem e corta menos o desenho (pares de pixels opacos dos dois lados de
+// uma borda de célula). Empate → a MENOR célula (a borda de uma célula maior é subconjunto da menor). Calibrado com os
+// tamanhos declarados pelo autor: 40x40 (Demon Lord, Goblin King, Raptors), 64x32 (Lizardman Brute/Warlord).
+function inferCell(img) {
+  const op = (x, y) => img.data[(y * img.w + x) * 4 + 3] > 0;
+  const cands = [[32, 32], [40, 40], [48, 48], [64, 64], [64, 32], [16, 16]].filter(([w, h]) => img.w % w === 0 && img.h % h === 0);
+  let best = null;
+  for (const [w, h] of cands) {
+    let cut = 0;
+    for (let x = w; x < img.w; x += w) for (let y = 0; y < img.h; y++) if (op(x - 1, y) && op(x, y)) cut++;
+    for (let y = h; y < img.h; y += h) for (let x = 0; x < img.w; x++) if (op(x, y - 1) && op(x, y)) cut++;
+    const score = cut * 1e6 + w * h;
+    if (!best || score < best.score) best = { w, h, score, cut };
+  }
+  return best ? [best.w, best.h] : [32, 32];
+}
+
+function rows_check(nm, sheet) { const got = sheet.rowsInfo.filter(r => r.frames).map(r => r.frames); return got.length !== nm.contagens.length || got.some((v, i) => v !== nm.contagens[i]); }
+
 // Nomes de tag do autor -> ação canônica do jogo (só quando existe de fato)
 const CANON = [
   [/^idle/i, 'idle'], [/^walk\s*2|^walk2/i, 'walk2'], [/^walk\s*\/?\s*jump|^walk/i, 'walk'], [/^run/i, 'walk'], [/^jump/i, 'jump'], [/^flight|^fly/i, 'fly'],
@@ -123,9 +143,15 @@ const CANON = [
 ];
 const canon = (n) => { for (const [re, v] of CANON) if (re.test(n.trim())) return v; return n.trim().toLowerCase().replace(/\W+/g, '_'); };
 
-const norm = (s) => s.toLowerCase().replace(/^mini/, '').replace(/\.(png|aseprite|ase)$/, '').replace(/[^a-z0-9]/g, '').replace(/man$/, '').replace(/b$/, '');
+const norm = (s) => s.toLowerCase().replace(/^mini/, '').replace(/\.(png|aseprite|ase)$/, '').replace(/[^a-z0-9]/g, '').replace(/test$/, '').replace(/man$/, '').replace(/b$/, '');
 function walk(dir, acc = []) { for (const e of fs.readdirSync(dir, { withFileTypes: true })) { const p = path.join(dir, e.name); if (e.isDirectory()) walk(p, acc); else acc.push(p); } return acc; }
 
+const NOMES = (() => { try { return JSON.parse(fs.readFileSync(new URL('./nomes_linhas.json', import.meta.url), 'utf8')); } catch { return {}; } })();
+function nomesPara(pack, key) {
+  if (NOMES[`${pack}/${key}`]) return NOMES[`${pack}/${key}`];
+  for (const [k, v] of Object.entries(NOMES)) if (v.variantes && k.startsWith(pack + '/')) for (const suf of v.variantes) if (k + suf === `${pack}/${key}`) return v;
+  return null;
+}
 const files = walk(ROOT).filter(f => /\.(png|aseprite|ase)$/i.test(f));
 const packs = {};
 for (const f of files) { const pack = path.relative(ROOT, f).split(path.sep)[0]; (packs[pack] ||= []).push(f); }
@@ -151,13 +177,22 @@ for (const [pack, list] of Object.entries(packs).sort()) {
     const img = decodePNG(fs.readFileSync(pngPath));
     // tamanho da célula: do .ase; sem .ase, tenta 32/40/48/64 que divide a imagem e dá linhas consistentes
     let cw = c.cell?.w, ch = c.cell?.h;
-    if (!cw) { const cand = [32, 40, 48, 64].filter(s => img.w % s === 0 && img.h % s === 0); cw = ch = cand[0] || 32; issues.push(`${pack}/${key}: sem .ase, célula inferida ${cw}x${ch} pelo tamanho da imagem`); }
+    if (!cw) { [cw, ch] = inferCell(img); issues.push(`info ${pack}/${key}: sem .ase, célula inferida ${cw}x${ch} (menos pixels cortados pelas bordas de célula)`); }
     const sheet = analyseSheet(img, cw, ch);
-    const anims = {}; const tags = c.tags || [];
+    const rowsN = sheet.rowsInfo.filter(r => r.frames).length;
+    let tags = c.tags || []; const nmAll = nomesPara(pack, key);
+    // .ase com número de tags diferente do PNG: se a lista do autor/visual bate com o PNG, ela manda
+    if (tags.length && tags.length !== rowsN && nmAll && nmAll.contagens && !rows_check(nmAll, sheet)) { issues.push(`info ${pack}/${key}: tags do .ase (${tags.length}) ≠ linhas do PNG (${rowsN}); usada a lista '${nmAll.fonte}'`); tags = []; }
+    const anims = {}; const nm = !tags.length ? nmAll : null;
+    if (nm && nm.contagens && rows_check(nm, sheet)) issues.push(`${pack}/${key}: contagens da fonte (${nm.contagens.join(',')}) diferem do PNG (${sheet.rowsInfo.filter(r => r.frames).map(r => r.frames).join(',')})`);
     const rows = sheet.rowsInfo.filter(r => r.frames > 0);
     if (tags.length && tags.length !== rows.length) issues.push(`${pack}/${key}: ${tags.length} tags no .ase x ${rows.length} linhas não vazias no PNG`);
+    if (tags.length && nmAll && nmAll.linhas && nmAll.linhas.length === tags.length) {
+      const a = tags.map(t => canon(t.name)), b = nmAll.linhas; const diff = a.map((x, i) => x !== b[i] ? `${i}:${b[i]}→${x}` : null).filter(Boolean);
+      if (diff.length) issues.push(`info-nomes ${pack}/${key}: ${diff.join(' ')}`);
+    }
     rows.forEach((r, i) => {
-      const tag = tags[i]; const name = tag ? tag.name : `row${r.row}`; let id = canon(name);
+      const tag = tags[i]; const name = tag ? tag.name : nm && nm.linhas[i] ? nm.linhas[i] : `row${r.row}`; let id = tag ? canon(name) : name;
       while (anims[id]) id += '_b';
       const aseCount = tag ? tag.to - tag.from + 1 : null;
       if (r.holes) issues.push(`${pack}/${key}/${name}: ${r.holes} célula(s) vazia(s) no meio da linha`);
@@ -183,7 +218,8 @@ for (const [pack, list] of Object.entries(packs).sort()) {
     outChars[key] = {
       name: path.basename(pngPath).replace(/\.png$/i, '').replace(/^Mini/, ''), cell: { w: cw, h: ch }, sheet: { cols: sheet.cols, rows: sheet.rows, w: img.w, h: img.h },
       pivot: { x: cx, y: uy2, rule: 'centro horizontal e base da caixa opaca do idle' }, idleBox: { x: ux, y: uy, w: ux2 - ux, h: uy2 - uy },
-      kind: Object.keys(anims).length <= 1 || !anims.idle ? 'prop' : 'character', heavy: cw > 32 || ch > 32, files: { pngs: c.pngs, ase: c.ase || null }, actions: Object.keys(anims), anims,
+      kind: nm && nm.tipo ? nm.tipo : (!tags.length && !nm) ? 'pendente' : Object.keys(anims).length <= 1 || !anims.idle ? 'prop' : 'character',
+      names: tags.length ? 'aseprite' : nm ? nm.fonte : 'a_confirmar', ...(nm && nm.nota ? { note: nm.nota } : {}), heavy: cw > 32 || ch > 32, files: { pngs: c.pngs, ase: c.ase || null }, actions: Object.keys(anims), anims,
     };
   }
   manifest.packs[pack] = { characters: outChars, count: Object.keys(outChars).length };

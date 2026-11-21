@@ -1,0 +1,1816 @@
+{
+ "_leia": "Nome de cada linha (de cima para baixo) das folhas PNG que vieram sem .aseprite. 'fonte': lista publicada pelo autor na página do pack (contagens conferidas uma a uma pelo build_manifest) ou 'visual' (conferido olhando a folha ampliada). 'contagens' = quadros por linha segundo a fonte; o script avisa se o PNG divergir.",
+ "bandits/bandit": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "block",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   5,
+   5,
+   2,
+   4
+  ]
+ },
+ "bandits/banditbrute": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   7,
+   2,
+   7
+  ]
+ },
+ "bandits/banditcrossbow": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "attack_melee",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   9,
+   6,
+   2,
+   4
+  ]
+ },
+ "bandits/bandithorse": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   7,
+   2,
+   5
+  ]
+ },
+ "bandits/banditthug": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "attack2",
+   "throw",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   5,
+   5,
+   8,
+   2,
+   4
+  ]
+ },
+ "bandits/banditleader": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "warcry",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   10,
+   4,
+   2,
+   7
+  ]
+ },
+ "bandits/throwingknife": {
+  "fonte": "autor",
+  "linhas": [
+   "spin"
+  ],
+  "contagens": [
+   4
+  ],
+  "tipo": "projetil"
+ },
+ "vikings/vikingsword": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "block",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   5,
+   5,
+   2,
+   4
+  ]
+ },
+ "vikings/vikingspear": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   7,
+   2,
+   5
+  ]
+ },
+ "vikings/vikingarcher": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "attack_melee",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   10,
+   10,
+   2,
+   4
+  ]
+ },
+ "vikings/vikinghorse": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   7,
+   2,
+   6
+  ]
+ },
+ "vikings/vikingberserker": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "throw",
+   "rage",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   6,
+   6,
+   4,
+   2,
+   6
+  ]
+ },
+ "vikings/vikingjarl": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "attack2",
+   "warcry",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   7,
+   6,
+   5,
+   2,
+   7
+  ]
+ },
+ "vikings/vikingaxe": {
+  "fonte": "autor",
+  "linhas": [
+   "spin"
+  ],
+  "contagens": [
+   4
+  ],
+  "tipo": "projetil"
+ },
+ "elves/elfspear": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   7,
+   2,
+   5
+  ]
+ },
+ "elves/elfwarden": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "block",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   8,
+   6,
+   2,
+   5
+  ]
+ },
+ "elves/elfarcher": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "attack_melee",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   10,
+   10,
+   2,
+   5
+  ]
+ },
+ "elves/elfarcanearcher": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "attack_melee",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   13,
+   9,
+   2,
+   5
+  ]
+ },
+ "elves/elfsword": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "attack2",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   6,
+   5,
+   2,
+   8
+  ]
+ },
+ "elves/elfspellsword": {
+  "fonte": "visual",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "attack2",
+   "spell",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   4,
+   7,
+   7,
+   12,
+   3,
+   9
+  ],
+  "nota": "a página do autor diz 4,6,3,6,6,11,2,8; o PNG tem 1 quadro a mais a partir do pulo (folha atualizada); ordem igual"
+ },
+ "elves/elfhorse": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   7,
+   2,
+   6
+  ]
+ },
+ "elves/elfpegasusrider": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "fly",
+   "jump",
+   "attack",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   4,
+   3,
+   7,
+   2,
+   6
+  ]
+ },
+ "elves/elfmage": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "spell",
+   "attack_melee",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   11,
+   8,
+   5,
+   2,
+   8
+  ]
+ },
+ "elves/elfqueen": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "spell",
+   "spell2",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   11,
+   9,
+   8,
+   2,
+   5
+  ]
+ },
+ "demons/imp": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "attack",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   5,
+   6,
+   2,
+   5
+  ]
+ },
+ "demons/fireimp": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "attack",
+   "throw",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   5,
+   6,
+   9,
+   2,
+   5
+  ]
+ },
+ "demons/demonfirethrower": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "attack_melee",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   5,
+   7,
+   8,
+   2,
+   4
+  ]
+ },
+ "demons/demonfirekeeper": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "attack_melee",
+   "spell",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   5,
+   8,
+   8,
+   7,
+   2,
+   7
+  ]
+ },
+ "demons/succubus": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "seduction",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   9,
+   6,
+   2,
+   7
+  ]
+ },
+ "demons/demoness": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "seduction",
+   "spell",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   5,
+   9,
+   6,
+   7,
+   2,
+   7
+  ]
+ },
+ "demons/claweddemon": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "attack2",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   5,
+   5,
+   2,
+   5
+  ]
+ },
+ "demons/demontormentor": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "attack2",
+   "mockery",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   6,
+   6,
+   3,
+   2,
+   11
+  ]
+ },
+ "demons/highdemon": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   7,
+   2,
+   8
+  ]
+ },
+ "demons/demonlord": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "spell",
+   "spell2",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   4,
+   7,
+   8,
+   10,
+   2,
+   8
+  ]
+ },
+ "demons/fireball": {
+  "fonte": "visual",
+  "linhas": [
+   "fly",
+   "explode"
+  ],
+  "contagens": [
+   3,
+   5
+  ],
+  "tipo": "projetil"
+ },
+ "demons/trident": {
+  "fonte": "visual",
+  "linhas": [],
+  "contagens": [],
+  "tipo": "projetil",
+  "nota": "1 quadro estático"
+ },
+ "pirates/piratecrew": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   5,
+   2,
+   4
+  ]
+ },
+ "pirates/pirategunner": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "attack_melee",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   7,
+   6,
+   2,
+   4
+  ]
+ },
+ "pirates/pirateharpooner": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "attack_melee",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   10,
+   4,
+   2,
+   5
+  ]
+ },
+ "pirates/piratecaptain": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "attack2",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   5,
+   8,
+   2,
+   5
+  ]
+ },
+ "pirates/cannon": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "attack",
+   "rotate",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   1,
+   4,
+   2,
+   3,
+   2,
+   4
+  ]
+ },
+ "pirates/cannonball": {
+  "fonte": "autor",
+  "linhas": [
+   "fly"
+  ],
+  "contagens": [
+   1
+  ],
+  "tipo": "projetil"
+ },
+ "pirates/harpoon": {
+  "fonte": "autor",
+  "linhas": [
+   "fly"
+  ],
+  "contagens": [
+   1
+  ],
+  "tipo": "projetil"
+ },
+ "dwarfs/dwarfminer": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   5,
+   2,
+   4
+  ]
+ },
+ "dwarfs/dwarfwarrior": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   5,
+   2,
+   4
+  ]
+ },
+ "dwarfs/dwarfhunter": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "attack_melee",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   7,
+   5,
+   2,
+   4
+  ]
+ },
+ "dwarfs/dwarfrifle": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "attack_melee",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   7,
+   6,
+   2,
+   4
+  ]
+ },
+ "dwarfs/dwarfgrenadier": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   6,
+   2,
+   5
+  ]
+ },
+ "dwarfs/dwarfdemolitionist": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "barrel",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   6,
+   9,
+   2,
+   5
+  ]
+ },
+ "dwarfs/dwarfbearrider": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "attack2",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   5,
+   6,
+   2,
+   4
+  ]
+ },
+ "dwarfs/dwarfarmoredbearrider": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "attack2",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   5,
+   6,
+   2,
+   4
+  ]
+ },
+ "dwarfs/dwarfshieldbreaker": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "block",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   6,
+   6,
+   2,
+   6
+  ]
+ },
+ "dwarfs/dwarfking": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "warcry",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   5,
+   5,
+   2,
+   7
+  ]
+ },
+ "dwarfs/grenade": {
+  "fonte": "visual",
+  "linhas": [
+   "fly",
+   "land",
+   "explode",
+   "smoke"
+  ],
+  "contagens": [
+   4,
+   7,
+   8,
+   6
+  ],
+  "tipo": "projetil"
+ },
+ "orcs/goblin": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   4,
+   2,
+   4
+  ]
+ },
+ "orcs/goblinthief": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "attack2",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   4,
+   4,
+   2,
+   4
+  ]
+ },
+ "orcs/orc": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   5,
+   2,
+   6
+  ]
+ },
+ "orcs/orcwarrior": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "block",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   5,
+   5,
+   2,
+   6
+  ]
+ },
+ "orcs/orcaxethrower": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "throw",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   6,
+   6,
+   2,
+   4
+  ]
+ },
+ "orcs/orcberserker": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "throw",
+   "attack2",
+   "rage",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   4,
+   6,
+   6,
+   6,
+   4,
+   2,
+   4
+  ]
+ },
+ "orcs/wolfrider": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   4,
+   6,
+   2,
+   4
+  ]
+ },
+ "orcs/wargrider": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   4,
+   6,
+   2,
+   5
+  ]
+ },
+ "orcs/orcveteran": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   5,
+   2,
+   6
+  ]
+ },
+ "orcs/orcwarchief": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "attack2",
+   "warcry",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   5,
+   5,
+   5,
+   2,
+   6
+  ]
+ },
+ "orcs/throwingaxe": {
+  "fonte": "autor",
+  "linhas": [
+   "spin"
+  ],
+  "contagens": [
+   4
+  ],
+  "tipo": "projetil"
+ },
+ "undead/skeleton": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   5,
+   4,
+   6
+  ]
+ },
+ "undead/skeletonarcher": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "attack2",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   10,
+   5,
+   3,
+   6
+  ]
+ },
+ "undead/ghost": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "attack",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   8,
+   2,
+   5
+  ]
+ },
+ "undead/reaper": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "attack",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   8,
+   2,
+   6
+  ]
+ },
+ "undead/deathknight": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "spell",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   5,
+   8,
+   2,
+   4
+  ]
+ },
+ "undead/dreadknight": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "spell",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   5,
+   8,
+   2,
+   5
+  ]
+ },
+ "undead/necromancer": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "spell",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   3,
+   5,
+   7,
+   2,
+   8
+  ]
+ },
+ "undead/lich": {
+  "fonte": "autor",
+  "linhas": [
+   "idle",
+   "walk",
+   "attack",
+   "spell",
+   "spell2",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   7,
+   8,
+   6,
+   3,
+   7
+  ]
+ },
+ "undead/lichspell": {
+  "fonte": "visual",
+  "linhas": [
+   "fx1",
+   "fx2",
+   "fx3",
+   "fx4"
+  ],
+  "contagens": [
+   4,
+   4,
+   4,
+   4
+  ],
+  "tipo": "projetil"
+ },
+ "undead/zombie": {
+  "fonte": "visual",
+  "linhas": [
+   "rising",
+   "idle",
+   "walk",
+   "jump",
+   "getup",
+   "attack",
+   "attack2",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   9,
+   4,
+   6,
+   6,
+   5,
+   4,
+   6,
+   2,
+   4
+  ],
+  "nota": "ordem difere da página; 'rising' tem o 1º quadro vazio de propósito (sai do chão)"
+ },
+ "undead/zombiebutcher": {
+  "fonte": "visual",
+  "linhas": [
+   "rising",
+   "idle",
+   "walk",
+   "jump",
+   "getup",
+   "attack",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   12,
+   4,
+   6,
+   3,
+   8,
+   6,
+   2,
+   4
+  ],
+  "nota": "ordem difere da página; 'rising' tem o 1º quadro vazio"
+ },
+ "slimes/slime": {
+  "fonte": "visual",
+  "variantes": [
+   "",
+   "d",
+   "o",
+   "r",
+   "l"
+  ],
+  "linhas": [
+   "idle",
+   "walk",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   3,
+   5,
+   2,
+   5
+  ],
+  "nota": "sem animação de ataque: só dano por contato"
+ },
+ "slimes/spikedslime": {
+  "fonte": "visual",
+  "variantes": [
+   "",
+   "d",
+   "o",
+   "r",
+   "l"
+  ],
+  "linhas": [
+   "idle",
+   "walk",
+   "attack",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   3,
+   5,
+   5,
+   2,
+   5
+  ]
+ },
+ "slimes/mutantslime": {
+  "fonte": "visual",
+  "variantes": [
+   "",
+   "d",
+   "o",
+   "r",
+   "l"
+  ],
+  "linhas": [
+   "idle",
+   "walk",
+   "attack",
+   "throw",
+   "attack2",
+   "hit",
+   "death",
+   "projectile"
+  ],
+  "contagens": [
+   4,
+   4,
+   5,
+   6,
+   5,
+   2,
+   6,
+   9
+  ],
+  "nota": "última linha é o projétil do cuspe (voo + estouro)"
+ },
+ "slimes/bigslime": {
+  "fonte": "visual",
+  "variantes": [
+   "",
+   "d",
+   "o",
+   "r",
+   "l"
+  ],
+  "linhas": [
+   "idle",
+   "walk",
+   "attack",
+   "hit",
+   "split",
+   "death"
+  ],
+  "contagens": [
+   4,
+   5,
+   8,
+   2,
+   7,
+   5
+  ],
+  "nota": "'split' = se divide em gotas"
+ },
+ "slimes/giantslime": {
+  "fonte": "visual",
+  "variantes": [
+   "",
+   "d",
+   "o",
+   "r",
+   "l"
+  ],
+  "linhas": [
+   "idle",
+   "walk",
+   "attack",
+   "hit",
+   "split",
+   "death"
+  ],
+  "contagens": [
+   4,
+   5,
+   9,
+   2,
+   7,
+   7
+  ]
+ },
+ "slimes/slimemonster": {
+  "fonte": "visual",
+  "variantes": [
+   "",
+   "d",
+   "o",
+   "r",
+   "l"
+  ],
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "attack2",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   8,
+   10,
+   7,
+   2,
+   7
+  ]
+ },
+ "slimes/slimespikes": {
+  "fonte": "visual",
+  "linhas": [
+   "fx1",
+   "fx2",
+   "fx3"
+  ],
+  "contagens": [
+   5,
+   5,
+   5
+  ],
+  "tipo": "projetil"
+ },
+ "golems/rockgolem": {
+  "fonte": "visual",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "attack2",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   8,
+   4,
+   5,
+   5,
+   2,
+   7
+  ]
+ },
+ "golems/overgrowngolem": {
+  "fonte": "visual",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "attack2",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   8,
+   4,
+   5,
+   5,
+   2,
+   7
+  ]
+ },
+ "golems/moltengolem": {
+  "fonte": "visual",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "attack2",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   8,
+   4,
+   5,
+   5,
+   2,
+   9
+  ]
+ },
+ "golems/bronzegolem": {
+  "fonte": "visual",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "attack2",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   4,
+   8,
+   8,
+   2,
+   8
+  ]
+ },
+ "golems/steelgolem": {
+  "fonte": "visual",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "attack2",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   4,
+   8,
+   8,
+   2,
+   8
+  ]
+ },
+ "golems/dwarvengolem": {
+  "fonte": "visual",
+  "linhas": [
+   "idle",
+   "walk",
+   "jump",
+   "attack",
+   "attack2",
+   "hit",
+   "death"
+  ],
+  "contagens": [
+   4,
+   6,
+   4,
+   8,
+   8,
+   2,
+   8
+  ]
+ },
+ "humans/humansprojectiles": {
+  "fonte": "visual",
+  "linhas": [
+   "fx1",
+   "fx2",
+   "fx3"
+  ],
+  "contagens": [
+   2,
+   2,
+   5
+  ],
+  "tipo": "projetil"
+ },
+ "villagers2/anvil": {
+  "fonte": "visual",
+  "linhas": [],
+  "contagens": [],
+  "tipo": "prop",
+  "nota": "bigorna estática do ferreiro"
+ }
+}
