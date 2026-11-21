@@ -558,5 +558,13 @@
   "fonte": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2626860/header.jpg",
   "ensina": "Cápsula: criatura central + logo; muito detalhe some em tamanho pequeno.",
   "tags": "marketing"
+ },
+ {
+  "arquivo": "questbar/campo_01.png",
+  "jogo": "Wallpaper Game – Questbar RPG (Baby Stone Studios, Android)",
+  "appid": "—",
+  "fonte": "print enviado pelo usuário (21/11/2026); loja: https://share.google/xcY3qtAtIlIin19jw",
+  "ensina": "Batalha numa faixa estreita sobre o terreno (papel de parede): céu e corte do solo ocupam a tela, combate lateral pequeno com barras de vida mini, contador \"FASE 10 · BATALHA 26/30\" em fonte pixel. Mostra que o combate continua legível a 1x numa faixa fina.",
+  "tags": "layout,legibilidade,estrutura"
  }
 ]

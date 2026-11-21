@@ -1,6 +1,6 @@
 # Índice de referências (Fase 0.1)
 
-70 imagens de 9 jogos; **35** (50%) mostram pacotes, cartas, revelação, coleção ou absorção.
+71 imagens de 10 jogos; **35** (49%) mostram pacotes, cartas, revelação, coleção ou absorção.
 
 > As imagens são de terceiros, só para comparação interna, e **não vão para o Git** (o repositório é público).
 > Recrie com `python3 tools/referencias/baixar_referencias.py`, `python3 tools/referencias/gerar_indice.py` e `bash tools/referencias/montar_pranchas.sh`.
@@ -34,7 +34,7 @@ Tags: visual, gameplay, economia, estrutura, layout, UX, feedback, legibilidade,
 | revelação de carta rara | `slotbound/revelacao_rara_01.png`, `slotbound/revelacao_rara_02.png`, `slotbound/revelacao_rara_03.png`, `marvel_snap/revelacao_rara_01.png`, `marvel_snap/revelacao_rara_02.png`, `cardboard_conquest/carta_nova_01.png`, `cardboard_conquest/carta_nova_02.png`, `marvel_snap/revelacao_rara_03.png`, `marvel_snap/revelacao_rara_04.png` |
 | álbum de coleção | `slotbound/album_01.png`, `balatro/album_01.png`, `balatro/versoes_raras_01.png`, `marvel_snap/album_01.png`, `marvel_snap/versoes_raras_01.png`, `marvel_snap/album_02.png`, `my_life_as_an_archeologist/bestiario_01.png`, `slotbound/album_02.png`, `marvel_snap/album_03.png` |
 | detalhe de carta | `balatro/detalhe_carta_01.png`, `marvel_snap/detalhe_carta_01.png`, `dragon_eclipse/subclasse_01.png`, `slotbound_demo/detalhe_carta_01.png`, `balatro/detalhe_carta_02.png` |
-| campo de batalha cheio | `slotbound/chefe_01.png`, `slotbound/campo_cheio_01.png`, `slotbound/infinito_01.png`, `cardboard_conquest/campo_cheio_01.png`, `dragon_eclipse/campo_cheio_01.png`, `auto_dungeon/campo_cheio_01.png`, `seedborne_soldiers/campo_cheio_01.png`, `my_life_as_an_archeologist/campo_01.png` |
+| campo de batalha cheio | `slotbound/chefe_01.png`, `slotbound/campo_cheio_01.png`, `slotbound/infinito_01.png`, `cardboard_conquest/campo_cheio_01.png`, `dragon_eclipse/campo_cheio_01.png`, `auto_dungeon/campo_cheio_01.png`, `seedborne_soldiers/campo_cheio_01.png`, `my_life_as_an_archeologist/campo_01.png`, `questbar/campo_01.png` |
 | absorção e estrelas | `slotbound_demo/absorcao_estrelas_01.png`, `slotbound_demo/absorcao_estrelas_02.png`, `dragon_eclipse/evolucao_01.png` |
 | loja | `slotbound/loja_01.png`, `balatro/loja_01.png`, `cardboard_conquest/loja_01.png`, `dragon_eclipse/loja_01.png`, `seedborne_soldiers/loja_01.png` |
 | escolha 1-de-3 | `slotbound/escolha_1de3_01.png`, `dragon_eclipse/escolha_1de3_01.png`, `seedborne_soldiers/escolha_1de3_01.png`, `my_life_as_an_archeologist/artefato_1de3_01.png`, `my_life_as_an_archeologist/escolha_1de3_01.png` |
@@ -162,10 +162,16 @@ Tags: visual, gameplay, economia, estrutura, layout, UX, feedback, legibilidade,
 | `my_life_as_an_archeologist/campo_01.png` | Faixa de combate lateral com retratos e barras grandes nos cantos inferiores. | layout | [imagem](https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1689350/ss_aa8d8792194ded5938765ff64280dedc1f8e8bb2.1920x1080.jpg) |
 | `my_life_as_an_archeologist/capsula_steam_01.png` | Cápsula pixel art com personagem e logo curvo. | marketing | [imagem](https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1689350/header.jpg) |
 
+### Wallpaper Game – Questbar RPG (Baby Stone Studios, Android) (app —)
+
+| Arquivo | O que ensina | Tags | Fonte |
+|---|---|---|---|
+| `questbar/campo_01.png` | Batalha numa faixa estreita sobre o terreno (papel de parede): céu e corte do solo ocupam a tela, combate lateral pequeno com barras de vida mini, contador "FASE 10 · BATALHA 26/30" em fonte pixel. Mostra que o combate continua legível a 1x numa faixa fina. | layout,legibilidade,estrutura | [imagem](print enviado pelo usuário (21/11/2026); loja: https://share.google/xcY3qtAtIlIin19jw) |
+
 ## O que faltou (preciso de ajuda)
 
 - **Pokémon TCG Pocket** e **Hearthstone**: não estão na Steam e os sites com imagens (serebii.net, hearthstone.wiki.gg, sites oficiais) estão fora da rede deste ambiente. Peço prints de: pacote fechado, pacote rasgando, carta virando com brilho de raridade, carta rara/“imersiva”, tela de chances do pacote, álbum, troca por pontos (Pocket) e pó/criação (Hearthstone).
-- **Wallpaper Game – Questbar RPG (Baby Stone Studios)**: não achei na Steam nem na busca (nome, estúdio, “Questbar”). Pode mandar o link ou prints de equipamento com raridade, comandante e builds?
+- **Wallpaper Game – Questbar RPG**: só 1 print (campo). O Google Play está fora da rede daqui; prints de equipamento e do personagem ainda ajudariam (opcional).
 - **Slotbound jogado** (opcional): prints da demo com a tela de chances, absorção passo a passo, um julgamento e a meta-progressão.
 - **Escavação**: nenhum dos jogos tem uma tela de escavação curta; essa tela vai partir de referência de mecânica (camadas, dureza), não de layout.
 - YouTube (vídeos de gameplay) não é acessível daqui; os quadros vieram dos trailers oficiais hospedados na Steam. Não achei wiki do Slotbound.

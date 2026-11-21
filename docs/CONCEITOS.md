@@ -222,3 +222,16 @@ na vitrine**. Cada pacote guardado fechado é um MiniFolk a menos defendendo a b
 | Muitos sistemas | a escavação fica opcional (botão "cavar tudo") e curta; alvarás só nos chefes |
 | Cenário de feira | barraca, prateleira e vitrine desenhadas em código; fundos de ruína são o único asset de cenário |
 | Começo lento | primeira meta-recompensa paga já na primeira run perdida |
+
+## Revisão 21/11/2026: sai a escavação
+
+O usuário não gostou da escavação. O papel que ela cumpria (achados raros entre ondas que alimentam os pacotes) passa a
+ser feito por uma destas opções:
+
+| Opção | Como funciona | Liga aos pacotes por | Custo |
+|---|---|---|---|
+| **1. Cliente da noite** (recomendada) | depois de cada onda, um cliente passa na barraca com 3 propostas, escolhe 1 ou recusa: trocar repetidas por um **pacote lacrado antigo**, comprar uma **relíquia**, receber uma **carta de pesquisa** | gasta repetidas (agência), dá pacotes que só existem assim | ≤10 s, sem minijogo; reaproveita a tela de escolha 1-de-3 |
+| 2. Leilão relâmpago | um pacote raro é leiloado contra um rival; você dá lances com ouro | ouro vira pacote raro | mais tenso, mas mais UI e mais tempo por onda |
+| 3. Tirar sem substituir | relíquias e pacotes raros só vêm dos chefes, dos julgamentos e da prateleira | — | menos sistemas; menos variedade entre ondas |
+
+Sem resposta do usuário, o GDD segue com a **opção 1**. Onde o texto acima diz "porão / escavação", leia "cliente da noite".

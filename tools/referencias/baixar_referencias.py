@@ -132,7 +132,10 @@ def main():
         subprocess.run(['convert', raw, '-resize', '1280x1280>', out], check=True)
         index.append({'arquivo': os.path.relpath(out, ROOT), 'jogo': GAMES[game][1], 'appid': GAMES[game][0], 'fonte': url, 'ensina': teaches, 'tags': tags})
         print('ok', os.path.relpath(out, ROOT))
-    json.dump(index, open(os.path.join(ROOT, 'indice.json'), 'w'), ensure_ascii=False, indent=1)
+    # mantém as entradas manuais (prints enviados pelo usuário, sem app id da Steam)
+    old = os.path.join(ROOT, 'indice.json')
+    if os.path.exists(old): index += [e for e in json.load(open(old)) if e.get('appid') == '—']
+    json.dump(index, open(old, 'w'), ensure_ascii=False, indent=1)
     print(len(index), 'imagens')
 
 if __name__ == '__main__':

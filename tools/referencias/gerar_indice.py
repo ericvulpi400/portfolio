@@ -41,7 +41,7 @@ for g, items in by.items():
     L.append('')
 L += ['## O que faltou (preciso de ajuda)', '',
       '- **Pokémon TCG Pocket** e **Hearthstone**: não estão na Steam e os sites com imagens (serebii.net, hearthstone.wiki.gg, sites oficiais) estão fora da rede deste ambiente. Peço prints de: pacote fechado, pacote rasgando, carta virando com brilho de raridade, carta rara/“imersiva”, tela de chances do pacote, álbum, troca por pontos (Pocket) e pó/criação (Hearthstone).',
-      '- **Wallpaper Game – Questbar RPG (Baby Stone Studios)**: não achei na Steam nem na busca (nome, estúdio, “Questbar”). Pode mandar o link ou prints de equipamento com raridade, comandante e builds?',
+      '- **Wallpaper Game – Questbar RPG**: só 1 print (campo). O Google Play está fora da rede daqui; prints de equipamento e do personagem ainda ajudariam (opcional).',
       '- **Slotbound jogado** (opcional): prints da demo com a tela de chances, absorção passo a passo, um julgamento e a meta-progressão.',
       '- **Escavação**: nenhum dos jogos tem uma tela de escavação curta; essa tela vai partir de referência de mecânica (camadas, dureza), não de layout.',
       '- YouTube (vídeos de gameplay) não é acessível daqui; os quadros vieram dos trailers oficiais hospedados na Steam. Não achei wiki do Slotbound.', '']
