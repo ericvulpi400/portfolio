@@ -358,13 +358,34 @@ function sceneOpen() {
   bevel(20, 242, 440, 22, RP.papel, { fill: 3 }); nail(22, 244); nail(456, 244);
   [['rara', 'Rara+ em 2', 2, 3], ['epica', 'Épica+ em 9', 9, 12], ['lendaria', 'Lendária em 27', 27, 40]].forEach(([r, t, n, m], i) => { const x = 30 + i * 146; gem(x, 249, r); txt(t, x + 10, 248, TINTA, 'p', null); R(x + 94, 251, 38, 3, RP.papel[1]); R(x + 94, 251, Math.round(38 * (m - n) / m), 3, RP[r][2]); });
 }
-const SCENES = { estilo_preparacao: scenePrep, estilo_cartas: sceneCard, estilo_abertura: sceneOpen };
+function sceneAssetTest() {
+  const bg = IMG['_terceiros/sunny.png']; const oy = -46;
+  g.save(); g.translate(440, oy); g.scale(-1, 1); g.drawImage(bg, 0, 0); g.restore(); g.drawImage(bg, 40, oy); g.save(); g.translate(840, oy); g.scale(-1, 1); g.drawImage(bg, 0, 0); g.restore();
+  // exército na vitrine (sem tapetes coloridos: marcas discretas no chão) e inimigos chegando pela estrada
+  const cols = [168, 138, 108], rows = [132, 146, 160, 174, 188];
+  for (const c of cols) for (const r of rows) { R(c - 7, r, 14, 1, '#3f7a1e'); }
+  const army = [['humans/sword', 0, 0], ['humans/shield', 0, 2], ['dwarfs/dwarfwarrior', 0, 4], ['humans/spear', 1, 1], ['dwarfs/dwarfminer', 1, 3], ['humans/archer', 2, 0], ['dwarfs/dwarfhunter', 2, 2], ['humans/mage', 2, 4], ['elves/elfarcher', 2, 1]];
+  army.sort((a, b) => a[2] - b[2]).forEach(([ref, c, r], i) => spr(ref, 'idle', i % 4, cols[c], rows[r] + 1, 1, false, true));
+  const foes = [['slimes/slime', 300, 150], ['slimes/slime', 326, 138], ['slimes/spikedslime', 352, 160], ['slimes/slime', 380, 146], ['slimes/bigslime', 410, 172], ['slimes/slime', 436, 156]];
+  foes.forEach(([ref, x, y], i) => spr(ref, 'idle', i % 3, x, y, 1, true, true));
+  // barraca no campo
+  plank(14, 116, 52, 56, RP.madeira, 41); for (let i = 0; i < 52; i += 13) R(14 + i, 116, 1, 56, RP.madeira[1]);
+  for (let i = 0; i < 6; i++) { const rp = i % 2 ? RP.creme : RP.lona; R(10 + i * 10, 106, 10, 10, rp[2]); R(10 + i * 10, 106, 2, 10, rp[3]); R(17 + i * 10, 106, 3, 10, rp[1]); } R(10, 105, 60, 1, RP.lona[0]);
+  plank(12, 140, 56, 6, RP.balcao, 9); spr('villagers2/merchant', 'idle_b', 2, 30, 140, 1, false, false); spr('villagers2/miner', 'work', 1, 50, 140, 1, false, false);
+  awning(); post(0); post(W - 10); counter(196);
+  const waves = Array.from({ length: 15 }, (_, i) => ({ n: i + 1, feita: i < 2, atual: i === 2, tipo: i === 3 || i === 7 || i === 11 ? 'julg' : i === 9 || i === 14 ? 'chefe' : 'n' }));
+  bunting(150, 330, 22, waves);
+  sign(18, 22, 62, 14, 18); icon('moeda', 23, 25); txt('42', 35, 25, RP.latao[4], 'p', INK); txt('+4', 55, 25, RP.incomum[3], 'p', INK);
+  sign(W - 104, 22, 90, 14, 18); let x = W - 100; for (const [ic, n] of [['lupa', 3], ['troca', 2], ['lacre', 1]]) { icon(ic, x, 25); x += 11; x += txt(String(n), x, 25, CLARO, 'p', INK) + 6; }
+  txt('TESTE: fundo Sunny Hills (ansimuz) + MiniFolks 1×', 240, 206, RP.balcao[4], 'p', RP.balcao[0], 'center');
+}
+const SCENES = { teste_assets: sceneAssetTest, estilo_preparacao: scenePrep, estilo_cartas: sceneCard, estilo_abertura: sceneOpen };
 window.renderScene = (name, k = 4) => { g.clearRect(0, 0, W, H); SCENES[name](); out.width = W * k; out.height = H * k; og.imageSmoothingEnabled = false; og.drawImage(cv, 0, 0, W * k, H * k); return true; };
 window.ready = (async () => {
   M = await (await fetch('../../assets/minifolks/manifest.json')).json();
   for (const n of ['classes', 'raridades', 'cartas_unidades']) D[n] = await (await fetch(`../../data/${n}.json`)).json();
   T = await (await fetch('../../data/strings/pt-BR.json')).json();
   const ff = new FontFace('m5x7', 'url(../../assets/fonts/m5x7.ttf)'); await ff.load(); document.fonts.add(ff); calibrate();
-  const refs = new Set(['villagers2/merchant', 'villagers2/miner', 'elves/elfarcher', 'dwarfs/dwarfwarrior']); for (const u of D.cartas_unidades.lista) refs.add(u.sprite); await preload([...refs]);
+  await loadImg('_terceiros/sunny.png').catch(() => null); const refs = new Set(['villagers2/merchant', 'villagers2/miner', 'elves/elfarcher', 'dwarfs/dwarfwarrior', 'slimes/slime', 'slimes/spikedslime', 'slimes/bigslime']); for (const u of D.cartas_unidades.lista) refs.add(u.sprite); await preload([...refs]);
   return TOP;
 })();

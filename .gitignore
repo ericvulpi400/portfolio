@@ -24,3 +24,6 @@ assets/pesquisa_prancha.png
 
 # fontes de terceiros (baixar com tools/assets/baixar_fontes.py)
 assets/fonts/*.ttf
+
+# prévias de assets de terceiros (só para teste local)
+tools/mockups/_terceiros/
