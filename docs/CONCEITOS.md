@@ -138,3 +138,87 @@ Se você não responder, sigo com A pelos motivos acima.
 2. **Resolução lógica**: trocar "480×270 fixo" por **área segura 426×240 com lógica variável** (3× no Deck, 4× em 1080p)? Ver `trabalho/spike.md`.
 3. **Facções**: o bundle hoje tem **13 packs** (entraram Lizardmen e Goblins). Você tem os dois? Entram como facções 16 e 17?
 4. **Teste no seu PC**: rodar o roteiro de `trabalho/spike.md` (Steam, overlay, controle, build) e me mandar o `spike-results.json`. Só depois disso a decisão Electron × Godot fica fechada.
+
+---
+
+# Conceito D — **Bazar das Ruínas** (B como tema, com ideias de A e C)
+
+> Pedido em 21/11/2026: B como tema principal, reaproveitando ideias de A e C.
+
+**Pitch.** Sua barraca de pacotes de cartas viaja com uma feira que monta acampamento em cima de ruínas antigas, e toda
+noite os monstros das ruínas atacam. Você compra, abre e especula com pacotes, e os MiniFolks que saem deles defendem a
+barraca; entre as ondas, o porão da barraca escava as ruínas e acha pacotes lacrados de outras eras.
+
+**Fantasia.** Comerciante esperto e colecionador: ler a prateleira, decidir o que abrir agora e o que guardar lacrado,
+e montar o catálogo completo dos 15 povos.
+
+## O que vem de cada conceito
+
+| De onde | Ideia | Como entra no Bazar |
+|---|---|---|
+| **B** (tema) | prateleira com pacotes diferentes a cada onda | 3–4 ofertas por onda com tipo, tamanho, chances e preço |
+| **B** | pacote lacrado valoriza | guardado fechado ganha +1 carta por onda (até 7) |
+| **B** | comerciante | o comandante é o dono da barraca, com equipamento de raridades |
+| **C** | campo com espaços | a **vitrine** da barraca tem espaços; é o limite do exército (8 → 14) |
+| **C** | espaço com bônus | espaços de frente e "moldura dourada" dão bônus a quem estiver neles |
+| **C** | monstro derrotado vira carta | cartas de pesquisa vão para o bestiário do catálogo |
+| **C** | coleção mexe no sorteio | carta nunca vista tem chance própria de "Novidade!" em cada pacote |
+| **A** | escavação entre ondas | o porão cava as ruínas (≤20 s): pacotes lacrados antigos, relíquias, pesquisa |
+| **A** | ferramentas de manipulação | carimbos: Lupa (espiar), Troca (trocar 1), Lacre (guardar 1 carta) |
+| **A** | 5ª carta especial + brilho antes de virar | igual |
+| **A** | silhueta com dica + fragmentos para comprar a carta que falta | igual ("créditos de catálogo") |
+
+## A tensão central: vitrine × estoque
+
+O problema do B era "estocar tudo" virar a estratégia dominante. A solução vem do C: **pacotes lacrados ocupam espaço
+na vitrine**. Cada pacote guardado fechado é um MiniFolk a menos defendendo a barraca nesta onda.
+- Abrir agora: exército mais forte já.
+- Guardar: o pacote cresce (+1 carta por onda), mas a onda fica mais perigosa.
+- Os chefes "fiscais" punem estoque grande (taxa, confisco de 1 pacote), e os julgamentos às vezes premiam (onda "feira cheia": cada lacrado vale ouro).
+
+## Cada pacote
+
+1. A prateleira mostra o **tipo** (comum, de povo, de era/escavação, de colecionador), o **tamanho** (3/5/7) e o **painel de chances**; o preço sobe a cada compra na mesma onda.
+2. Comprou: abrir agora ou pôr no estoque.
+3. Abrindo: rasga, as cartas brilham na cor da raridade antes de virar, a 5ª vira por último com tabela melhor; contador de garantia ("raro garantido em 3").
+4. Cada carta vai para a vitrine, para a absorção (repetidas sobem o nível de quem já está lá) ou para o Lacre.
+5. Combos dentro do pacote (3 iguais, 3 povos diferentes, povo completo) dão bônus, como as linhas do slot.
+
+## Loops
+
+| Escala | O que acontece |
+|---|---|
+| 30 s | ler a prateleira → comprar → abrir ou estocar → distribuir as cartas |
+| Onda (~2–3 min) | preparação sem cronômetro → combate automático (~45 s) → lucro da feira + ouro → **porão** (≤20 s) |
+| Run (30–45 min) | uma cidade = 15 ondas: normais, 3 julgamentos, chefes "fiscais" na 10 e na 15, **alvará 1-de-3** por chefe |
+| Meta | catálogo (álbum) por povo + bestiário; árvore da feira paga em "fichas de feira" (até run perdida paga); novas cidades, povos e tipos de pacote |
+
+## Camadas menores
+
+- **Comandante (dono da barraca)**: equipamento com raridade e afixos que mexem nos pacotes e no combate (avental, balança, lupa, carimbo, lanterna). Evolui entre runs. (Inspiração: Questbar RPG.)
+- **Alvarás 1-de-3** depois de cada chefe: regras grandes ("a 5ª carta é sempre Rara+, pacotes custam +25%"). (Inspiração: artefatos do My Life as an Archeologist.)
+- **Porão / escavação**: grade curta com dureza; acha pacotes lacrados de eras antigas (que só existem assim), relíquias e cartas de pesquisa.
+- **Bestiário**: monstros derrotados viram cartas de pesquisa; páginas completas compram poderes permanentes.
+
+## Catálogo (álbum) puxando a próxima run
+
+- Página de povo completa → o **pacote daquele povo** entra fixo na prateleira (direciona a sorte).
+- Silhuetas com dica ("cai em pacotes de era, cidade 2+").
+- Repetidas fora da run viram créditos de catálogo para comprar a carta exata que falta.
+- Versões raras (brilhante, prisma) são cosméticas, sem mudar a regra da carta.
+- Contador de coleção sempre visível.
+
+## Diferença
+
+- **Do Slotbound**: a decisão não é "girar de novo"; é qual pacote, abrir ou guardar, e onde pôr cada carta.
+- **Dos roguelites de cartas**: não tem mão nem baralho; o pacote é a unidade de decisão e a coleção é persistente.
+- **Gancho da loja**: "Abra, venda e especule com pacotes de cartas — e defenda sua barraca com o que sair deles."
+
+## Riscos
+
+| Risco | Resposta |
+|---|---|
+| Economia dominar | lacrados ocupam a vitrine; fiscais taxam; simulação de 1.000 runs com bot "estocador" |
+| Muitos sistemas | a escavação fica opcional (botão "cavar tudo") e curta; alvarás só nos chefes |
+| Cenário de feira | barraca, prateleira e vitrine desenhadas em código; fundos de ruína são o único asset de cenário |
+| Começo lento | primeira meta-recompensa paga já na primeira run perdida |
